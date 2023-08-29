@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="naviguation">
+        <i class="fa-solid fa-bars" id="barre_naviguation"></i>
+        <div id="box_naviguation_liste">
+            
+        </div>
+    </div>
+    <main>
+
+        <section class="chapter blue" style="background-color: rgb(255, 160, 64);"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank">Référence javascript</a></section>
+
+        <section class="chapter">Affichage</section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Utilisation d'un script</div>
+                <div class="content black">
+                    <div>
+                        <div>Pour utliser du javascript dans une page internet, il est recommander de posséder un fichier html, et un ou plusieurs fichiers javascript. <br>
+                            Pendant le cours, nous utiliserons un fichier html : <span class="red">java_index.html</span> et un fichier javascript : <span class="red">javascript.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title precision">Code utiliser</div>
+                <div class="content blue">
+                    <div>
+                        <pre>
+< !DOCTYPE html >
+< html lang="en" >
+< head >
+    < meta charset="UTF-8" >
+    < meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    < link rel="stylesheet" href="javascript.js" >
+    < title >Travail< /title >
+< /head >
+< body >
+
+    < button >Cliquez ici !< /button >
+
+< /body >
+< /html >
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Afficher une pop-up</div>
+                <div class="content_onlyone">
+                    <div>
+                        <div>La bonne pratique veut que l'on code le script dans le <span class="red">fichier javascript</span> et que nous utilisons une balise <span class="red"><< script >></span> dans le <span class="red">fichier HTML</span> ( idéalement en bas du fichier ) en indiquant le chemin du fichier javascript.</div>
+                    </div>
+                </div>
+                <div class="content_onlyone blue">
+                    <div>
+                        <div>
+                            <div class="precision">dans le fichier html :</div>
+                            <br>
+                            <pre>
+< body >
+
+    < button >Cliquez ici !< /button >
+
+    <span class="red"><< script src="<span class="blue">chemin_fichier_javascript</span>">><< /script >></span>
+
+< /body >
+< /html >
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+            
+        </section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Afficher une pop-up</div>
+                <div class="content blue">
+                    <div>
+                        <div class="precision">Dans le fichier javascript :</div>
+                        <br>
+                        <div>
+                            <pre>
+<span class="red">alert("<span class="blue">message_d'alerte</span>");</span>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Afficher directement dans le naviguateur</div>
+                <div class="content blue">
+                    <div>
+                        <div class="precision">Dans le fichier javascript :</div>
+                        <br>
+                        <div>
+                            <pre>
+<span class="red">document.write("<span class="blue">Message_à_afficher</span>");</span>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Afficher dans la console ( F12 ) :</div>
+                <br>
+                <div class="content blue">
+                    <div>
+                        <div class="precision">Dans le fichier javascript :</div>
+                        <br>
+                        <div>
+                            <pre>
+<span class="red">console.log("<span class="blue">message</span>");</span>
+                            </pre>
+                        </div>
+                        <div class="precision">Ecrit un message dans la console.</div>
+                        <br>
+                        <div>
+                            <pre>
+<span class="red">console.error("<span class="blue">message</span>");</span>
+                            </pre>
+                        </div>
+                        <div class="precision">Ecrit un message d'erreur dans la console.</div>
+                        <br>
+                        <div>
+                            <pre>
+<span class="red">console.clear();</span>
+                            </pre>
+                        </div>
+                        <div class="precision">Efface les messages écrit dans la console.</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+
+        <section class="chapter">Variables</section>
+
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Déclarer avec <span class="red">var</span></div>
+                <div class="content red">
+                    <div>
+                        <div>var <span class="blue">age</span> = <span class="blue">28</span>;</div>
+                        <br>
+                        <div class="precision">portée de la variable : limité au contexte, non accessible en dehors du contexte</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Déclarer avec <span class="red">let</span></div>
+                <div class="content red">
+                    <div>
+                        <div>let <span class="blue">age</span> = <span class="blue">28</span>;</div>
+                        <br>
+                        <div class="precision">portée de la variable : limité au bloc de code contexte</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Redéfinir la valeur d'une variable</div>
+                <div class="content blue">
+                    <div>
+                        <div>age <span class="red">=</span> 14;</div>
+                        <br>
+                        <div class="precision">Il faut que la variable soit déclarer</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Connaitre le type d'une variable</div>
+                <div class="content red">
+                    <div>
+                        <div>typeof(<span class="blue">age</span>)</div>
+                        <br>
+                        <div class="precision">Pour l'afficher :</div>
+                        <br>
+                        <div class="blue">document.write(<span class="red">typeof(<span class="blue">age</span>)</span>);</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Variable en dynamique</div>
+                <div class="content blue">
+                    <div>
+                        <div class="precision">Il est possible de récupérer une saisie utilisateur pour la stocker dans une variable.</div>
+                        <div class="precision">par exemple avec <span class="red">prompt()</span></div>
+                        <br>
+                        <div>var age = <span class="red">prompt(<span class="blue">" Quel âge as-tu ? "</span>)</span></div>
+                        <br>
+                        <div class="precision">Avec prompt, un message va s'afficher avec la phrase : <span class="blue">" Quel âge as-tu ? ",</span>
+                        <br>Et la saisie de l'utilisateur sera stocker ensuite dans la variable <span class="blue">age</span>
+                        <br>Il est possible ensuite de l'utiliser, par exemple pour l'afficher :</div>
+                        <br>
+                        <div>document.write("Tu est agées de "<span class="red">+</span>age<span class="red">+</span>" ans");</div>
+                        <br>
+                        <div class="precision"><span class="red">+</span> sert pour la concaténation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Convertir le type d'une variable</div>
+                <div class="content blue">
+                    <div>
+                        <div class="precision">par défaut, <span class="blue">prompt()</span> renverra toujours un string.</div>
+                        <div class="precision">Si on veut pouvoir effectuer des calculs avec la variable <span class="blue">age</span> par exemple,</div>
+                        <div class="precision">il faudra la convertir en <span class="blue">number</span></div>
+                        <br>
+                        <div>age = <span class="red">parseInt(<span class="blue">age</span>)</span></div>
+                        <br>
+                        <div class="precision">A ce moment là, la variable <span class="blue">age</span> est devenue un <span class="blue">Integer</span>.</div>
+                        <br>
+                        <div class="precision">Les fonction de conversion :</div>
+                        <br>
+                        <div class="red">parseInt() <span class="black">=> Converti en Integer.</span></div>
+                        <div class="red">parseFloat() <span class="black">=> Converti en Flottant.</span></div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+
+        <section class="chapter">Constante</section>
+
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Déclarer une constante</div>
+                <div class="content red">
+                    <div>
+                        <div>const <span class="blue">age = 28</span></div>
+                        <br>
+                    <div class="precision">La valeur et le type d'une constante ne peut pas être redéfinie ensuite.</div>
+                    <div class="precision">( causera une erreur )</div>
+                    <br>
+                    <div class="precision">A noter, quand <span class="red">const</span> est utiliser sur des objets ( exemple : tableau ), la constante ne vas pas assurer la constance de la valeur des élément présent dans le tableau, mais la constante du type de valeur du tableau.</div>
+                    <br>
+                    <div class="precision">( un tableau ne contenant que des <span class="blue">Integer</span> ne pourra pas se voir attribuer de <span class="blue">String</span>, bien que les valeurs des données puissent changer )</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+
+        <section class="chapter">Opérateur et opérateur de comparaison</section>
+
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Incrémentation Post / Pre</div>
+                <div class="content red">
+                    <div>
+                        <div class="blue">let number = 10;</div>
+                        <br>
+                        <div class="precision">Pré-incrémentation :</div>
+                        <br>
+                        <div>++Number;</div>
+                        <br>
+                        <div class="precision">( ce que ça fait : <span class="blue">number + 1</span> et ensuite <span class="blue">number = number</span> )</div>
+                        <br>
+                        <div class="precision">Post-incrémentation :</div>
+                        <br>
+                        <div>Number++;</div>
+                        <br>
+                        <div class="precision">( ce que ça fait : <span class="blue">number = number</span> et ensuite <span class="blue">number + 1</span> )</div>
+                        <br>
+                        <div class="precision">Exemple de différence : </div>
+                        <br>
+                        <div class="blue">document.write(<span class="red">number++</span>);<span class="black"> ==>  </span> 10</div>
+                        <br>
+                        <div class="precision">( Dans l'ordre, javascript va gérer l'affichage, puis l'incrémentation ).</div>
+                        <br>
+                        <div class="blue">document.write(<span class="red">++number</span>);<span class="black"> ==>  </span> 11</div>
+                        <br>
+                        <div class="precision">( Dans l'ordre, javascript va gérer l'incrémentation, puis l'affichage ).</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Même valeur ET même type</div>
+                <div class="content blue">
+                    <div>
+                        <div>document.write(8 <span class="red">===</span> 8); ==> <span class="red">True</span></div>
+                        <br>
+                        <div class="precision">l'opérateur <span class="red">===</span> renverra true si les deux élément sont de même valeur et de même type.</div>
+                        <div class="precision">C'est le cas, en revanche, elle reverrais <span class="red">False</span> dans ce cas :</div>
+                        <br>
+                        <div>document.write(8 <span class="red">===</span> "8"); ==> <span class="red">False</span></div>
+                        <br>
+                        <div class="precision">La valeur est la même, mais le premier est de type <span class="blue">Integer</span> et le second est de type <span class="blue">String</span></div>
+                        <br>
+                        <div class="black">L'opérateur <span class="red">==</span> vérifie simplement la valeur, et pas le type, elle aurait renvoyer <span class="red">True</span> dans</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">différent type OU différente valeur</div>
+                <div class="content blue">
+                    <div>
+                        <div>document.write(8 <span class="red">!==</span> 8); ==> <span class="red">False</span></div>
+                        <br>
+                        <div class="precision">l'opérateur <span class="red">===</span> renverra False si les deux élément sont de même valeur et de même type.</div>
+                        <div class="precision">C'est le cas, en revanche, elle reverrais <span class="red">True</span> si :</div>
+                        <br>
+                        <div class="precision">La valeur est différente <span class="red">OU</span> le type est différent <span class="red">OU</span> les deux. ( Dès que ce n'est pas strictement égal )</div>
+                        <br>
+                        <div class="precision">Par exemple :</div>
+                        <br>
+                        <div>document.write(8 <span class="red">!==</span> 1); ==> <span class="red">True</span><span class="precision"> ( valeur différente )</span></div>
+                        <div>document.write(8 <span class="red">!==</span> "8"); ==> <span class="red">True</span><span class="precision"> ( Type différent )</span></div>
+                        <div>document.write(8 <span class="red">!==</span> "1"); ==> <span class="red">True</span><span class="precision"> ( valeur et type différent )</span></div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="chapter">Condition</section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Ternaire</div>
+                <div class="content blue">
+                    <div>
+                        <div>let result = number == 10 <span class="red">?</span> "number est égale à 10" <span class="red">:</span> "number n'est pas égale à 10";</div>
+                        <br>
+                        <div>document.write(result);</div>
+                        <br>
+                        <div class="precision">"result = " condition ( si number a la même valeur que 10 ) ? si True ( number est égale à 10 ) : si False ( number n'est pas égale à 10 );</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="chapter">Boucle</section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">while / do while</div>
+                <div class="content red">
+                    <div>
+                        <div class="blue">let number == 10;</div>
+                        <br>
+                        <div>do</div>
+                        <div>{</div>
+                        <div class="blue">document.write(number);</div>
+                        <div class="blue">number++;</div>
+                        <div>}</div>
+                        <div>while(number < 10);</div>
+                        <br>
+                        <div class="precision">Ici, on effectue une itération avant de vérifier la condition <br>
+                        Et donc affiche <span class="blue">number</span><br><br>
+                        Avec un <span class="red">while</span> simple, on serai déjà en dehors de la condition<br>
+                        et rien ne serait afficher</div>
+                        <br>
+                        <div class="black"><span class="red">while </span>: Regarde la condition, puis suis les instructions</div>
+                        <div class="black"><span class="red">do while </span>: Suis les instructions, puis regarde la condition.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">for</div>
+                <div class="content blue">
+                    <div>
+                        <div><span class="red">for(</span> let number = 0<span class="red"> ; </span>number < 5<span class="red"> ; </span>++number<span class="red"> )</span></div>
+                        <div class="red">{</div>
+                        <div>document.write(number);</div>
+                        <div class="red">}</div>
+                        <br>
+                        <div class="precision">for() == > <span class="red">initialisation</span> ( let number = 0 ) + <span class="red">condition</span> ( number < 5 ) + <span class="red">instruction de fin de boucle</span> ( ++number )</div>
+                        <div class="precision">{</div>
+                        <div class="precision"><span class="red">instruction de la boucle</span></div>
+                        <div class="precision">}</div>
+                        <br>
+                        <div class="precision">Il est possible de créé la variable <span class="blue">number</span> en dehors du <span class="red">for</span>, et dans ce cas là, juste renseigner <span class="blue">number</span></div>
+                        <br>
+                        <div class="black">Ne pas renoter l'instruction de fin de boucle, elle est déjà contenue dans le <span class="red">for</span>, cela risquerais de faire doublon.</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="chapter">Fonction</section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Définir une fonction</div>
+                <div class="content red">
+                    <div>
+                        <div>function <span class="blue">calcule</span>(<span class="blue">a</span>, <span class="blue">b</span>)</div>
+                        <div>{</div>
+                        <div class="blue">return a + b;</div>
+                        <div>}</div>
+                        <br>
+                        <div class="blue">let resultat = <span class="red">calcule(</span>10, 5<span class="red">)</span>;</div>
+                        <br>
+                        <div class="blue">document.write(resultat);</div>
+                        <br>
+                        <br>
+                        <div class="precision">Création de la fonction <span class="red">calcule</span> avec deux paramètre obligatoire :<span class="red"> a b </span></div>
+                        <div class="precision">Ce que doit faire la fonction : retourner le résultat de <span class="red">a + b</span></div>
+                        <div class="precision">Comme il y a un <span class="red">return</span>, on recupère ce retour dans une variable : <span class="red">resultat</span></div>
+                        <div class="precision">Il y avait deux paramètre obligatoire, on lui donne : <span class="red">10 5</span> en argument lors de l'appel de la fonction</div>
+                        <div class="precision">Enfin, on affiche le resultat avec <span class="blue">document.write</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Avoir des paramètre facultatif</div>
+                <div class="content blue">
+                    <div>
+                        <div class="precision">Pour indiquer dans une fonction des paramètre facultatif, il faut leurs donner une valeur par défaut, quand elles ne sont pas indiquer
+                        dans l'appel de la fonction</div>
+                        <br>
+                        <div>function <span class="blue">calcule</span>(<span class="blue">a</span>, <span class="blue">b</span><span class="red"> = 5</span>)</div>
+                        <div>{</div>
+                        <div class="blue">return a + b;</div>
+                        <div>}</div>
+                        <br>
+                        <div class="blue">let resultat = <span class="red">calcule(</span>10<span class="red">)</span>;</div>
+                        <br>
+                        <div class="blue">document.write(resultat);</div>
+                        <br>
+                        <div class="precision">Dans l'appel de la fonction, nous n'avons pas indiquer le paramètre <span class="red">b</span> puisqu'il est faculatif <br>
+                        ( il a une valeur par défaut de : <span class="red">5</span> )</div>
+                        <br>
+                        <div class="precision">Il prendra donc pour le paramètre <span class="red">b</span> la valeur par défaut, comme nous ne l'avons pas indiquer dans son appel</div>
+                        <br>
+                        <div class="precision">( si un argument avait été donner pour <span class="red">b</span> dans l'appel de la fonction, cette argument aurait remplacer la valeur par défaut )</div>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Nombre de paramètre infinie</div>
+                <div class="content blue">
+                    <div>
+                        <div>function <span class="blue">calcule</span>(<span class="red"> ...args</span> )</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Définir une expression de fonction</div>
+                <div class="content blue">
+                    <div>
+                        <div><span class="red">let hi = </span>function <span class="blue">bonjour</span>()</div>
+                        <div>{</div>
+                        <div class="blue">document.write("bonjour");</div>
+                        <div>}<span class="red">;</span></div>
+                        <br>
+                        <div class="red">hi()</div>
+                        <br>
+                        <div class="precision">Quand on définie une expression de fonction, on attribut la définition d'une fonction à une variable : <span class="red">hi</span></div>
+                        <br>
+                        <div class="precision">Pour appeler cette fonction, il suffi maintenant d'appeler la fonction <span class="red">hi()</span></div>
+                        <div class="precision">( Il n'est pas obligatoire de nommer la fonction à l'origine, une fonction anonyme marche aussi bien )</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Fonction fléchés</div>
+                <div class="content blue">
+                    <div>
+                        <div>let hi = () <span class="red">=> </span>{ document.write("bonjour") };</div>
+                        <br>
+                        <div>hi()</div>
+                        <br>
+                        <div class="precision">Une fonction fléché permet de raccourcir l'expression d'une fonction, mais attention : <br><br>
+                        <span class="red">Elle a des comportement différent nottament dans le cas de la programmation objet.</span></div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="chapter">Programmation objet</section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Principe</div>
+                <div class="content black">
+                    <div>
+                        <div>Le principe de la programmation objet est de créé des <span class="red">classes</span> dans lesquelles nous allons pouvoir générer des <span class="red">objets</span></div>
+                        <div>Ces objets auront des <span class="red">attributs</span>, des <span class="red">methodes</span>.</div>
+                        <br>
+                        <div>Par exemple :</div>
+                        <br>
+                        <div>Classe : Chien</div>
+                        <div>Objet : Snoopy</div>
+                        <div>Attribut : poils = fluffy, couleur = marron, yeux = trop mignon, etc</div>
+                        <div>Methode : Aboie quand le facteur passe, sautille partout, mord s'il est pas content</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Définir une classe</div>
+                <div class="content blue">
+                    <div>
+                        <pre>
+<span class="red">class</span> Music_Player
+{
+    <span class="red">constructor(<span class="blue">format</span>)</span>
+    {
+        <span class="red">this.</span>format = format;
+        document.write(this.format);
+    }
+
+    <span class="red">play()</span>
+    {
+        consol.log("Lecture en cours");
+    }
+}
+                        </pre>
+                    </div>
+                    <br>
+                    <div class="precision">On a :</div>
+                    <div class="precision">Définie une class : <span class="red">class </span><span class="blue">Music_Player</span></div>
+                    <div class="precision">Définie un constructeur : <span class="red">this.format = format</span></div>
+                    <div class="precision">Définie une methode : <span class="red">play()</span> ( une méthode est une fonction de classe )</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Créé une instance de classe ( un objet )</div>
+                <div class="content blue">
+                    <div>
+                        <div>let user_1 = <span class="red">new</span> Music_Player(<span class="red">"MP3"</span>);</div>
+                        <br>
+                        <div>let user_2 = <span class="red">new</span> Music_Player(<span class="red">"WAV"</span>);</div>
+                        <br>
+                        <div>user_1<span class="red">.play()</span>;</div>
+                        <br>
+                        <div class="precision">On a créé deux instances de classe : <span class="red">user_1</span> et <span class="red">user_2</span></div>
+                        <div class="precision">Dans le constructeur, on a renseigner un attribut obligatoire : <span class="red">format</span>, on le renseigne lors de la créationd e l'objet : <span class="red">"MP3"</span> et <span class="red">"WAV"</span></div>
+                        <br>
+                        <div class="precision">On a appeler une methode de la classe <span class="red">Music_Player</span> en indiquant un objet et sa methode : <span class="red">user_1.play()</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Modifier un attribut de classe</div>
+                <div class="content blue">
+                    <div>
+                        <div class="precision">Il n'est pas encore possible de rendre non accessible du global des attribut de classe, c'est pour cela qu'il est conseiller dans les methode de classe de procéder comme suit :</div>
+                        <br>
+                        <div class="precision">Créé deux methode, l'une capable de lire un attribut, l'autre de la modifier :</div>
+                        <br>
+                        <div class="red">get_format()</div>
+                        <div>{</div>
+                        <div>return this.format;</div>
+                        <div>}</div>
+                        <br>
+                        <div class="red">set_format(<span class="blue">new_format</span>)</div>
+                        <div>{</div>
+                        <div>this.format = new_format;</div>
+                        <div>}</div>
+                        <br>
+                        <div class="precision">Il suffira de les appeler : <span class="blue">user_1<span class="red">.get_format()</span></span>, <span class="blue">user_1<span class="red">.set_format(<span class="blue">nouveau_nom</span>)</span></span></div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="chapter">Prototype et classes</section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Code utilisé</div>
+                <div class="content black">
+                    <div>
+                        <pre>
+class Music_player
+{
+
+    constructor(filetype)
+    {
+        this.filetype = filetype;
+    }
+
+    play()
+    {
+        console.log("lecture en cours")
+    }
+
+    get_filetype()
+    {
+        return this.filetype;
+    }
+
+    set_filetype(new_filetype)
+    {
+        this.filetype = new_filetype;
+    }
+
+    <div class="blue"><span class="red">    static</span> hello()
+    {
+        return "Hello";
+    }
+    </div>
+}
+
+let song = new Music_player("MP3");
+<span class="blue">Music_player.<span class="red">prototype</span>.filename = "nom";</span>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Méthode static</div>
+                <div class="content blue">
+                    <div>
+                        <div class="precision">La méthode <span class="red">play()</span> est accessible via l'instance de la classe <span class="red">Music_player</span> :<br><br>
+                            <span class="red">song<span class="blue">.play()</span>;</div>
+                        <br>
+                        <div class="precision">Une méthode static est une methode qui est liée à la classe elle même, et pas à une instance de classe,<br> elle utilise le mot clef <span class="red">static</span>, dans la classe, il faut donc écrire :</div><br>
+                        <div class="precision"><span class="red">static </span><span class="blue">hello()</span></div>
+                        <div class="precision">{</div>
+                        <div class="precision blue">return "Hello";</div>
+                        <div class="precision">}</div>
+                        <br>
+                        <div class="precision">Pour y accéder, il faudra passer par la classe elle même, et pas par une instance :</div>
+                        <br>
+                        <div class="precision blue"><span class="red">Music_player</span>.hello()</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Ajout d'attribut et méthode dans une classe</div>
+                <div class="content blue">
+                    <div class="precision">
+                        <div>Il est possible d'ajouter des attribut et méthode de classe après la définition d'une classe :</div>
+                        <br>
+                        <div>Pour un attribut :</div>
+                        <br>
+                        <div class="blue">Music_player.<span class="red">prototype</span>.filename = "nom";</div>
+                        <br>
+                        <div>Pour une méthode :</div>
+                        <br>
+                        <div class="blue">Music_player.<span class="red">prototype</span>.bye = function()</div>
+                        <div class="blue">{</div>
+                        <div class="blue">return "bye";</div>
+                        <div class="blue">};</div>
+                        <br>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">Supprimer un attribut de classe</div>
+                <div class="content blue">
+                    <div class="precision">
+                        <div>Il est possible de supprimer des attribut et méthode de classe après la définition d'une classe :</div>
+                        <br>
+                        <div>Pour un attribut :</div>
+                        <br>
+                        <div class="blue"><span class="red">delete</span> song.filename;</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="chapter">Héritage</section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Créé un objet</div>
+                <div class="content black">
+                    <div>
+                        <div>Il existe plusieurs méthode pour créé un objet</div>
+                        <br>
+                        <div>Par une <span class="red">variable</span>, une <span class="red">fonction</span>, une <span class="red">classe</span></div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">En passant par une variable :</div>
+                <div class="content black">
+                    <div>
+                        <pre>
+let naruto = 
+{
+    name : "naruto",
+    weapon : "shuriken",
+    attack : function()
+            {
+                return "Rasengan !"
+            }
+}
+                        </pre>
+                    </div>
+                    <br>
+                    <div>On peut acceder aux attribut et valeurs de l'objet <span class="red">naruto</span> :</div>
+                    <br>
+                    <div>document.write(naruto.attack());</div>
+                    <div>document.write(naruto.name);</div>
+                    <div>document.write(naruto.weapon);</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">En passant par une fonction :</div>
+                <div class="content black">
+                    <div>
+                        <pre>
+function ninja(name, weapon)
+{
+    this.attack = function()
+    {
+        return "Rasengan !";
+    }
+
+    this.name = name;
+    this.weapon = weapon;
+}
+
+let naruto = new ninja("naruto", "shuriken")
+                        </pre>
+                    </div>
+                    <br>
+                    <div>On créé un objet <span class="red">naruto</span> en passant par le mot clef <span class="red">new</span></div>
+                    <div>On peut acceder aux attribut et valeurs de l'objet <span class="red">naruto</span> :</div>
+                    <br>
+                    <div>document.write(naruto.attack());</div>
+                    <div>document.write(naruto.name);</div>
+                    <div>document.write(naruto.weapon);</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title">En passant par une classe :</div>
+                <div class="content black">
+                    <div>
+                        <pre>
+class ninja
+{
+    constructor(name, weapon)
+    {
+        this.name = name;
+        this.weapon = weapon;
+    }
+
+    attack()
+    {
+        return "Rasengan";
+    }
+}
+
+let naruto = new ninja("Naruto", "Kunai");
+                        </pre>
+                    </div>
+                    <br>
+                    <div>On créé un objet <span class="red">naruto</span> en passant par le mot clef <span class="red">new</span></div>
+                    <div>On peut acceder aux attribut et valeurs de l'objet <span class="red">naruto</span> :</div>
+                    <br>
+                    <div>document.write(naruto.attack());</div>
+                    <div>document.write(naruto.name);</div>
+                    <div>document.write(naruto.weapon);</div>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+<!--    
+        
+        <section class="chapter">Fonction</section>
+        
+        --------------------------------------------------------------------
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title"></div>
+                <div class="content blue">
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title"></div>
+                <div class="content blue">
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title"></div>
+                <div class="content blue">
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        ---------------------------------------------------------------------
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Titre</div>
+                <div class="content_onlyone">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    -->

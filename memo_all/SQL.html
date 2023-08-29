@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="naviguation">
+        <i class="fa-solid fa-bars" id="barre_naviguation"></i>
+        <div id="box_naviguation_liste">
+            
+        </div>
+    </div>
+
+    <section class="chapter">Principe de MySQL</section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title">Modèle relationnelle</div>
+            <div class="content blue">
+                <div>
+                    <img src="../fichier/mariadb_Système relationnelle.PNG" alt="" style="height: 500px;">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title">Démarrer son serveur</div>
+            <div class="content blue">
+                <div>
+                    <div class="red">sudo service mariadb start</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Se connecter à son serveur</div>
+            <div class="content blue">
+                <div>
+                    <div class="red">mysql -u root -p</div>
+                    <br>
+                    <div class="blue">Puis rentrer son mot de passe</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Se déconnecter du serveur</div>
+            <div class="content red">
+                <div>
+                    <div>exit</div>
+                    <br>
+                    <div>sudo mysqladmin -u root shutdown</div>
+                    <div>sudo service mariadb stop</div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title">Moteur transactionnelle</div>
+            <div class="content black">
+                <div>
+                    <div class="black">Ce type de moteur est plus lent que le moteur classique, mais offre une sécurité lors du traitement des données</div>
+                    <div class="black">Contre les pannes par exemple, ils feront un rollback arrière si les fichier sont corrompus</div>
+                    <br>
+                    <div class="precision">exemple : InnoDB</div>
+                    <br>
+                    <ul>
+                        <li class="precision">Beaucoup d'écritures</li>
+                        <li class="precision">Sécuriser les données</li>
+                        <li class="precision">Cohérence entre les données ( tables )</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Moteur classique</div>
+            <div class="content blue">
+                <div>
+                    <div class="black">Ne possède pas de sécurité comme les moteur transactionnelles, mais sont plus rapide.</div>
+                    <br>
+                    <div class="precision">exemple : MyISAM</div>
+                    <br>
+                    <ul>
+                        <li class="precision">Rapide en écriture, très rapide en lecture ( beaucoup de lecture )</li>
+                        <li class="precision">Efficace pour la recherche</li>
+                        <li class="precision">Bloque la table lors de l'enregistrement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Changer de moteur</div>
+            <div class="content blue">
+                <div>
+                    <div class="red">SET default_storage_engine = <span class="blue">InnoDB</span>;</div>
+                    <br>
+                    <div class="black">ou</div>
+                    <br>
+                    <div class="red">SET default_storage_engine = <span class="blue">MyISAM</span>;</div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=86f6ldnLVLM&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=5&ab_channel=FormationVid%C3%A9o" target="_blank">Gestion de base d'une base de données</a></section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title"><span class="green">Afficher</span> ses bases de données</div>
+            <div class="content red">
+                <div>
+                    <div>SHOW DATABASES;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Créé</span> une base de données</div>
+            <div class="content red">
+                <div>
+                    <div>CREATE DATABASE <span class="blue">`test`</span>;</div>
+                    <br>
+                    <div class="black">ou pour plus de sécurité :</div>
+                    <br>
+                    <div>CREATE DATABASE IF NOT EXISTS <span class="blue">`test`</span>;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Utiliser</span> une base de données</div>
+            <div class="content red">
+                <div>
+                    <div>USE <span class="blue">`test`</span>;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Supprimer</span> une base de données</div>
+            <div class="content red">
+                <div>
+                    <div>DROP DATABASE <span class="blue">`test`</span>;</div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=Y_y-RNZApmk&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=6&ab_channel=FormationVid%C3%A9o" target="_blank">Tables et données</a></section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title">Représentation d'une table</div>
+            <div class="content blue">
+                <div>
+                    <img src="../fichier/mariadb_table.PNG" alt="">
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title"><span class="green">Afficher les tables</span> d'une base de données</div>
+            <div class="content blue">
+                <div>
+                    <div class="black">De la ou on se trouve ( selectionner avec use ) :</div>
+                    <br>
+                    <div class="red">SHOW TABLES;</div>
+                    <br>
+                    <div class="black">D'une base de données spécifique :</div>
+                    <br>
+                    <div class="red">SHOW TABLES FROM <span class="blue">`test`</span>;</div>
+                    <div class="precision">( affiche les tables dans la base de donnée <span class="blue">test</span> )</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Créé une table</span> dans une base de données</div>
+            <div class="content red">
+                <div>
+                    <pre>
+CREATE TABLE <span class="blue">`users`</span>
+(
+    <span class="blue">`user_id`</span> INT,
+    <span class="blue">`user_name`</span> VARCHAR(65),
+    <span class="blue">`user_birthday`</span> DATE
+);
+                    </pre>
+                    <div class="black">Ou</div>
+                    <br>
+                    <pre class="blue">
+CREATE TABLE <span class="red">IF NOT EXISTS</span> `users`
+(
+    `user_id` <span class="red">INT,</span>
+    `user_name` <span class="red">VARCHAR(65),</span>
+    `user_birthday` <span class="red">DATE</span>
+);
+                    </pre>
+                    <br>
+                    <div class="precision blue">`user_id` = <span class="black">Le nom du champ</span></div>
+                    <br>
+                    <div class="precision red">INT, VARCHAR, DATE, ... = <span class="black">Le type du champ</span></div>
+                    <br>
+                    <span class="precision">On peut verifier si la table est bien créé par exemple avec un <span class="blue">SHOW TABLES;</span></span>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="title"><span class="green">Afficher les colonnes</span> à l'interieur d'une table</div>
+            <div class="content red">
+                <div>
+                    <div>DESCRIBE <span class="blue">`users`</span>;</div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="title"><span class="green">Supprimer une table</span></div>
+            <div class="content red">
+                <div>
+                    <div>DROP TABLE <span class="blue">`users`</span>;</div>
+                    <div class="precision green">Il n'est pas possible de supprimer une table relier par une clef etrangere, il faut dabord supprimer la liaison</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title"><span class="green">Choisir un type cohérent</span>  pour son champ</div>
+            <div class="content_onlyone">
+                <div>
+                    <div>Type numérique</div>
+                    <br>
+                    <img src="../fichier/mariadb_type numérique.PNG" alt="">
+                </div>
+            </div>
+            <div class="content_onlyone">
+                <div>
+                    <div>Type Chaine</div>
+                    <br>
+                    <img src="../fichier/mariadb_type chaine.PNG" alt="">
+                </div>
+            </div>
+            <div class="content_onlyone">
+                <div>
+                    <div>Type date</div>
+                    <br>
+                    <img src="../fichier/mariadb_type date.PNG" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=Y_y-RNZApmk&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=6&ab_channel=FormationVid%C3%A9o" target="_blank">Alterer une table</a></section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title"><span class="green">Signifier l'alteration</span> d'une table</div>
+            <div class="content red">
+                <div>
+                    <div>ALTER TABLE <span class="blue">`users`</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Ajouter une colonne</span> à la table</div>
+            <div class="content red">
+                <div>
+                    <div class="black">ALTER TABLE <span class="blue">`users`</span></div>
+                    <div>ADD <span class="blue">`user_color` #type</span> ;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Supprimer une colonne</span> de la table</div>
+            <div class="content red">
+                <div>
+                    <div class="black">ALTER TABLE <span class="blue">`users`</span></div>
+                    <div>DROP <span class="blue">`user_color`</span> ;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title"><span class="green">Modifier le type</span> d'une colonne</div>
+            <div class="content red">
+                <div>
+                    <div class="black">ALTER TABLE <span class="blue">`users`</span></div>
+                    <div>MODIFY <span class="blue">`user_id`</span> #nouveau_type ;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Modifier le nom</span> d'une colonne</div>
+            <div class="content red">
+                <div>
+                    <div class="black">ALTER TABLE <span class="blue">`users`</span></div>
+                    <div>CHANGE <span class="blue">`user_id` `#nouveau_nom` #nouveau_type </span> ;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Information complète</span> d'une table</div>
+            <div class="content red">
+                <div>
+                    <div>SHOW TABLE STATUS;</div>
+                    <br>
+                    <div class="black">Ou</div>
+                    <br>
+                    <div>SHOW TABLE STATUS FROM <span class="blue">#quelquepart</span> ;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=b3kbXSOg9ZU&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=7&ab_channel=FormationVid%C3%A9o" target="_blank">Contrainte</a></section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title"><span class="green">Liste des contraintes</span> possible</div>
+            <div class="content red">
+                <div>
+                    <div class="black">Indiquer une colonne obligatoire</div>
+                    <div>NOT NULL</div>
+                    <br>
+                    <div class="black">Indiquer une valeur par défaut ( si non renseigner )</div>
+                    <div>DEFAULT <span class="blue">#valeur_par_défaut</span></div>
+                    <br>
+                    <div class="black">Vérification d'une valeur</div>
+                    <div>CHECK(<span class="blue">#contrainte</span>) </div>
+                    <br>
+                    <div class="black">Contrainte de clef unique ( vérifie qu'une clef est unique et n'existe pas déjà, <span class="red">s'il n'y a pas encore de clef primaire, la ou les premières clef unique deviendront automatiquement primaire, si une clef primaire est défini ensuite, celle_ci passeront en clef unique simple </span>) :</div>
+                    <div>UNIQUE(<span class="blue">#nom_colonne</span>)</div>
+                    <br>
+                    <div class="black">Contrainte de clef primaire ( permet d'identifier de manière unique chaque enregistrement, garantie l'unicité et l'identification des données)</div>
+                    <div>PRIMARY KEY(<span class="blue">#colonne_unique</span>)</div>
+                    <br>
+                    <div class="black">Génère automatiquement une valeur croissante dans une colonne lorsque lors de l'insertion d'une nouvelle ligne dans une table ( Il faut qu'une clef primaire ou unique ai été déclarer <span class="red">Il ne peut y avoir qu'une seule colonne en auto_increment</span>)</div>
+                    <div>AUTO_INCREMENT</div>
+                    <br>
+                    <div class="black">Assigne une clef etrangere</div>
+                    <div>FOREIGN KEY (<span class="blue">#nom_colonne_clef_etrangere</span>) REFERENCES <span class="blue">#nom_tableau(#nom_colonne_du_tableau)</span></div>
+                    <br>
+                    <div class="black">Assigne une index <span class="green">( permet d'augmenter la vitesse de lecture, souvent utiliser avec MyISA )</span></div>
+                    <div>CREATE INDEX <span class="blue">#nom_de_cet_index</span> ON <span class="blue">#nom_de_la_table(#nom_colonne1_à_indexer, #nom_colonne2_à_indexer)</span></div>
+                    <br>
+                    <div class="black">Assigner un moteur spécifique ( par défaut : InnoDB )</div>
+                    <div>ENGINE = <span class="blue">#nom_du_moteur (InnoDB, MyISAM, ..)</span></div>
+                    <br>
+                    <div class="black">Assigner un encodage spécifique</div>
+                    <div>CHARACTER SET <span class="blue">#type-encodage (utf8mb4, ..)</span></div>
+                    <div>COLLATE <span class="blue">#type-encodage_collate (utf8mb4_unicode_ci, ..)</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="box_large">
+        <div class="box">
+            <div class="title green">Démonstration</div>
+            <div class="content black">
+                <div>
+                    <div class="black" style="text-align: center;">Renseignement des contraintes <span class="red">au moment de la création de la table</span></div>
+                    <br>
+                    <pre>
+create table table_users
+(
+    user_id smallint(6) <span class="red">AUTO_INCREMENT</span>,
+    user_name varchar(30) <span class="red">not null</span>,
+    user_email varchar(100) <span class="red">not null</span>,
+    user_registration date <span class="red">not null</span>,
+    user_admin boolean <span class="red">default <span class="blue">0</span> <span class="red">check(<span class="blue">user_admin < 1</span>)</span>,
+
+    <span class="red">UNIQUE(<span class="blue">user_name</span>),</span>
+    <span class="red">PRIMARY KEY(<span class="blue">user_id</span>)</span>
+)
+<span class="red">ENGINE = </span>InnoDB
+<span class="red">CHARACTER SET </span>utf8mb4
+<span class="red">COLLATE </span>utf8mb4_unicode_ci;
+                    </pre>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <pre>
+create table table_news
+(
+    news_id smallint(6) not null auto_increment,
+    news_title varchar(80) not null,
+    news_content text not null,
+    news_author smallint(6) not null,
+
+
+    primary key(news_id),
+    <span class="red">FOREIGN KEY (<span class="blue">news_author</span>) REFERENCES <span class="blue">table_users(user_id)</span></span>
+);
+                    </pre>
+                </div>
+            </div>
+            <div class="content black">
+                <div>
+                    <div class="black" style="text-align: center;">Renseignement des contraintes <span class="red">après la création de la table</span></div>
+                    <br>
+                    <pre>
+create table table_users
+(
+    user_id smallint(6),
+    user_name varchar(30),
+    user_email varchar(100),
+    user_registration date,
+    user_admin boolean
+);
+                    </pre>
+                    <br>
+                    <div class="red" style="font-size: 30px;">ALTER TABLE <span class="blue">table_users</span></div>
+                    <br>
+                    <br>
+                    <div class="precision">Pour indiquer une colonne obligatoire :</div>
+                    <div class="red">MODIFY <span class="blue">user_name varchar(30)</span> NOT NULL;</div>
+                    <div class="precision">Pour annuler ceci :</div>
+                    <div class="red">MODIFY <span class="blue">user_name varchar(30)</span>;</div>
+                    <br>
+                    <br>
+                    <div class="precision">Pour indiquer une valeur par défaut :</div>
+                    <div class="red">ALTER <span class="blue">user_admin</span> SET DEFAULT <span class="blue">0</span>;</div>
+                    <div class="precision">Pour supprimer une valeur par défaut :</div>
+                    <div class="red">ALTER <span class="blue">user_admin</span> DROP DEFAULT;</div>
+                    <br>
+                    <br>
+                    <div class="precision">Pour indiquer une vérification de valeur :</div>
+                    <div class="red">ADD CHECK(<span class="blue">user_id <= 1000</span> AND <span class="blue">user_id > 0</span>);</div>
+                    <div class="precision green">( Le nom de cette contrainte sera par défaut : <span class="red">table_users_chk_1</span> ) => première contrainte check renseigner dans le tableau "table_users"</div>
+                    <div class="precision">Pour lui donner un nom spécifique :</div>
+                    <div class="red">ADD CONSTRAINT <span class="blue">chk_nombre_trop_grand</span> CHECK(<span class="blue">user_id <= 10000</span> AND <span class="blue">user_id > 0</span> AND <span class="blue">user_admin < 1</span>);</div>
+                    <div class="precision green">( Le nom de cette contrainte est : <span class="red">chk_nombre_trop_grand</span> )</div>
+                    <div class="precision">Pour supprimer une contrainte check:</div>
+                    <div class="red">DROP CHECK <span class="blue">#nom_de_la_contrainte_check</span>;</div>
+                    <br>
+                    <br>
+                    <div class="precision">Pour indiquer une clef unique :</div>
+                    <div class="red">ADD UNIQUE(<span class="blue">user_name</span>, <span class="blue">user_id</span>);</div>
+                    <div class="precision green">( Le nom de la contrainte est par défaut le nom de la première colonne indiquer : <span class="red">user_name</span> )</div>
+                    <div class="precision">Pour donner un nom spécifique :</div>
+                    <div class="red">ADD CONSTRAINT <span class="blue">unique_key</span> UNIQUE(<span class="blue">user_id</span>, <span class="blue">user_name</span>);</div>
+                    <div class="precision">Pour supprimer une contrainte unique :</div>
+                    <div class="red">DROP INDEX <span class="blue">#nom_de_la_contrainte_unique</span>;</div>
+                    <br>
+                    <br>
+                    <div class="precision">Pour indiquer une clef primaire :</div>
+                    <div class="red">ADD PRIMARY KEY (<span class="blue">user_id</span>, <span class="blue">user_name</span>);</div>
+                    <div class="precision">Pour supprimer les clef primaire (<span class="red">Il faut qu'il n'y ai plus d'auto-incrémentation )</span></div>
+                    <div class="red">DROP PRIMARY KEY;</div>
+                    <br>
+                    <br>
+                    <div class="precision">Pour indiquer une auto_incrémentation (<span class="red">Il faut qu'une clef primaire ou unique ai été renseigner ) :</span></div>
+                    <div class="red">MODIFY <span class="blue">user_id smallint(6) not null </span>AUTO_INCREMENT;</div>
+                    <div class="precision">Pour supprimer l'auto-incrémentation :</div>
+                    <div class="red">MODIFY <span class="blue">user_id smallint(6) not null</span>;</div>
+                    <br>
+                    <br>
+                    <div class="precision">Pour indiquer une clef étrangere</div>
+                    <div class="red">ADD FOREIGN KEY (<span class="blue">news_author</span>) REFERENCES <span class="blue">table_users(user_id)</span></div>
+                    <div class="precision green">Par défaut, le nom de la contrainte sera : <span class="red">table_news_ibfk_1</span> (ibfk = InnoDBForeignKey)</div>
+                    <div class="precision">Pour lui donner un nom spécifique</div>
+                    <div class="red">ADD CONSTRAINT <span class="blue">clef_etrangere</span> FOREIGN KEY (<span class="blue">news_author</span>) REFERENCES <span class="blue">table_users(user_id)</span></div>
+                    <div class="precision green">Le nom de la contrainte sera : <span class="red">clef_etrangere</span></div>
+                    <div class="precision">Pour supprimer une clef etrangere : supprimer sa contrainte => supprimer la clef</div>
+                    <div class="red">DROP CONSTRAINT <span class="blue">#nom_de_la_contrainte</span>;</div>
+                    <div class="red">DROP KEY <span class="blue">#nom_de_la_clef</span>;</div>
+                    <div class="precision green">Par défaut, le nom de la clef est le nom de la colonne ou a été appliquer la clef, ici : <span class="red">news_author</span></div>
+                    <br>
+                    <br>
+                    <div class="precision">Assigner un index <span class="red">NE PAS RENSEIGNER ALTER TABLE EN AMONT</span> :</div>
+                    <div class="red">CREATE INDEX <span class="blue">index_utilisateur</span> ON <span class="blue">table_users(user_id, user_name)</span>;</div>
+                    <div class="precision">Supprimer un index</div>
+                    <div class="red">DROP KEY <span class="blue">index_utilisateur ( nom de l'index )</span>;</div>
+                    <div class="precision">ou bien</div>
+                    <div class="red">DROP INDEX <span class="blue">index_utilisateur ( nom de l'index )</span>;</div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="precision">Pour afficher toute les contraintes d'un tableau et nom de clef et contraintes</div>
+                    <div class="red">SHOW CREATE TABLE table_users;</div>
+                    <div class="precision"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=IvOCAobeihs&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=8&ab_channel=FormationVid%C3%A9o" target="_blank">Utilisateur et privilèges</a></section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title"><span class="green">Afficher tout</span> les utilisateurs</div>
+            <div class="content red">
+                <div>
+                    <div>SELECT USER FROM MYSQL.USER;</div>
+                    <div class="precision">( pour le gestionnaire de base de donnée mysql )</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Afficher</span> l'utilisateur en cours</div>
+            <div class="content red">
+                <div>
+                    <div>SELECT CURRENT_USER();</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title"><span class="green">Créé un utilisateur</span> et son mot de passe</div>
+            <div class="content red">
+                <div>
+                    <div>CREATE USER "<span class="blue">#nom_utilisateur</span>"@"<span class="blue">#nom_de_l'hôte</span>"" IDENTIFIED BY "<span class="blue">#mot_de_passe</span>"</div>
+                    <div class="precision">( En local, le nom de l'hote est localhost, sinon il pourrait s'agir d'une adresse ip ou d'un nom de domaine )</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Se connecter</span> en tant que ce nouvel utilisateur :</div>
+            <div class="content red">
+                <div>
+                    <div class="black">Lors de la connexion au serveur, indiquer :</div>
+                    <div>mysql -u anthony -p</div>
+                    <br>
+                    <div class="precision green">anthony = le nom de l'utilisateur</div>
+                    <div class="precision">Ensuite préciser le mot de passe</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title"><span class="green">Ajouter ou modifier</span> un mot de passe</div>
+            <div class="content red">
+                <div>
+                    <div>ALTER USER <span class="blue">"anthony"@"localhost"</span> IDENTIFIED BY <span class="blue">"nouveau_mot_de_passe"</span>;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title"><span class="green">Renommer</span> un utilisateur</div>
+            <div class="content red">
+                <div>
+                    <div>RENAME USER <span class="blue">"anthony"@"localhost"</span> TO <span class="blue">"boschat"@"localhost"</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title"><span class="green">Supprimer</span> un utilisateur</div>
+            <div class="content red">
+                <div>
+                    <div>DROP USER <span class="blue">"boschat"@"localhost"</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title green">Privilèges</div>
+            <div class="content_onlyone">
+                <div>
+                    <div style="font-size: 30px;"><a href="https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html" target="_blank" style="color: blue;">Documentation</a></div>
+                </div>
+            </div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red precision" style="text-align: center;">Accorder un privilège</div>
+                    <br>
+                    <div class="red">GRANT <span class="blue">#privilège1, #privilège2</span></div>
+                    <div class="red">ON <span class="blue">#endroit_à_appliquer</span> <span class="green">( *.* => tout les tableau de toute les bases de données )</span></div>
+                    <div class="red">TO <span class="blue">"anthony"@"localhost"</span>;</div>
+                    <br>
+                    <div class="precision">Pour indiquer que l'utilisateur peut aussi accorder ou revoquer des privilège on termine la ligne de commande par :</div>
+                    <div class="red">WITH GRANT OPTION;</div>
+                </div>
+            </div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red precision" style="text-align: center;">Révoquer un privilège</div>
+                    <br>
+                    <div class="red">REVOKE <span class="blue">#privilège1, #privilège2</span></div>
+                    <div class="red">ON <span class="blue">#endroit_à_appliquer</span> <span class="green">( *.* => tout les tableau de toute les bases de données )</span></div>
+                    <div class="red">FROM <span class="blue">"anthony"@"localhost"</span>;</div>
+                    <br>
+                    <div class="precision">Pour signifier de retirer tout les privilège d'un utilisateur on peut indiquer au début :</div>
+                    <div class="red">REVOKE ALL</div>
+                    <br>
+                    <div class="precision">Pour supprimer le droit de grant option</div>
+                    <div class="red">REVOKE GRANT OPTION</div>
+                    <div class="red">ON <span class="blue">#endroit_à_appliquer</span></div>
+                    <div class="red">FROM <span class="blue">"anthony"@"localhost"</span>;</div>
+                </div>
+            </div>
+            <div class="content_onlyone red">
+                <div>
+                    <div class="precision" style="text-align: center;">Exemple</div>
+                    <br>
+                    <div>GRANT CREATE</div>
+                    <div>ON <span class="blue">cours_sql.*</span> <span class="green">( toute les tables de la base de donnée cours_sql )</span></div>
+                    <div>TO <span class="blue">"anthony"@"localhost"</span></div>
+                    <div>WITH GRANT OPTION;</div>
+                    <br>
+                    <br>
+                    <div class="precision">Et pour supprimer tout ceci</div>
+                    <div>REVOKE GRANT OPTION, CREATE</div>
+                    <div>ON <span class="blue">cours_sql.*</span></div>
+                    <div>FROM <span class="blue">"anthony"@"localhost"</span>;</div>
+                    <br>
+                    <br>
+                    <div class="precision">Dans tout les cas, même tout les privilèges supprimer, il gardera au moin un droit d'usage</div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section class="box_large">
+        <div class="box">
+            <div class="title"><span class="green">Afficher les privilège</span> d'un utilisateur</div>
+            <div class="content red">
+                <div>
+                    <div>SHOW GRANTS FOR <span class="blue">"anthony"@"localhost"</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=QfN_URkzw94&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=9&ab_channel=FormationVid%C3%A9o" target="_blank">Lecture des données</a></section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title">Code utilisé ( database : <span class="red">fv_database</span> )</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Première table</div>
+                    <br>
+                    <br>
+                    <div>fv_product</div>
+                    <br>
+                    <div>
+                        <pre>
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| id_product     | int          | NO   | PRI | NULL    | auto_increment |
+| product_name   | varchar(100) | NO   |     | NULL    |                |
+| product_stock  | int          | NO   |     | 1       |                |
+| product_amount | float        | NO   |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Deuxième table</div>
+                    <br>
+                    <br>
+                    <div>fv_users</div>
+                    <br>
+                    <div>
+                        <pre>
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| id_user        | int         | NO   | PRI | NULL    | auto_increment |
+| user_firstname | varchar(65) | NO   |     | NULL    |                |
+| user_lastname  | varchar(65) | NO   |     | NULL    |                |
+| user_birthdate | date        | NO   |     | NULL    |                |
+| user_tel       | char(10)    | YES  |     | NULL    |                |
+| user_purchases | int         | NO   |     | 0       |                |
++----------------+-------------+------+-----+---------+----------------+
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title"><span class="green">Charger un fichier</span> SQL</div>
+            <div class="content red">
+                <div>
+                    <div>SOURCE <span class="blue">#chemin_du_fichier</span>;</div>
+                    <div class="precision">Attention, ceci va appliquer toutes les instructions du fichier</div>
+                    <br>
+                    <div class="precision">( Le fichier se trouve dans fichier SQL : data1 )</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title"><span class="green">Lire des données</span> avec <span class="green">SELECT</span></div>
+            <div class="content_onlyone red">
+                <div>
+                    <div class="red" style="text-align: center;">Afficher toutes les entrées d'une table</div>
+                    <div class="precision" style="text-align: center;">( Affiche toute les entrées de toute les colonnes de la table <span class="blue">fv_products</span> )</div>
+                    <br>
+                    <div>SELECT * FROM <span class="blue">fv_products</span>;</div>
+                    <br>
+                    <pre class="black">
++------------+-----------------------------------------------+---------------+----------------+
+| id_product | product_name                                  | product_stock | product_amount |
++------------+-----------------------------------------------+---------------+----------------+
+|          1 | PC portable Gaming Nabilla                    |            15 |        1399.99 |
+|          2 | Kit de rituels TOS TES TAS                    |          6000 |           9.95 |
+|          3 | MyBigBurger - salade tomates oignons chef     |            15 |           17.4 |
+|          4 | MyBigBurger - salade tomates oignons chef     |            15 |           17.4 |
+|          5 | Livre - l'Univers comme tu ne l'as jamais cru |            42 |          14.95 |
+|          6 | Pain au chocolat OU Chocolatine               |             1 |           0.15 |
+|          7 | Toilette portatif pour streamers              |           200 |            275 |
+|          8 | Bidon d'essence (1L)                          |          1500 |           0.15 |
+|          9 | Carte cadeau Steam                            |        400000 |             25 |
++------------+-----------------------------------------------+---------------+----------------+
+                    </pre>
+                </div>
+            </div>
+            <div class="content_onlyone red">
+                <div>
+                    <div class="red" style="text-align: center;">Affiche toutes les entrées d'une colonne d'une table</div>
+                    <div class="precision" style="text-align: center;">( Affiche les entrées de la colonnes <span class="blue">product_name</span> de la table <span class="blue">fv_product</span> )</div>
+                    <br>
+                    <div>SELECT <span class="blue">product_name</span> FROM <span class="blue">fv_products</span>;</div>
+                    <br>
+                    <pre class="black">
++-----------------------------------------------+
+| product_name                                  |
++-----------------------------------------------+
+| PC portable Gaming Nabilla                    |
+| Kit de rituels TOS TES TAS                    |
+| MyBigBurger - salade tomates oignons chef     |
+| MyBigBurger - salade tomates oignons chef     |
+| Livre - l'Univers comme tu ne l'as jamais cru |
+| Pain au chocolat OU Chocolatine               |
+| Toilette portatif pour streamers              |
+| Bidon d'essence (1L)                          |
+| Carte cadeau Steam                            |
++-----------------------------------------------+
+                    </pre>
+                </div>
+            </div>
+            <div class="content_onlyone red">
+                <div>
+                    <div class="red" style="text-align: center;">Affiche toutes les entrées de plusieurs colonnes d'une table</div>
+                    <div class="precision" style="text-align: center;">( Affiche les entrées des colonnes <span class="blue">product_name</span> et <span class="blue">product_amount</span> de la table <span class="blue">fv_products</span> )</div>
+                    <br>
+                    <div>SELECT <span class="blue">product_name, product_amount</span> FROM <span class="blue">fv_products</span>;</div>
+                    <br>
+                    <pre class="black">
++-----------------------------------------------+----------------+
+| product_name                                  | product_amount |
++-----------------------------------------------+----------------+
+| PC portable Gaming Nabilla                    |        1399.99 |
+| Kit de rituels TOS TES TAS                    |           9.95 |
+| MyBigBurger - salade tomates oignons chef     |           17.4 |
+| MyBigBurger - salade tomates oignons chef     |           17.4 |
+| Livre - l'Univers comme tu ne l'as jamais cru |          14.95 |
+| Pain au chocolat OU Chocolatine               |           0.15 |
+| Toilette portatif pour streamers              |            275 |
+| Bidon d'essence (1L)                          |           0.15 |
+| Carte cadeau Steam                            |             25 |
++-----------------------------------------------+----------------+
+                    </pre>
+                </div>
+            </div>
+            <div class="content_onlyone red">
+                <div>
+                    <div class="red" style="text-align: center;">Affiche toutes les entrées distinct</div>
+                    <div class="precision" style="text-align: center;">( <span class="blue">MyBigBurger</span> apparait deux fois, c'est pour éviter ce genre de comportement )</div>
+                    <div class="precision" style="text-align: center;">( Pour oracle => UNIQUE )</div>
+                    <br>
+                    <div>SELECT DISTINCT <span class="blue">product_name</span> from <span class="blue">fv_products</span>;</div>
+                    <br>
+                    <pre class="black">
++-----------------------------------------------+
+| product_name                                  |
++-----------------------------------------------+
+| PC portable Gaming Nabilla                    |
+| Kit de rituels TOS TES TAS                    |
+| MyBigBurger - salade tomates oignons chef     |
+| Livre - l'Univers comme tu ne l'as jamais cru |
+| Pain au chocolat OU Chocolatine               |
+| Toilette portatif pour streamers              |
+| Bidon d'essence (1L)                          |
+| Carte cadeau Steam                            |
++-----------------------------------------------+
+                    </pre>
+                </div>
+            </div>
+            <div class="content_onlyone red">
+                <div>
+                    <div class="red" style="text-align: center;">Utiliser un alias temporaire</div>
+                    <div class="precision" style="text-align: center;">( Permet d'utiliser un "pseudo" non utilisable par la suite )</div>
+                    <br>
+                    <div>SELECT <span class="blue">product_name</span> AS <span class="blue">"Nom du produit"</span> FROM <span class="blue">fv_products</span>;</div>
+                    <br>
+                    <pre class="black">
++-----------------------------------------------+
+| <span class="red">Nom du produit</span>                                   |
++-----------------------------------------------+
+| PC portable Gaming Nabilla                    |
+| Kit de rituels TOS TES TAS                    |
+| MyBigBurger - salade tomates oignons chef     |
+| MyBigBurger - salade tomates oignons chef     |
+| Livre - l'Univers comme tu ne l'as jamais cru |
+| Pain au chocolat OU Chocolatine               |
+| Toilette portatif pour streamers              |
+| Bidon d'essence (1L)                          |
+| Carte cadeau Steam                            |
++-----------------------------------------------+
+                    </pre>
+                </div>
+            </div>
+            <div class="content_onlyone red">
+                <div>
+                    <div class="red" style="text-align: center;"></div>
+                    <div class="precision" style="text-align: center;"></div>
+                    <br>
+                    <div></div>
+                    <br>
+                    <pre class="black">
+                        
+                    </pre>
+                </div>
+            </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=jLQ7r6a9aiA&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=10" target="_blank">Filtrer les requêtes</a></section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title precision">Chargement du fichier</div>
+            <div class="content black">
+                <div>
+                    <div>Pour cette partie on charge <span class="green">data2.sql</span></div>
+                    <div>SOURCE <span class="blue">#chemin_du_fichier</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title green">WHERE</div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;">Where permet de créé des filtres/conditions</div>
+                    <div style="text-align: center;">Il peut etre traduit par <span class="green">LORSQUE</span></div>
+                </div>
+            </div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;" class="red">Application d'une condition :</div>
+                    <br>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> <span class="blue">id_game = 11</span>;</div>
+                    <br>
+                    <div class="precision">Affiche toute les informations, dans la table fv_game, lorsque l'id du jeu est 11</div>
+                    <div class="precision red">Affiche l'enregistrement qui a l'identifiant numéro 11</div>
+                </div>
+            </div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;" class="red">Appliquer plusieurs conditions avec AND et OR:</div>
+                    <br>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> <span class="blue">id_game > 5</span> <span class="red">AND</span> <span class="blue">id_game < 10</span>;</div>
+                    <br>
+                    <div class="precision">Affiche toute les informations des enregistrement dans la table fv_game lorsque l'id du jeu est superieur à 5 <span class="green">ET</span> l'id du jeu est inferieur à 10</div>
+                    <div class="precision red">Affiche les enregistrement qui ont l'identifiant 6, 7, 8, 9</div>
+                    <br>
+                    <br>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> <span class="blue">id_game > 5</span> <span class="red">OR</span> <span class="blue">id_game < 10</span>;</div>
+                    <br>
+                    <div class="precision">Affiche toute les informations des enregistrement dans la table fv_game lorsque l'id du jeu est superieur à 5 <span class="green">OU</span> lorsque l'id du jeu est inferieur à 10</div>
+                    <div class="precision red">Affiche tout les enregistrement</div>
+                </div>
+            </div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;" class="red">Application sur plusieurs colonnes :</div>
+                    <br>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> <span class="blue">id_game > 5</span> <span class="red">AND</span> <span class="blue">game_price < 30</span>;</div>
+                    <br>
+                    <div class="precision">Affiche toute les informations des enregistrement dans la table fv_game lorsque l'id du jeu est superieur à 5 <span class="green">ET</span> que le prix du jeu est inferieur à 30</div>
+                </div>
+            </div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;" class="red">Indiquer une plage :</div>
+                    <br>
+                    <div class="precision">Avec <span class="red">IN</span></div>
+                    <br>
+                    <div class="precision">Imaginons que nous voulions tout les enregistrement des jeux qui ont un stock de 2, 4, et 6.</div>
+                    <div class="precision">Pour eviter un code à rallonge comme :</div>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> game_stock = 2 <span class="red">OR</span> game_stock = 4 <span class="red">OR</span> game_stock = 6;</div>
+                    <br>
+                    <div class="precision">On peut raccourcir le code :</div>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> game_stock <span class="red">IN(<span class="blue">2, 4, 6</span>)</span>;</div>
+                    <br>
+                    <div class="precision">Affiche toute les informations des enregistrement dans la table fv_game lorsque le stock du jeu est 2, 4, ou 6.</div>
+                    <br>
+                    <div class="precision">Avec <span class="red">BETWEEN</span></div>
+                    <br>
+                    <div class="precision">Imaginons que nous voulions tout les enregistrement des jeux quit ont un ID compris entre 5 et 15 ( inclu )</div>
+                    <div class="precision">Pour eviter un code à rallonge comme :</div>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> id_game >= 5 <span class="red">AND</span> id_game <= 15 <span class="red">;</div>
+                    <br>
+                    <div class="precision">On peut raccourcir le code :</div>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> id_game <span class="red">BETWEEN <span class="blue">5</span> <span class="red"> AND</span> <span class="blue"> 15</span>;</div>
+                    <div class="precision">( Attention, <span class="green">BETWEEN</span> inclus les nombres indiquer )</div>
+                </div>
+            </div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;" class="red">Rechercher par vérifications de chaînes :</div>
+                    <br>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> <span class="blue">game_title</span> <span class="red">LIKE "<span class="blue">pok%</span>"</span>;</div>
+                    <br>
+                    <div class="precision">Affiche toute les informations des enregistrement dans la table fv_game lorsque le titre du jeu commence par les lettres : <span class="green">pok</span></div>
+                    <div class="precision">( Le symbole <span class="green">%</span> indique qu'il peut s'agir de n'importe quoi ensuite, n'importe combien de caractère )</div>
+                    <div class="precision">( Le symbole <span class="green">_</span> indique qu'il peut s'agir de n'importe quoi ensuite, du moment que ceci colle directement à la suite la chaîne renseigner <span class="green">pok</span> )</div>
+                </div>
+            </div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;" class="red">N'est pas null ou est null</div>
+                    <br>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> <span class="blue">game_price</span> <span class="red">IS NOT NULL</span>;</div>
+                    <br>
+                    <div>ou</div>
+                    <br>
+                    <div>SELECT * FROM fv_games <span class="red">WHERE</span> <span class="blue">game_price</span> <span class="red">IS NULL</span>;</div>
+                    <br>
+                    <div class="precision">Affiche toute les informations des enregistrement dans la table fv_game lorsque le prix du jeu est null</div>
+                </div>
+            </div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;" class="red">Triée par ordre alphabétique</div>
+                    <br>
+                    <div>SELECT * FROM fv_games <span class="red">ORDER BY</span> <span class="blue">game_title</span> <span class="green">ADC/DESC</span>;</div>
+                    <br>
+                    <div class="precision">Affiche toute les informations des enregistrement dans la table fv_game en les affichant dans l'ordre de leurs titres ( Alphabétique )</div>
+                    <div class="precision">Par défaut, le triage s'effectue sur l'ID</div>
+                    <div class="precision"><span class="green">ASC/DESC</span> = Ascendant ou descendant ( par défaut Ascendant )</div>
+                </div>
+            </div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;" class="red">Limité le nombre de lecture</div>
+                    <br>
+                    <div>SELECT * FROM fv_games <span class="red">LIMIT</span> <span class="blue">5</span>;</div>
+                    <br>
+                    <div class="precision">Affiche toute les informations des <span class="red">5</span> premiers enregistrement dans la table fv_game</div>
+                    <br>
+                    <div class="precision">Attention, <span class="green">LIMIT</span> est différent selon certains SGBD ( Systèmes de gestion de base de données )</div>
+                    <div class="precision red">MySQL, PostgreSQL, MariaDB : <span class="green">LIMIT</span></div>
+                    <div class="precision red">SQL Server, MS Access : <span class="green">TOP</span></div>
+                    <div class="precision red">Oracle : <span class="green">ROWNUM</span></div>
+                    <br>
+                    <br>
+                    <div class="precision">Il est possible d'indiquer un point de départ :</div>
+                    <div>SELECT * FROM fv_games <span class="red">LIMIT</span> <span class="blue">5</span> <span class="red">OFFSET</span> <span class="blue">2</span>;</div>
+                    <br>
+                    <div class="precision">Affiche toute les informations des <span class="red">5</span> premiers enregistrement dans la table fv_game. Mais en partant de l'entrées numéro 3</div>
+                    <div class="precision">( Il " oublie " les 2 premières entrées )</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=ETBhek3AklE&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=11&ab_channel=FormationVid%C3%A9o" target="_blank">Enregistrer des données</a></section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title precision">Chargement du fichier</div>
+            <div class="content black">
+                <div>
+                    <div>Pour cette partie on charge <span class="green">data3.sql</span></div>
+                    <div>SOURCE <span class="blue">#chemin_du_fichier</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title green">INSERT INTO : VALUES</div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;" class="red">Insérer un enregistrement</div>
+                    <br>
+                    <div class="blue"><span class="red">INSERT INTO </span>fv_clients <span class="red">( </span>client_firstname, client_lastname, client_birthday, client_loyalty<span class="red"> ) </span></div>
+                    <div class="red">VALUES</div>
+                    <div class="red">( <span class="blue">"Anthony", "Boschat", "1994-10-22", 5</span> );</div>
+                    <br>
+                    <div class="precision">Dans la table <span class="green">fv_clients</span>, j'insère un enregistrement qui, dans l'ordre, sera décrit comme : <span class="green">client_firstname</span>, <span class="green">client_lastname</span>, <span class="green">client_birthday</span>, <span class="green">client_loyalty</span></div>
+                    <div class="precision">Les informations de cet enregistrement seront dans le même ordre :
+                    <span class="red">Values</span> : <span class="green">"Anthony"</span>, <span class="green">"Boschat"</span>, <span class="green">"1994-10-22"</span>, <span class="green">5</span>;</div>
+                    <div class="precision">( L'identifiant est en auto_increment, ce qui veut dire que son id est un automatiquement ajouter lors d'un nouvel enregistrement, <br>il n'y a pas besoin de le mentionner lors de l'enregistrement )</div>
+                </div>
+            </div>
+            <div class="content_onlyone black">
+                <div>
+                    <div style="text-align: center;" class="red">Insérer plusieurs enregistrements</div>
+                    <br>
+                    <div style="text-align: center;" class="black">On peut ajouter plusieurs enregistrement à la fois en respectant l'ordre pour chaque enregistrement</div>
+                    <br>
+                    <div class="blue"><span class="red">INSERT INTO </span>fv_clients <span class="red">( </span>client_firstname, client_lastname, client_birthday, client_loyalty<span class="red"> ) </span></div>
+                    <div class="red">VALUES</div>
+                    <div class="red">( <span class="blue">"Anthony", "Boschat", "1994-10-22", 5</span> ),</div>
+                    <div class="red">( <span class="blue">"Maurane", "Lorjou", "1996-06-18", 15</span> ),</div>
+                    <div class="red">( <span class="blue">"Olivier", "Boschat", "1978-11-30", 25</span> ),</div>
+                    <div class="red">( <span class="blue">"Angelina", "Boschat", "1996-01-25", 35</span> );</div>
+                    <br>
+                    <div class="precision"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=7gMgsSrFgaw&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=12" target="_blank">Modifier et supprime des données</a></section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title precision">Chargement du fichier</div>
+            <div class="content black">
+                <div>
+                    <div>Pour cette partie on charge <span class="green">data2.sql</span></div>
+                    <div>SOURCE <span class="blue">#chemin_du_fichier</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title green">UPDATE / DELETE</div>
+            <div class="content_onlyone black">
+                <div>
+                    
+                    <div style="text-align: center;" class="red">Modifier une entrée</div>
+                    <br>
+                    <div class="precision">On met à jour la table <span class="green">fv_games</span>, on modifie <span class="green">game_stock</span> pour lui doner la valeur <span class="green">6</span>, dans l'entrée ou <span class="green">id_game = 1</span></div>
+                    <div><span class="red">UPDATE <span class="blue">fv_games</span> SET <span class="blue">game_stock = 6 </span>WHERE</span> <span class="blue">id_game = 1</span>;</div>
+                    <br>
+                    <div class="precision">On peut aussi modifier plusieurs informations d'une même entrée :</div>
+                    <div><span class="red">UPDATE <span class="blue">fv_games</span> SET <span class="blue">game_stock = 6, game_price = 10.99 </span>WHERE</span> <span class="blue">id_game = 1</span>;</div>
+                    <br>
+                    <div class="precision"><span class="red">WHERE</span> sert à spécifier un ou plusieurs colonnes spécifique, si on veut que la modification d'applique sur toutes les colonnes, il n'y a pas besoin de spécifier de condition <span class="red">WHERE</span></div>
+                </div>
+            </div>
+            <div class="content_onlyone black">
+                <div>
+                    
+                    <div style="text-align: center;" class="red">Supprimer une entrée</div>
+                    <br>
+                    <div class="precision">Supprime dans la table <span class="green">fv_games</span>, l'information ou le <span class="green">game_stock = 10</span></div>
+                    <div><span class="red">DELETE FROM <span class="blue">fv_games</span> WHERE <span class="blue">game_stock = 10</span>;</div>
+                    <br>
+                    <div class="precision">Pour supprimer toutes les entrées d'une table, il y a deux manière possible ( la deuxième est préférable )</div>
+                    <div class="red">DELETE FROM <span class="blue">fv_games</span>;</div>
+                    <div class="red">TRUNCATE TABLE <span class="blue">fv_games</span>;</div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=TnPLdAuGCzU&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=13" target="_blank">Fonction d'agrégation</a></section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title precision">Chargement du fichier</div>
+            <div class="content black">
+                <div>
+                    <div>Pour cette partie on charge <span class="green">data2.sql</span></div>
+                    <div>SOURCE <span class="blue">#chemin_du_fichier</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title green">COUNT</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Compter un nombre d'enregistrement</div>
+                    <br>
+                    <div>Par exemple compter d'entrée dans la table <span class="green">fv_games</span> ( donc le nombres de jeu enregistrer ) :</div>
+                    <div class="red">SELECT COUNT(*) <span class="blue">AS "nombre d'enregistrement" </span>FROM <span class="blue">fv_games</span>;</div>
+                </div>
+            </div>
+            <div class="title green">AVG</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Faire une moyenne</div>
+                    <br>
+                    <div>Par exemple faire la moyenne des <span class="green">game_price</span> dans la table <span class="green">fv_games</span> :</div>
+                    <div class="red">SELECT AVG(<span class="blue">game_price</span>) <span class="blue">AS "Prix moyen" </span>FROM <span class="blue">fv_games</span>;</div>
+                </div>
+            </div>
+            <div class="title green">MAX</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Obtenir un maximum</div>
+                    <br>
+                    <div>Par exemple avoir le maximum des <span class="green">game_price</span> dans la table <span class="green">fv_games</span> :</div>
+                    <div class="red">SELECT MAX(<span class="blue">game_price</span>) <span class="blue">AS "Prix le plus haut" </span>FROM <span class="blue">fv_games</span>;</div>
+                </div>
+            </div>
+            <div class="title green">MIN</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Obtenir un minimum</div>
+                    <br>
+                    <div>Par exemple avoir le minimum des <span class="green">game_price</span> dans la table <span class="green">fv_games</span> :</div>
+                    <div class="red">SELECT MIN(<span class="blue">game_price</span>) <span class="blue">AS "Prix le plus bas" </span>FROM <span class="blue">fv_games</span>;</div>
+                </div>
+            </div>
+            <div class="title green">SUM</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Afficher un total</div>
+                    <br>
+                    <div>Par exemple savoir le nombre total de jeu disponible :</div>
+                    <div class="red">SELECT SUM(<span class="blue">game_stock</span>) <span class="blue">AS "Nombre total de jeu disponible en stock" </span>FROM <span class="blue">fv_games</span>;</div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=5RFdXGicu1o&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=14" target="_blank">Grouper des résultats</a></section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title precision">Chargement du fichier</div>
+            <div class="content black">
+                <div>
+                    <div>Pour cette partie on charge <span class="green">data4.sql</span></div>
+                    <div>SOURCE <span class="blue">#chemin_du_fichier</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title green">GROUP BY</div>
+            <div class="content_onlyone">
+                <div>
+                    <div>Par exemple, afficher le nombre d'utilisateur pour chaques pays :</div>
+                    <div class="red">SELECT COUNT(*) <span class="blue">as "Nombre de résident"</span>, user_country <span class="blue">as "Pays"</span> FROM <span class="blue">fv_users</span> GROUP BY <span class="blue">user_country</span>;</div>
+                    <br>
+                    <div class="precision">Le <span class="green">COUNT</span> et le nom des pays est GROUPER par le nom des pays</div>
+                    <br>
+                    <br>
+                    <div>Par exemple, afficher la somme totale des âges des résident par pays :</div>
+                    <div class="red">SELECT SUM(<span class="blue">user_age</span>) <span class="blue">as "Âges des résidents"</span>, user_country <span class="blue">as "Pays"</span> FROM <span class="blue">fv_users</span> GROUP BY <span class="blue">user_country</span> WITH ROLLUP;</div>
+                    <br>
+                    <div class="precision"><span class="green">WITH ROLLUP</span> Affiche à la fin le total des âges de tout les résident, tout pays confondu</div>
+                    <br>
+                    <br>
+                    <div class="red" style="text-align: center;">Filtrer des résultats issu d'un groupement de donnée</div>
+                    <br>
+                    <div>Par exemple, indiquer les pays ou la somme de leurs âges dépasse 20 :</div>
+                    <div class="red">SELECT user_country <span class="blue">as "Pays"</span>, SUM(<span class="blue">user_age</span>) <span class="blue">as "Âges des résidents"</span> FROM <span class="blue">fv_users</span> GROUP BY <span class="blue">user_country</span> HAVING SUM(<span class="blue">user_age</span>) > 20;</div>
+                    <br>
+                    <div class="precision"><span class="green">Having</span> condition d'avoir ( user_age > 20 )</div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=tIP_bQeFeXg&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=15" target="_blank">Unions et intersections</a></section>
+    
+    <section class="box_large">
+        <div class="box">
+            <div class="title precision">Chargement du fichier</div>
+            <div class="content black">
+                <div>
+                    <div>Pour cette partie on charge <span class="green">data5.sql</span></div>
+                    <div>SOURCE <span class="blue">#chemin_du_fichier</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title green">UNION</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Concaténer le résultat de plusieurs requêtes</div>
+                    <br>
+                    <div>Au lieu d'avoir deux requêtes :</div>
+                    <br>
+                    <pre>
+SELECT <span class="blue">*</span> FROM fv_site1_users;
+SELECT <span class="blue">*</span> FROM fv_site2_users;
+                    </pre>
+                    <div>on peut faire :</div>
+                    <br>
+                    <pre>
+SELECT <span class="blue">*</span> FROM fv_site1_users
+<span class="red">UNION</span>
+SELECT <span class="blue">*</span> FROM fv_site2_users;
+                    </pre>
+                    <br>
+                    <div class="precision red">• Il faut que le nombre de colonnes à récupérer soit égal dans les deux requêtes</div>
+                    <div class="precision red ">• Il faut que l'ordre donner aux colonnes soit le même</div>
+                    <div class="precision red">• Il faut que le type de donnée soit la même</div>
+                    <br>
+                    <div class="precision green">• Ne récupère pas les doublons identiquement parfait</div>
+                    <br>
+                    <div>( Si on veut récupérer tout, même les doublons parfait )</div>
+                    <br>
+                    <pre>
+SELECT <span class="blue">*</span> FROM fv_site1_users
+<span class="red">UNION ALL</span>
+SELECT <span class="blue">*</span> FROM fv_site2_users; 
+                    </pre>
+                </div>
+            </div>
+
+            <div class="title green">INTERSECT</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Récupérer le résultat de requêtes effectué sur des tables différentes</div>
+                    <br>
+                    <div>Imaginons que je veuille récupérer le nom des utilisateurs à la fois présent dans les table <span class="green">site1</span> et <span class="green">site2</span> :</div>
+                    <br>
+                    <pre>
+SELECT <span class="blue">user_name</span> FROM fv_site1_users
+<span class="red">INTERSECT</span>
+SELECT <span class="blue">user_name</span> FROM fv_site2_users; 
+                    </pre>
+                </div>
+            </div>
+
+            <div class="title green">EXCEPT</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Récupère la différence entre le résultat de deux requêtes</div>
+                    <br>
+                    <div>Imaginons que je veuille récupérer le nom des utilisateurs présent dans la table <span class="green">site1</span> mais qui ne sont pas présent dans la table <span class="green">site2</span></div>
+                    <br>
+                    <pre>
+SELECT <span class="blue">user_name</span> FROM fv_site1_users
+<span class="red">EXCEPT</span>
+SELECT <span class="blue">user_name</span> FROM fv_site2_users; 
+                    </pre>
+                    <br>
+                    <div>Ou bien avec <span class="red">NOT IN</span>:</div>
+                    <br>
+                    <pre>
+SELECT <span class="blue">user_name</span> FROM fv_site1_users
+WHERE <span class="blue">user_name</span> 
+<span class="red">NOT IN</span>(SELECT <span class="blue">user_name</span> FROM fv_site2_users);
+                    </pre>
+                    <br>
+                    <br>
+                    <div class="precision">Pour d'autres SGBD comme Oracle : <span class="red">Minus</span></div>
+                    <br>
+                    <pre>
+SELECT <span class="blue">user_name</span> FROM fv_site1_users
+<span class="red">MINUS</span>
+SELECT <span class="blue">user_name</span> FROM fv_site2_users; 
+                    </pre>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=n2y6DZAM_fM&list=PLrSOXFDHBtfGl66sXijiN8SU9YJaM_EQg&index=16" target="_blank">Sous-requête</a></section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title precision">Chargement du fichier</div>
+            <div class="content black">
+                <div>
+                    <div>Pour cette partie on charge <span class="green">data6.sql</span></div>
+                    <div>SOURCE <span class="blue">#chemin_du_fichier</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title green">( )</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">J'affiche toute les informations d'un joueur présent dans la table <span class="green">fv_players</span> d'un joueur qui a pour nom :<br> => Une joueur vendeur (<span class="green">player_tradeseller</span>) dans la table <span class="green">fv_playertrades</span> qui a pour nom <span class="green">Icekissy</span></div>
+                    <br>
+                    <pre>
+SELECT * FROM fv_players
+WHERE player_name =
+<span class="red">(</span>
+    SELECT playertrade_seller
+    FROM fv_playertrades
+    WHERE playertrade_seller = "Icekissy"
+    LIMIT 1
+<span class="red">)</span>;
+                    </pre>
+                    <div><span class="green">Limit 1</span> parceque dans la table <span class="green">fv_playertrades</span> le nom <span class="green">Icekissy</span> apparait plusieurs fois ( Il a vendu pousieurs objets )</div>
+                </div>
+            </div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">J'affiche tout les objets vendu d'un joueur qui s'appelle <span class="green">Sephiroth</span></div>
+                    <br>
+                    <pre>
+SELECT playertrade_item FROM fv_playertrades
+WHERE playertrade_seller =
+<span class="red">(</span>
+    SELECT player_name 
+    FROM fv_players
+    WHERE player_name = "Sephiroth"
+<span class="red">)</span>;
+                    </pre>
+                </div>
+            </div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">J'affiche tout les joueurs à qui Sephiroth a vendu quelque chose</div>
+                    <br>
+                    <pre>
+SELECT DISTINCT playertrade_buyer FROM fv_playertrades
+WHERE playertrade_seller =
+<span class="red">(</span>
+    SELECT player_name 
+    FROM fv_players
+    WHERE player_name = "Sephiroth"
+<span class="red">)</span>;
+                    </pre>
+                </div>
+            </div>
+            <div class="title green">IN</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Si la sous-requête renvoie plus d'une valeur comme ici :</div>
+                    <br>
+                    <pre>
+SELECT * FROM fv_players
+WHERE player_name =
+(
+    select playertrade_seller
+    from fv_playertrades
+    where playertrade_seller = "Icekissy"
+    limit 1
+);
+                    </pre>
+                    <div class="precision">On peut retirer le <span class="green">limit 1</span> pour renseigner un <span class="green">IN</span> ( = s'il en trouve au moin un )</div>
+                    <br>
+                    <pre>
+SELECT * FROM fv_players
+WHERE player_name <span class="red">IN</span>
+<span class="red">(</span>
+    SELECT playertrade_seller
+    FROM fv_playertrades
+    WHERE playertrade_seller = "Icekissy"
+<span class="red">)</span>;
+                    </pre>
+                    <div class="precision">Autre exemple, j'affiche la liste des noms des joueurs qui ont déjà été vendeur</div>
+                    <br>
+                    <pre>
+SELECT player_name FROM fv_players
+WHERE player_name <span class="red">IN</span>
+<span class="red">(</span>
+    SELECT DISTINCT playertrade_seller FROM fv_playertrades
+<span class="red">)</span>;
+                    </pre>
+                </div>
+            </div>
+        <div class="title green">ANY</div>
+            <div class="content_onlyone">
+                <div>
+                    <div class="red" style="text-align: center;">Any = Tout les</div>
+                    <br>
+                    <pre>
+SELECT * FROM fv_players
+WHERE player_name = <span class="red">ANY</span>
+(
+    SELECT playertrade_seller
+    from fv_playertrades
+    WHERE playertrade_item = "Épée en mousse"
+);
+                    </pre>
+                </div>
+            </div>
+        <div class="title green">EXISTS</div>
+        <div class="content_onlyone">
+            <div>
+                <div class="red" style="text-align: center;">Ma requête équivaut à :</div>
+                <div class="red" style="text-align: center;">SELECT * FROM fv_player <span class="green">SI et seulement si</span> ma sous-requête renvoie quelque chose qui existe <span class="green">( Aucun filtre ne s'applique )</span></div>
+                <br>
+                <pre>
+SELECT * FROM fv_players
+WHERE <span class="red">EXISTS</span>
+(
+    SELECT *
+    from fv_playertrades
+    WHERE playertrade_item = "Épée en mousse"
+);
+                </pre>
+                <br>
+                <div class="precision">Mais cette requête ne renverra rien, puisque <span class="green">"Epee en bois"</span> n'existe pas</div>
+                <br>
+                <pre>
+SELECT * FROM fv_players
+WHERE <span class="red">EXISTS</span>
+(
+    SELECT *
+    from fv_playertrades
+    WHERE playertrade_item = "<span class="red">Épée en bois</span>"
+);
+                </pre>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=Qms4XqTtnkA" target="_blank">Jointures</a></section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title precision">Chargement du fichier</div>
+            <div class="content black">
+                <div>
+                    <div>Pour cette partie on charge <span class="green">data7.sql</span></div>
+                    <div>SOURCE <span class="blue">#chemin_du_fichier</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title">Différentes jointures</div>
+        <div class="content_onlyone">
+            <div>
+                <div>
+                    <img src="../fichier/schema_jointure.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title">Les tables</div>
+        <div class="content_onlyone">
+            <div>
+                <pre>
+                    <div class="red" style="text-align: center;">fv_players</div>
+                    <pre>
++-----------+-------------+--------------+----------------+
+| id_player | player_name | player_level | player_ability |
++-----------+-------------+--------------+----------------+
+|         1 | BigBoss_89  |           15 |              1 |
+|         2 | Sephiroth   |           37 |              5 |
+|         3 | Nephion     |           23 |              6 |
+|         4 | Cladjuju    |            1 |              2 |
+|         5 | Haryko      |            1 |              3 |
+|         6 | Greg_war    |           16 |              5 |
+|         7 | Icekissy    |           50 |              4 |
++-----------+-------------+--------------+----------------+
+                    </pre>
+                </pre>
+            </div>
+        </div>
+        <div class="content_onlyone">
+            <div>
+                <pre>
+                    <div class="red" style="text-align: center;">fv_abilities</div>
+                    <pre>
++------------+--------------+
+| id_ability | ability_name |
++------------+--------------+
+|          2 | Archer       |
+|          6 | Barde        |
+|          7 | Démoniste    |
+|          1 | Guerrier     |
+|          8 | Ingénieur    |
+|          4 | Mage blanc   |
+|          5 | Mage noir    |
+|          3 | Voleur       |
++------------+--------------+
+                    </pre>
+                </pre>
+            </div>
+        </div>
+        <div class="content_onlyone">
+            <div>
+                <pre>
+                    <div class="red" style="text-align: center;">fv_items</div>
+                    <pre>
++---------+-----------------------------+-------------+----------------+
+| id_item | item_name                   | item_type   | item_sellprice |
++---------+-----------------------------+-------------+----------------+
+|       1 | Épée en mousse              | arme        |              2 |
+|       2 | Potion de furtivité         | consommable |              4 |
+|       3 | Extrait de rubis            | minerau     |             25 |
+|       4 | Arc en bois                 | arme        |              5 |
+|       5 | Arc en fer                  | arme        |              8 |
+|       6 | Arc en argent               | arme        |             15 |
+|       7 | Cape de héros Niv. 13       | armure      |             23 |
+|       8 | Pierre brute                | matériau    |              1 |
+|       9 | Grimoire de sorts Niv. 30   | magie       |             30 |
+|      10 | Enclos à bétail             | elevage     |             14 |
+|      11 | Sacoche 20 emplacements     | stockage    |              8 |
+|      12 | Anneau rouillé              | accessoire  |             10 |
+|      13 | Sceptre des anciens Niv. 40 | arme        |             41 |
+|      14 | Mitaines en cuir Niv. 4     | armure      |              4 |
++---------+-----------------------------+-------------+----------------+
+                    </pre>
+                </pre>
+            </div>
+        </div>
+        <div class="content_onlyone">
+            <div>
+                <pre>
+                    <div class="red" style="text-align: center;">fv_playertrades</div>
+                    <pre>
++----------------+--------------------+-------------------+------------------+---------------------+
+| id_playertrade | playertrade_seller | playertrade_buyer | playertrade_item | playertrade_date    |
++----------------+--------------------+-------------------+------------------+---------------------+
+|              1 |                  2 |                 1 |                1 | 2020-01-17 14:37:23 |
+|              2 |                  7 |                 6 |                9 | 2020-01-17 15:10:01 |
+|              3 |                  6 |                 1 |                5 | 2020-01-17 18:43:18 |
+|              4 |                  5 |                 4 |                4 | 2020-01-18 02:08:17 |
+|              5 |                  1 |                 2 |                1 | 2020-01-19 00:00:36 |
+|              6 |                  1 |                 2 |                6 | 2020-01-19 00:15:43 |
+|              7 |                  2 |                 7 |                8 | 2020-01-20 09:24:54 |
+|              8 |                  7 |                 5 |                3 | 2020-01-23 12:28:00 |
+|              9 |                  7 |                 2 |               10 | 2020-01-24 10:10:10 |
+|             10 |                  6 |                 5 |                2 | 2020-01-24 10:10:26 |
+|             11 |                  6 |                 5 |               11 | 2020-01-26 19:44:27 |
+|             12 |                  2 |                 7 |                7 | 2020-01-27 21:33:03 |
++----------------+--------------------+-------------------+------------------+---------------------+
+                    </pre>
+                </pre>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title green">Exemple</div>
+        <div class="content_onlyone">
+            <div>
+                <div class="red" style="text-align: center;">Imaginons que je veuille connaitre toute les abilités des joueurs inscrit sur le jeu, je pourrais faire : </div>
+                <br>
+                <div>select * from fv_players;</div>
+                <br>
+                <div>Cependant, nous ne verrions pas leurs abilities ( qui est un numéro ), c'est à ça que servira par exemple une jointure :</div>
+                <br>
+                <pre>
+SELECT <span class="blue">player_name</span>, <span class="blue">player_level</span>, <span class="blue">ability_name</span>
+<span class="red">FROM</span> <span class="blue">fv_players</span>
+<span class="red">INNER JOIN</span> <span class="blue">fv_abilities</span> <span class="red">ON</span> <span class="blue">player_ability</span> = <span class="blue">id_ability</span>;
+                </pre>
+                <ul>
+                    <li>Affiche moi <span class="green">player_name</span>, <span class="green">player_level</span>, <span class="green">ability_name</span></li>
+                    <li>Depuis la table <span class="green">fv_players</span></li>
+                    <li><span class="green">ability_name</span> n'existe pas dans la table <span class="green">fv_players</span>, donc on relie cette table avec la table qui a cette colonne ( <span class="green">INNER JOIN fv_abilities</span> )</li>
+                    <li>Affiche moi donc maintenant le <span class="green">ability_name</span> correspondant quand <span class="green">player_ability</span> ( un numero ) = <span class="green">id_ability</span> ( un numero )</li>
+                </ul>
+                <br>
+                <br>
+                <div class="red" style="text-align: center;">Imaginons maintenant que je veuille afficher tout les joueurs qui n'ont jamais acheter d'objet :</div>
+                <br>
+                <pre>
+SELECT <span class="blue">player_name</span>
+<span class="red">FROM</span> <span class="blue">fv_playertrades</span> 
+<span class="red">RIGHT JOIN</span> <span class="blue">fv_players</span>
+<span class="red">ON</span> <span class="blue">playertrade_buyer</span> = <span class="blue">id_player</span>
+<span class="red">WHERE</span> <span class="blue">playertrade_buyer</span> <span class="red">IS NULL</span>;
+                </pre>
+                <ul>
+                    <li>Tu va m'afficher des noms (<span class="green">SELECT player_name</span>)</li>
+                    <li>En te servant de la table des transactions (<span class="green">FROM fv_playertrades</span>)</li>
+                    <li>Les noms sont ici (<span class="green">RIGHT JOIN fv_players</span>)</li>
+                    <li>Tu va m'afficher des noms en comparant deux id (<span class="green">ON playertrade_buyer = id_player</span>)</li>
+                    <li>Et enfin, je veux que tu m'affiche le nom du joueur ( <span class="green">player_name</span> ) Qui n'a pas d'ID d'acheteur (<span class="green">WHERE playertrade_buyer IS NULL</span>)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title green">Jointure multiple</div>
+        <div class="content_onlyone">
+            <div>
+                <div class="red" style="text-align: center;">Je veux afficher le nom des joueurs vendeur, les objets vendu, et les joueur acheteur</div>
+                <br>
+                <pre>
+SELECT
+<span class="green">vendeur.</span><span class="blue">player_name</span> <span class="red">AS</span> <span class="blue">"joueur vendeur"</span>
+<span class="green">objet.</span><span class="blue">item_name</span> <span class="red">AS</span> <span class="blue">"objet vendu"</span>
+<span class="green">acheteur.</span><span class="blue">player_name</span> <span class="red">AS</span> <span class="blue">"joueur acheteur"</span>
+
+<span class="red">FROM</span> <span class="blue">fv_playertrades</span>
+
+<span class="red">INNER</span> <span class="red">JOIN</span> <span class="blue">fv_players</span> <span class="red">AS</span> <span class="green">vendeur</span>
+<span class="red">ON</span> <span class="blue">playertrade_seller</span> = <span class="green">vendeur.</span><span class="blue">id_player</span>
+
+<span class="red">INNER</span> <span class="red">JOIN</span> <span class="blue">fv_items</span> <span class="red">AS</span> <span class="green">objet</span>
+<span class="red">ON</span> <span class="blue">playertrade_item</span> = <span class="green">objet.</span><span class="blue">id_item</span>
+
+<span class="red">INNER</span> <span class="red">JOIN</span> <span class="blue">fv_players</span> <span class="red">AS</span> <span class="green">acheteur</span>
+<span class="red">ON</span> <span class="blue">playertrade_buyer</span> = <span class="green">acheteur.</span><span class="blue">id_player</span>;
+                </pre>
+                <br>
+                <div>Dans ce cas de figure, nous avons à lié deux fois la table fv_players, pour deux utilisations différentes, on utilise donc des alias pour les distinguer</div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="box_large">
+    <div class="box">
+    <div class="title green">Jointure profonde</div>
+        <div class="content_onlyone">
+            <div>
+                <div class="res" style="text-align: center;">Je veux afficher le nom des classes des joueurs vendeur</div>
+                <br>
+                <pre>
+SELECT <span class="blue">ability_name</span>
+<span class="red">FROM</span> <span class="blue">fv_playertrades</span>
+
+<span class="red">INNER JOIN</span> <span class="blue">fv_players</span>
+<span class="red">ON</span> <span class="blue">id_player</span> = <span class="blue">playertrade_seller</span>
+
+<span class="red">INNER JOIN</span> <span class="blue">fv_abilities</span>
+<span class="red">ON</span> <span class="blue">id_player</span> = <span class="blue">id_ability</span>;
+                </pre>
+                <ul>
+                    <li>En te servant de la table des transactions (<span class="green">FROM fv_playertrades</span>)</li>
+                    <li>Tu vas m'afficher des noms de classes (<span class="green">SELECT ability_name</span>)</li>
+                    <li>Join moi la table des joueurs (<span class="green">INNER JOIN fv_players</span>)</li>
+                    <li>Et relie moi les ID des vendeurs avec les ID des joueurs (<span class="green">ON id_player = playertrade_seller</span>)</li>
+                    <li>Join moi la table des classes (<span class="green">INNER JOIN fv_abilities</span>)</li>
+                    <li>Et relie moi les ID des joueurs avec les ID des classes (<span class="green">ON id_player = id_ability</span>)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=oEaLoI3Io90" target="_blank">Fonctions chaine de caractère</a></section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title precision">Chargement du fichier</div>
+            <div class="content black">
+                <div>
+                    <div>Pour cette partie on charge <span class="green">data8.sql</span></div>
+                    <div>SOURCE <span class="blue">#chemin_du_fichier</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title green">Les tables</div>
+        <div class="content_onlyone">
+            <div>
+                <div style="text-align: center; font-size:40px"><a href="https://github.com/jasonchampagne/FormationVideo/blob/master/Ressources/SQL/fonctions-chaines.md" style="color: blue;">Documentation</a></div>
+                <br>
+                <div class="red" style="text-align: center;">fv_carbrands</div>
+                <pre>
+<span class="blue">+-------------+---------------+------------------+---------------------------------------------+</span>
+| id_carbrand | carbrand_name | carbrand_country | carbrand_website                            |
++-------------+---------------+------------------+---------------------------------------------+
+|           1 | Mazda         | JP               | https://www.mazda.fr/                       |
+|           2 | Peugeot       | FR               | https://www.peugeot.fr/accueil.html         |
+|           3 | Renault       | FR               | https://group.renault.com/                  |
+|           4 | Audi          | DE               | https://www.audi.com/en.html                |
+|           5 | Toyota        | JP               | https://global.toyota/en/                   |
+|           6 | Ferrari       | IT               | https://www.ferrari.com/fr-FR               |
+|           7 | Hyundai       | KR               | http://www.hyundaigroup.com/                |
+|           8 | Nissan        | JP               | https://www.nissan-global.com/EN/index.html |
+|           9 | BMW           | DE               | https://www.bmwgroup.com/de.html            |
+|          10 | Lamborghini   | IT               | https://www.lamborghini.com/en-en/          |
++-------------+---------------+------------------+---------------------------------------------+
+                </pre>
+            </div>
+        </div>
+        <div class="content_onlyone">
+            <div>
+                <div class="red" style="text-align: center;">fv_countries</div>
+                <pre>
++------------+--------------+--------------+
+| id_country | country_code | country_name |
++------------+--------------+--------------+
+|          1 | FR           | France       |
+|          2 | JP           | Japon        |
+|          3 | DE           | Allemagne    |
+|          4 | IT           | Italie       |
+|          5 | KR           | Corée        |
++------------+--------------+--------------+
+                </pre>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Nombre de caractères</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT 
+<span class="green">carbrand_name</span> AS "<span class="blue">Marque automobile</span>",
+<span class="red">char_length</span>(<span class="green">carbrand_name</span>) AS "<span class="blue">Nombre de caractère</span>"
+FROM <span class="green">fv_carbrands</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Concaténation de chaîne</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">CONCAT</span>(<span class="green">carbrand_name</span>, "<span class="blue"> (</span>", <span class="green">carbrand_country</span>, "<span class="blue">)</span>")
+from <span class="green">fv_carbrands</span>;   
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Conversion en miniscule / majuscule</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">LOWER</span>(<span class="green">carbrand_name</span>)
+FROM <span class="green">fv_carbrands</span>;
+
+SELECT <span class="red">UPPER</span>(<span class="green">carbrand_name</span>)
+FROM <span class="green">fv_carbrands</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Inversion de chaîne</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">REVERSE</span>(<span class="green">carbrand_name</span>)
+FROM <span class="green">fv_carbrands</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Supression d'espace blanc ( avant et après la chaîne )</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">TRIM</span>(<span class="green">carbrand_name</span>)
+FROM <span class="green">fv_carbrands</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Remplacement d'une chaîne de caractère</div>
+            <div class="content">
+                <div>
+                    <pre>
+UPDATE <span class="green">fv_carbrands</span>
+SET <span class="green">carbrand_website</span> = <span class="red">REPLACE</span>(<span class="green">carbrand_website</span>, "<span class="blue">groupe</span>", "<span class="blue">group</span>")
+WHERE <span class="green">carbrand_name</span> = "Renault";
+                    </pre>
+                    <div class="precision">
+                        <ul>
+                            <li>carbrand_website = la colonne qu'on souhaite modifier</li>
+                            <li>group = ancien</li>
+                            <li>groupe = nouveau </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Position d'une occurence dans une chaîne</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="green">carbrand_name</span>, <span class="red">LOCATE</span>("<span class="blue">y</span>", <span class="green">carbrand_name</span>)
+FROM <span class="green">fv_carbrands</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Extraction d'une sous-chaîne</div>
+            <div class="content">
+                <div>
+                    <div class="precision red">Affiche les chaînes de caractère à partir de la deuxième position ( deuxième caractère )</div>
+                    <br>
+                    <pre>
+SELECT <span class="green">carbrand_name</span>, <span class="red">SUBSTR</span>(<span class="green">carbrand_name</span>, <span class="blue">2</span>)
+FROM <span class="green">fv_carbrands</span>;
+                    </pre>
+                    <br>
+                    <div class="precision red">Affiche les chaînes de caractère à partir de la première position ( premier caractère )</div>
+                    <div class="precision red">Et arrête toi au cinquième caractère</div>
+                    <br>
+                    <pre>
+SELECT <span class="green">carbrand_name</span>, <span class="red">SUBSTR</span>(<span class="green">carbrand_name</span>, <span class="blue">1</span>, <span class="blue">5</span>)
+FROM <span class="green">fv_carbrands</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=hLY7cBnFoPQ" target="_blank">Fonctions dates et heures</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Documentation</div>
+            <div class="content">
+                <div>
+                    <div style="font-size: 40px;"><a href="https://github.com/jasonchampagne/FormationVideo/blob/master/Ressources/SQL/fonctions-dates-heures.md" style="color: blue;">Documentation</a></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Formatage d'informations</div>
+            <div class="content">
+                <div>
+                    <ul>
+                        <li><span class="red">%d</span> -> jour</li>
+                        <li><span class="red">%m</span> -> mois</li>
+                        <li><span class="red">%Y/y</span> -> année</li>
+                        <li><span class="red">%H/h</span> -> heures</li>
+                        <li><span class="red">%i</span> -> minutes</li>
+                        <li><span class="red">%S/s</span> -> secondes</li>
+                        <br>
+                        <div>MySQL :</div>
+                        <pre>
+SELECT <span class="red">DATE_FORMAT</span><span class="blue">("2023-07-28 13:04:26", "%d/%m/%Y, à %H:%i:%S")</span>;
+                        </pre>
+                        <div class="precision">-> Change le format de la date</div>
+                        <br>
+                        <div>Oracle & PostgreSQL:</div>
+                        <pre>
+<span class="red">TO_CHAR</span><span class="blue">("date","format")</span>;
+                        </pre>
+                        <br>
+                        <div>SQLite:</div>
+                        <pre>
+<span class="red">strftime</span><span class="blue">("format", "date")</span>;
+                        </pre>
+                        <br>
+                        <div>SQL Server:</div>
+                        <pre>
+<span class="red">FORMAT</span><span class="blue">("date","format")</span>;
+                        </pre>
+                        <br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+        <div class="title">Date exacte actuel</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">NOW()</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+        <div class="title">Extraction d'information</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">DAY</span><span class="blue">("2023-07-28 13:04:26")</span>;
+SELECT <span class="red">MONTH</span><span class="blue">("2023-07-28 13:04:26")</span>;
+SELECT <span class="red">YEAR</span><span class="blue">("2023-07-28 13:04:26")</span>;
+
+SELECT <span class="red">SECOND</span><span class="blue">("2023-07-28 13:04:26")</span>;
+SELECT <span class="red">MINUTE</span><span class="blue">("2023-07-28 13:04:26")</span>;
+SELECT <span class="red">HOUR</span><span class="blue">("2023-07-28 13:04:26")</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Différence entre deux dates</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">DATEDIFF</span><span class="blue">("2023-07-28 13:04:26","2022-07-28 13:04:26")</span>;
+                    </pre>
+                    <div class="precision">-> Nombre de jours de différences (365)</div>
+                    <br>
+                    <pre>
+SELECT <span class="red">TIMEDIFF</span><span class="blue">("2023-07-28 13:04:26","2023-07-28 15:24:56")</span>;
+                    </pre>
+                    <div class="precision">-> Nombre d'heures, minutes, secondes de différences</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=9Y20_0MQzEE&t=1s" target="_blank">Fonctions mathématiques</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Documentation</div>
+            <div class="content">
+                <div>
+                    <div style="font-size: 40px;"><a href="https://github.com/jasonchampagne/FormationVideo/blob/master/Ressources/SQL/fonctions-mathematiques.md" target="_blank" style="color: blue;">Documentation</a></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Valeur positive d'un nombre</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">ABS</span>(<span class="blue">-5</span>);
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Tronquer un nombre</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">TRUNCATE</span>(<span class="blue">3.1489</span>, <span class="blue">2</span>);
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Arrondie à l'entier superieur ( de PI )</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">CEIL</span>(<span class="blue">PI()</span>);
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Arrondie à l'entier inferieur ( de PI )</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT <span class="red">FLOOR</span>(<span class="blue">PI()</span>);
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Arrondie le plus proche</div>
+            <div class="content">
+                <div>
+                    <div class="precision">-> Arrondie de la troisième décimal</div>
+                    <br>
+                    <pre>
+SELECT <span class="red">ROUND</span>(<span class="blue">3.1489</span>, <span class="blue">3</span>);
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+        <div class="title">Arrondie le plus proche</div>
+            <div class="content">
+                <div>
+                    <div class="precision">-> Convertir le nombre 145 en base 10, en base binaire (2)</div>
+                    <br>
+                    <pre>
+SELECT <span class="red">CONV</span>(<span class="blue">145</span>, <span class="blue">10</span>, <span class="blue">2</span>);
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=VTkhWoQ4QPA" target="_blank">Fonctions de sécurité</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Documentation</div>
+            <div class="content">
+                <div>
+                    <div style="font-size: 40px;"><a href="https://github.com/jasonchampagne/FormationVideo/blob/master/Ressources/SQL/fonctions-securite.md" target="_blank" style="color: blue;">Documentation</a></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Chiffrement / Hashage</div>
+            <div class="content">
+                <div>
+                    <div class="red">Chiffrement</div>
+                    <div>Donnée en clair -> Clé -> Donnée chiffrée</div>
+                    <br>
+                    <div class="precision">• Chiffre des données à l'aide d'une clé</div>
+                    <div class="precision">• Peut revenir en arrière avec la clé</div>
+                    <br>
+                    <div class="red">Hashage</div>
+                    <div>Donnée en clair -> Donnée hasher ( un hash )</div>
+                    <br>
+                    <div class="precision">• Ne peut pas revenir en arrière</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Hashage</div>
+            <div class="content">
+                <div>
+                    <pre>
+SELECT MD5("bonjour");
+-> 32 caractères (128 bits)
+<span class="red">NE PAS UTILISER</span>
+<span class="red"></span>
+SELECT SHA("bonjour");
+<span class="red">NE PAS UTILISER</span>
+
+
+
+
+SELECT <span class="red">SHA2(</span>"bonjour"<span class="red">,</span> <span class="red">#bits)</span>;
+<span class="green">Conseiller</span>
+                    </pre>
+                    <div>
+                        <span class="red">#bits :</span>
+                        <ul>
+                            <li><span class="red">224</span> (56 caractères)</li>
+                            <li><span class="red">256</span> (64 caractères)</li>
+                            <li><span class="red">384</span> (96 caractères)</li>
+                            <li><span class="red">512</span> (128 caractères)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Chiffrement</div>
+            <div class="content">
+                <div>
+                    <span class="red">Chiffrée une donnée</span>
+                    <pre>
+SET @variable = <span class="red">AES_ENCRYPT(</span>"bonjour"<span class="red">,</span>"clef"<span class="red">)</span>;
+
+-> On stock le chiffrement dans la variable <span class="red">@variable</span>
+                    </pre>
+                    Déchiffrée une donnée
+                    <pre>
+SELECT <span class="red">AES_DECRYPT(</span>@variable<span class="red">,</span>"clef"<span class="red">)</span>;
+
+-> On utilise la clé "<span class="red">clef</span>" pour déchiffrer @variable
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="script.js"></script>
+</body>
+<!--    
+
+
+
+
+
+
+        <section class="chapter"><a href="" target="_blank">Fonction</a></section>
+        
+        --------------------------------------------------------------------
+
+        <section class="box_large">
+            <div class="box">
+                <div class="title"></div>
+                <div class="content red">
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title"></div>
+                <div class="content red">
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title"></div>
+                <div class="content red">
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        ---------------------------------------------------------------------
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Titre</div>
+                <div class="content_onlyone">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    -->

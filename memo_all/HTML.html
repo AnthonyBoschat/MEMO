@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HTML</title>
+    <link rel="stylesheet" href="style_html_css.css">
+</head>
+<body>
+    <div id="naviguation">
+        <div class="naviguation_bouton">Fonctionnement de base</div>
+        <div class="naviguation_bouton">Balise général</div>
+        <div class="naviguation_bouton">Balise spécifique</div>
+        <div class="naviguation_bouton">Tableau</div>
+        <div class="naviguation_bouton">Formulaire</div>
+        <div class="naviguation_bouton">Sons et vidéos</div>
+        <div class="naviguation_bouton">Structurer une page web</div>
+    </div>
+
+    <h1 class="chapter">Fonctionnement de base</h1>
+
+    <p><strong class="point">Il existe 2 type de balise :</strong></p>
+    <ul>
+        <li><em>Classique : </em>Elles nécessitent une <strong class="precision">ouverture</strong> et une <strong class="precision">fermeture</strong> de balise.<br><br>
+            exemple : <span class="violet">< p ></span> (ouverture de la balise) <span class="violet">< /p ></span> (fermeture de la balise)</li><br>
+        <li><em>Orpheline : </em>Elles ne nécessitent pas de fermeture de balise, <strong class="precision">une seule mention suffi.</strong><br><br>
+        exemple : <span class="violet">< br ></span> (ne necessite pas de fermeture de balise)</li>
+    </ul>
+
+    <p><strong class="point" classe="point">Principe de fermeture de balise imbriqué :</strong></p>
+    <ul>
+        <li>On ferme toujours en premier <strong class="precision">la dernière balise qui a été ouverte</strong> (symétrie central) :<br><br>
+        exemple : <span class="violet">< p > < strong ></span> Message important <span class="violet">< /strong > < /p ></span></li>
+    </ul>
+
+    <br>
+    <hr>
+
+    <h1 class="chapter">Balise général</h1>
+
+    <p><strong class="point">Commenté le code :</strong></p>
+    <span class="violet">< ! - -</span> Commentaire <span class="violet">- - ></span>
+
+    <p><strong class="point">Nouveau paragraphe :</strong></p>
+    <span class="violet">< p ></span> Texte <span class="violet">< /p ></span>
+    
+    <p><strong class="point">Saut de ligne :</strong></p>
+    <span class="violet">< br ></span>
+
+    <p><strong class="point"> Séparateur (ligne noir) :</strong></p>
+    <span class="violet">< hr ></span>
+
+    <p><strong class="point">Indiquer un texte important (par ordre d'importance) :</strong></p>
+    <ol>
+        <li><span class="violet">< strong ></span> Texte important ++ <span class="violet">< /strong ></span></li>
+        <li><span class="violet">< em ></span> Texte important <span class="violet">< /em ></span></li>
+        <li><span class="violet">< b ></span> Texte semi-important <span class="violet">< /b ></span></li>
+        <li><span class="violet">< i ></span> Texte un peu hors propos <span class="violet">< /i ></span></li>
+    </ol>
+
+    <p><strong class="point">Texte obsolète :</strong><br>
+    <em>Texte obsolète à remplacer :</em></p>
+    <span class="violet">< del ></span> Ancien texte <span class="violet">< /del ></span><br>
+    <em>exemple : Anthony à <del>27</del> ans</em>
+    <p><em>Texte qui le remplace :</em></p>
+    <span class="violet">< ins ></span> Nouveau texte <span class="violet">< /ins ></span><br>
+    <em>exemple : Anthony à <del>27</del> <ins>28</ins> ans</em>
+    
+    <p><strong class="point">Texte pas pertinent :</strong></p>
+    <span class="violet">< s ></span> Texte pas pertinent <span class="violet">< /s ></span>
+
+    <p><strong class="point">Texte surligné</strong></p>
+    <span class="violet">< mark ></span> Texte surligné <span class="violet">< /mark ></span>
+
+    <p><strong class="point">Titre (par ordre d'importance) :</strong></p>
+    <ol>
+    <li><span class="violet">< h1 ></span> Premier titre <span class="violet">< h1 ></span></li>
+    <li><span class="violet">< h2 ></span> Deuxième titre <span class="violet">< h2 ></span></li>
+    <li>...</li>
+    <li><span class="violet">< h6 ></span> Dernier titre <span class="violet">< h6 ></span></li>
+    </ol>
+
+    <p><strong class="point">Lien internet :</strong><br>
+    <em>Sans infobulle :</em></p>
+    <span class="violet"><ins>< a href="lien" ></a></ins></span> Texte en lien <span class="violet">< /a ></span><br>
+    <em>exemple : <a href="https://www.google.fr/">Google</a></em>
+    <p><em>Avec infobulle :</em></p>
+    <span class="violet">< a href="lien" <ins>title="texte de l'infobulle"</ins> ></span> Texte en lien <span class="violet">< /a ></span><br>
+    <em>exemple : <a href="https://www.google.fr/" title ="Moteur de recherche google">Google</a></em>
+    <p><em>Ouvrir le lien dans un nouvel onglet :</em></p>
+    <span class="violet">< a href="lien" title="texte de l'infobulle" <ins>target="_blank"</ins>></span> Texte en lien <span class="violet">< /a ></span><br>
+    <em>exemple : <a href="https://www.google.fr/" title ="Moteur de recherche google" target="_blank">Google</a></em>
+    
+    <p><strong class="point">Citation de source externe :</strong><br>
+    <em>Sans la source :</em></p>
+    <span class="violet">< q ></span> Citation <span class="violet">< /q ></span>
+    <p><em>Avec la source :</em></p>
+    <span class="violet">< q </q><ins>cite="http..."</ins> ></span> Citation <span class="violet">< /q ></span><br>
+    <em>exemple : <q cite="https://fr.wikipedia.org/wiki/Abraham_Lincoln">Abraham Lincoln</q></em>
+
+    <p><strong class="point">Citation d'une oeuvre, nom de document (pas de personne) :</strong></p>
+    <span class="violet">< cite ></span> Citation d'un nom <span class="violet">< /cite ></span><br>
+    <em>exemple : <cite>Montargis</cite></em>
+
+    <p><strong class="point">Citation longue :</strong><br>
+    <em>Sans la source :</em></p>
+    <span class="violet">< blockquote ></span> Citation longue <span class="violet">< /blockquote ></span>
+    <p><em>Avec la source :</em></p>
+    <span class="violet">< blockquote </q><ins>cite="http..."</ins> ></span> Citation longue <span class="violet">< /blockquote ></span>
+
+    <p><strong class="point">Attention spoil :</strong><br>
+    <em>Sans personnaliser :</em></p>
+    <span class="violet"><ins>< details ></details></ins></span> Texte à masquer <span class="violet"><ins>< details ></details></ins></span><br>
+    <em>exemple : <details>Texte à masquer</details></em>
+    <p><em>En personnalisant :</em></p>
+    <span class="violet">< details > <ins>< summary ></summary></ins></span> Texte de personnalisation <span class="violet"><ins>< summary ></ins></span>Texte à masquer<span class="violet">< details ></span><br>
+    <em>exemple : <details><summary>Texte personnaliser</summary>Texte à masquer</details></em>
+
+    <p><strong class="point">Liste :</strong><br>
+    <em>Non ordonnée (liste à puces) :</em></p>
+    <pre>
+    <span class="violet">< <ins>ul</ins> ></ul></span>
+          <span class="violet">< li ></span> Premier élément de la liste <span class="violet">< li ></span>
+          <span class="violet">< li ></span> Deuxième élément de la liste <span class="violet">< li ></span>
+          <span class="violet">< li ></span> Troisième élément de la liste <span class="violet">< li ></span>
+    <span class="violet">< <ins>/ul</ins> ></span>
+    </pre>
+    <p><details><summary><em>exemple</em></summary>
+    <ul>
+        <li>Faire ceci</li>
+        <li>Ou ça</li>
+        <li>Ou bien cela</li>
+    </ul>
+    </details></p>
+    <p><em>Ordonnée :</em></p>
+    <pre>
+    <span class="violet">< <ins>ol</ins> ></span>
+          <span class="violet">< li ></span> Premier élément de la liste <span class="violet">< li ></span>
+          <span class="violet">< li ></span> Deuxième élément de la liste <span class="violet">< li ></span>
+          <span class="violet">< li ></span> Troisième élément de la liste <span class="violet">< li ></span>
+    <span class="violet">< <ins>/ol</ins> ></ul></span>    
+    </pre>
+    <p><details><summary><em>exemple</em></summary>
+    <ol>
+        <li>Faire ceci</li>
+        <li>Puis ça</li>
+        <li>Et enfin cela</li>
+    </ol>
+    </details><br>
+    <details><summary><em>Attribut possible pour la liste ordonnée</em></summary><br>
+    <span class="violet">< ol <ins>Attribut</ins>></span>
+    <ul>
+        <li><span class="violet">reversed</span> : Inverse la numérotation</li>
+        <li><span class="violet">start="10"</span> : Commence la numérotation à 10</li>
+        <li><span class="violet">type="a"</span> : Ordonne alphabétiquement</li>
+        <li><span class="violet">type="I"</span> : Ordonne avec des chiffres romain</li>
+    </ul>
+    </details>
+
+    <p><strong class="point">Sous-liste :</strong></p>
+    <pre>
+    <span class="violet">< ul ></span>
+          <span class="violet">< li ></span> Un premier élément <span class="violet">< /li ></span>
+          <span class="violet">< li ></span> Un deuxième élément <span class="violet">< /li ></span>
+                <span class="violet">< ol ></span>
+                      <span class="violet">< li ></span> Etape a du deuxième élément <span class="violet">< /li ></span>
+                      <span class="violet">< li ></span> Etape b du deuxième élément <span class="violet">< /li ></span>
+                      <span class="violet">< li ></span> Etape c du deuxième élément <span class="violet">< /li ></span>
+                <span class="violet">< /ol ></span>
+          <span class="violet">< li ></span> Un troisième élément <span class="violet">< /li ></span>
+    <span class="violet">< /ul ></span>
+    </pre>
+
+    <p><em><details><summary>exemple</summary>
+    <ul>
+        <li>Un premier élément</li>
+        <li>un deuxième élément</li>
+            <ol>
+                <li>Etape a du deuxième élément</li>
+                <li>Etape b du deuxième élément</li>
+                <li>Etape c du deuxième élément</li>
+            </ol>
+        <li>Un troisième élément</li>
+    </ul>
+    </details></em></p>
+
+    <br><hr><br>
+
+    <h1 class="chapter">Balises Spécifique</h1>
+
+    <p><strong class="point">Définir une abréviation :</strong></p>
+    <span class="violet">< abbr title="Nom complet"</span> Abréviation <span class="violet">< /abbr ></span>
+    <br><em>exemple :</em> <span class="violet">< abbr title="Hypertext Markup Language"</span> HTML <span class="violet">< /abbr ></span>
+
+    <p><strong class="point">Information d'adresse / contact :</strong></p>
+    <span class="violet">< adress ></span> Information d'adresse / de contact <span class="violet">< adress ></span>
+    <br><details><summary><em>exemple :</em></summary>
+    <pre>
+        <span class="violet">< adresse ></span>
+                    Anthony
+                    16 rue des cerises
+                    45200 Montargis
+                    <a href="mailto:Anthony@anthony.com">Envoyer un e-mail</a>
+        <span class="violet">< /adresse ></span>
+    </pre></details>
+    
+    <p><strong class="point">Ecrire dans un sens particulier</strong><br>
+    <em>Left to Right :</em></p>
+    <span class="violet">< bdo dir=<ins>"ltr"</ins>></span> Bonjour tout le monde <span class="violet">< bdo ></bdo></span>
+    <p><em>Right to left :</em></p>
+    <span class="violet">< bdo dir=<ins>"rtl"</ins>></span> Bonjour tout le monde <span class="violet">< bdo ></bdo></span>
+    <br><details><summary><em>exemple :</em></summary><bdo dir="rtl">Bonjour tout le monde</bdo></details>
+
+    <p><strong class="point">Definition</strong><br>
+    <em>Définir un terme :</em></p>
+    <span class="violet">< dfn ></span> HTML <span class="violet"> /dfn </span> est un language informatique pour réaliser des pages web.
+
+    <p><em>Définir un lexique :</em></p>
+    <pre>
+        <span class="violet">< dl ></span>
+              <span class="violet">< dt ></span> HTML <span class="violet">< /dt ></span>
+              <span class="violet">< dt ></span> HTMLold <span class="violet">< /dt ></span>
+              <span class="violet">< dd ></span> Language informatique pour créé des pages web <span class="violet">< /dd ></span>
+              <span class="violet">< dt ></span> CSS <span class="violet">< /dt ></span>
+              <span class="violet">< dd ></span> Language informatique pour mettre en forme des pages web <span class="violet">< /dd ></span>
+       <span class="violet">< /dl ></span>
+    </pre>
+    <details><summary><em>exemple :</em></summary>
+        <dl>
+            <dt>HTML</dt>
+            <dt>HTMLold</dt>
+            <dd>Language informatique pour créé des pages web</dd>
+            <dt>CSS</dt>
+            <dd>Language informatique pour mettre en forme des pages web</dd>
+        </dl>
+    </details>
+    
+    <p><strong class="point">Progression d'un projet</strong></p>
+    Etat du projet : <span class="violet">< progress value ="X" max="X"< /progress ></span>
+    <br><details><summary>exemple :</summary>
+    Etat du projet : <progress value="25" max="100"></progress>
+    </details>
+
+    <p><strong class="point">Indice mathématique</strong></p>
+    Dioxyde de carbone : CO<span class="violet">< <ins>sub</ins> ></span> 2 <span class="violet">< <ins>/sub</ins> ></span>
+    <br><em>Dioxyde de carbone : CO<sub>2</sub></em>
+    <br><br>Superficie : 100m<span class="violet">< <ins>sup</ins> ></span> 2 <span class="violet">< <ins>/sup</ins> ></span>
+    <br><em>Superficie : 100m<sup>2</sup></em>
+
+    <p><strong class="point">Cassure d'un mot</strong></p>
+    <em>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<span class="violet">< wbr ></span>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</em>
+    <br><details><summary><em>exemple :</em></summary>
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<wbr>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    </details>
+
+    <br><hr><br>
+
+    <h1 class="chapter">Tableau</h1>
+
+    <p><strong class="point">Démarrer un tableau :</strong></p>
+    <span class="violet">< table ></span> <span class="violet">< /table ></span>
+
+    <p><strong class="point">Composant d'un tableau :</strong></p>
+    <pre>
+        < table >
+                 <span class="violet">< caption ></span> Titre du tableau <span class="violet">< /caption ></span> ( facultatif )
+                 <span class="violet">< thead ></span> Entête <span class="violet">< /thead ></span>
+                 <span class="violet">< tbody ></span> Corp du tableau <span class="violet">< /tbody ></span>
+                 <span class="violet">< tfoot ></tfoot></span> Pied du tableau <span class="violet">< /tfoot ></span> ( assez peu utiliser )
+        < /table >
+    </pre>
+
+    <p><strong class="point">Représenter une ligne de tableau :</strong></p>
+    <span class="violet">< tr ></span> <span class="violet">< tr ></span>
+
+    <p><strong class="point">Déterminer une colonne dans cette ligne</strong></p>
+    <pre>
+        < tr >
+              <span class="violet">< td ></span> Colonne 1 <span class="violet">< /td ></span>
+              <span class="violet">< td ></span> Colonne 2 <span class="violet">< /td ></span>
+              <span class="violet">< td ></span> Colonne 3 <span class="violet">< /td ></span>
+        < /tr >
+    </pre>
+
+    <p><strong class="point">Entête de colonne :</strong></p>
+    <pre>
+        < tr >
+              <span class="violet">< th ></span> Colonne 1 <span class="violet">< /th ></span>
+              <span class="violet">< th ></span> Colonne 2 <span class="violet">< /th ></span>
+              <span class="violet">< th ></span> Colonne 3 <span class="violet">< /th ></span>
+        < /tr >
+    </pre>
+
+    <details><summary><em>exemple</em></summary><br>
+    <table>
+        <caption>Liste de jeux vidéo</caption>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Genre</th>
+                <th>prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Assassin's Creed</td>
+                <td>Action-Aventure</td>
+                <td>69,99 €</td>
+            </tr>
+            <tr>
+                <td>Rocket League</td>
+                <td>Course</td>
+                <td>19,99 €</td>
+            </tr>
+            <tr>
+                <td>Vampire Survivro</td>
+                <td>Indépendant-Survie</td>
+                <td>10,99 €</td>
+            </tr>
+        </tbody>
+    </table>
+    </details>
+
+<p><strong class="point">Specifier qu'une cellule fait plusieeurs lignes ou colonnes :</strong><br>
+<em>Ligne :</em></p>
+<span class="violet">< td <ins>rowspan="2"</ins>></span> <span class="violet">< /td ></span>
+
+<p><em>Colonne :</em></p>
+<span class="violet">< td <ins>colspan="2"</ins>></span> <span class="violet">< /td ></span>
+
+<p><strong class="point">Donner un attribut utilisable pour X colonne :</strong></p>
+<pre>
+<span class="violet">< colgroupe ></span>
+              <span class="violet">< col class="Nomt de l'attribut" ></span>
+<span class="violet">< /colgroupe ></span>
+</pre>
+
+<p><strong class="point">Abréger un nom :</strong></p>
+<span class="violet">< td abbr="Abrev" ></span> Abréviation <span class="violet">< /td ></span>
+
+<p><strong class="point">Donner et faire référence à l'attribut d'un nom :</strong><br>
+<em>Donner un attribut :</em></p>
+<span class="violet">< td <ins>id="Nom de jeux vidéo"</ins>></span> Nom de jeux vidéo <span class="violet">< /td ></span>
+
+<p><em>Faire référence à l'attribut :</em></p>
+<span class="violet">< td <ins>header="Nom de jeux vidéo</ins>></span> Assassin's Creed <span class="violet">< /td ></span>
+
+<br><br><hr><br>
+
+<h1 class="chapter">Formulaire</h1>
+
+<p><strong class="point">Créé un formulaire :</strong></p>
+<span class="violet">< form ></span> <span class="violet">< /form ></span>
+
+<p><strong class="point">Attribut de <span class="violet">< form ></form></span> :</strong></p>
+<pre>
+    < form <span class="violet">method="get"</span>> (ajoute les donnée du formulaire sur l'URL de la page)
+    < form <span class="violet">method="post"</span>> (Fourni les données avec l'envoi du formulaire)<br>
+    < form <span class="violet">action=""</span>> (Destination d'envoi du formulaire)
+    < form <span class="violet">name="Mon Formulaire"</span>> (Donner un nom)
+    < form <span class="violet">target="_blank"</span>> (Envoi du formulaire au niveau du contexte)
+    < form <span class="violet">autocomplete="on"</span>> (Active l'auto-complétion du formulaire)
+    < form <span class="violet">autocomplete="off"</span>> (Desactive l'auto-complétion du formulaire)
+    < form <span class="violet">enctype=""</span>> (Spécifie un type MIME)
+    < form <span class="violet">accept-charset="UTF-8 etc..."</span>> (Spécifie plusieurs encodage accepter)
+</pre>
+
+<p><p><a href="https://www.w3.org/TR/2021/SPSD-html52-20210128/sec-forms.html#the-form-element" target="_blank">Standard Form Element</a></p></p>
+
+<p><strong class="point">Champ de saisie pour le formulaire</strong></p>
+<span class="violet">< input ></span>
+<p><strong class="point">Attribut de <span class="violet">< input ></span></strong></p>
+<pre>
+    <span class="violet">< label for="prenom"> Nom : < /label ></span> < input <span class="violet">id="prenom" name ="username"</span>> (Accessibilité sans souris au formulaire)
+    < input <span class="violet">placeholder="Entrez votre nom..."</span>> (Specifie un texte guide dans l'input)
+    < input <span class="violet">type=""</span>> (Donne un type)
+    < input <span class="violet">required</span>> (Indique qu'il faut remplir le champ)
+    < input <span class="violet">value=""</span>> (Donne du texte coté client)
+    < input <span class="violet">nom=""</span>> (Donne un nom utilisable dans le code)
+</pre>
+
+<p><strong class="point">Valeur de <span class="violet">< input type ></span> :</strong></p>
+<pre>
+    < input <span class="violet">type="texte"</span>> (Génère du texte standard)
+    < input <span class="violet">type="password"</span>> (Pour un mot de passe : saisie masquer)
+    < input <span class="violet">type="checkbox"</span>> (case à cocher non obligatoire)
+    < input <span class="violet">type="radio"</span>> (Case à cocher obligatoire)
+    < input <span class="violet">type="color"</span>> (Gestion de couleur : Palette)
+    < input <span class="violet">type="date"</span>> (Selection calendrier)
+    < input <span class="violet">type="datetime-local"</span>> (Selection calendrier + heure/minute)
+    < input <span class="violet">type="month"</span>> (Selection Mois/Année)
+    < input <span class="violet">type="week"</span>> (Selection Semaine)
+    < input <span class="violet">type="email"</span>> (Saisie d'email)
+    < input <span class="violet">type="tel"</span>> (Saisie clavier numérique)
+    < input <span class="violet">type="search"</span>> (Pour moteur de recherche)
+    < input <span class="violet">type="range"</span>> (jauge déplacable) ( type="range" min="0" max="100" step="5")
+    < input <span class="violet">type="number"</span>> (Aggrégation de nombre)
+    < input <span class="violet">type="hidden"</span>> (formulaire caché)
+    < input <span class="violet">type="submit"</span>> (Bouton de validation) (type="submit" value="Se connecter")
+    < input <span class="violet">type="reset"</span>> (clear le formulaire)
+</pre>
+<p><a href="https://www.w3.org/TR/2021/SPSD-html52-20210128/sec-forms.html#the-input-element" target="_blank">Standard Input Element</a></p>
+
+<details><summary><em>exemple : type="checkbox"</em></summary>
+Publier la newsletter <input type="checkbox"></details><br>
+
+<details><summary><em>exemple : type="radio"</em></summary>
+Votre choix <input type="radio" name ="choice"> Oui <input type="radio" name="choice"> Non</details><br>
+
+<details><summary><em>exemple : type="password"</em></summary>
+Mot de passe : <input type="password"></details><br>
+
+<details><summary><em>exemple : type="color"</em></summary>
+Couleur : <input type="color"></details><br>
+
+<details><summary><em>exemple : type="date"</em></summary>
+Mot de passe : <input type="date"></details><br>
+
+<details><summary><em>exemple : type="range"</em></summary>
+Mot de passe : <input type="range" min="0" max="100" step="1"></details><br>
+
+<details><summary><em>exemple : type="submit"</em></summary>
+Nom : <input type="texte"><input type="submit" value="Se connecter"></details><br>
+
+<details><summary><em>exemple : type="reset"</em></summary>
+Nom : <input type="texte"><input type="reset" value="Effacer"></details><br>
+    
+<p><strong class="point">Regroupe dans un champ et lui donner un nom :</strong></p>
+<pre>
+    < form >
+            <span class="violet">< fieldset ></fieldset></span>
+                <span class="violet">< legend ></span> Nom du champ <span class="violet">< /legend ></span>
+                Nom : < input type="texte" >
+            <span class="violet">< /fieldset ></fieldset></span>
+    < /form >
+</pre>
+<details><summary><em>exemple</em></summary>
+<form>
+    <fieldset>
+        <legend>Nom du champ</legend>
+        Nom : <input type="texte">
+    </fieldset>
+</form>
+</details>
+
+<p><strong class="point">Champ de saisie plus large :</strong></p>
+<span class="violet">< textarea rows="X" cols="X"> < /textarea ></span>
+
+<p><details><summary><em>exemple</em></summary>
+    <textarea></textarea>
+</details></p>
+
+<p><strong class="point">Attribut de <span class="violet">< textarea > </span>:</strong></p>
+<pre>
+    < textarea <span class="violet">cols="10"</span>> Nombre de colonnes par défaut du champ de saisi (10)
+    < textarea <span class="violet">rows="20"</span>> Nombre de ligne par défaut du champ de saisi (20)
+    < textarea <span class="violet">minlenght="5"</span>> Nombre de caractère minimum à entrer. (5)
+    < textarea <span class="violet">maxlenght="15"</span>> Nombre de caractère maximum à pouvoir entrer. (15)
+
+</pre>
+
+<p><strong class="point">Selection multiple :</strong></p>
+<pre>
+    <span class="violet">< select ></span>
+              <span class="violet">< option ></span> option 1 <span class="violet">< /option ></span>
+              <span class="violet">< option ></span> option 2 <span class="violet">< /option ></span>
+              <span class="violet">< option ></span> option 3 <span class="violet">< /option ></span>
+    <span class="violet">< /select ></span>
+</pre>
+<details><summary><em>exemple</em></summary>
+<form>
+    <select>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+    </select>
+</form>
+</details>
+
+<p><strong class="point">Groupe dans selection :</strong></p>
+<pre>
+    < select >
+        <span class="violet">< optgroup label="Nom du groupe" ></span>
+              < option > option 1 < /option >
+              < option > option 2 < /option >
+              < option > option 3 < /option >
+        <span class="violet">< /optgroup ></span>
+    < /select >
+</pre>
+
+<details><summary><em>exemple</em></summary>
+Prénom :
+<select>
+    <optgroup label="Maculin">
+        <option>Anthony</option>
+        <option>Romain</option>
+        <option>Benoit</option>
+    </optgroup>
+    <optgroup label="Féminin">
+        <option>Maurane</option>
+        <option>Jéshael</option>
+        <option>Angelina</option>
+    </optgroup>
+</select>
+</details>
+
+<p><strong class="point">Rendre indisponible une selection :</strong></p>
+<pre>
+    < select >
+              < option <span class="violet">disabled</span>> option 1 < /option >
+              < option > option 2 < /option >
+              < option > option 3 < /option >
+    < /select >
+</pre>
+<details><summary><em>exemple</em></summary>
+Prénom :
+<select>
+    <optgroup label="Maculin">
+        <option disabled>Anthony</option>
+        <option disabled>Romain</option>
+        <option disabled>Benoit</option>
+    </optgroup>
+    <optgroup label="Féminin">
+        <option>Maurane</option>
+        <option>Jéshael</option>
+        <option>Angelina</option>
+    </optgroup>
+</select>
+</details>
+
+<p><strong class="point">Champ de saisie dans une selection ( A eviter, incompatible avec SAFARI ) : </strong></p>
+<pre>
+    Choisir un nom : <span class="violet">< input list="<ins>ChoixNom</ins>" ></span>
+    <span class="violet">< datalist id="<ins>Choixnom</ins>"></datalist></span>
+        < option > Anthony < /option >
+        < option > Romain < /option >
+        < option > Benoit < /option >
+    <span class="violet">< /datalist ></span>
+</pre>
+<details><summary><em>exemple</em></summary>
+Choisir un nom <input list="ChoixNom">
+<datalist id="ChoixNom">
+    <option>Anthony</option>
+    <option>Romain</option>
+    <option>Benoit</option>
+</datalist>
+</details>
+
+<h1 class="chapter">Image et figures</h1>
+
+<p><strong class="point">Afficher une image :</strong></p>
+<pre>
+    <span class="violet">< img src="<ins>Chemin de l'image"</ins> ></span>
+</pre>
+<p><strong class="point">Ajouter un texte alternatif :</strong></p>
+<pre>
+    < img src="Chemin de l'image" <span class="violet">alt="<ins>Texte alternatif</ins>"</span> >
+</pre>
+<p><strong class="point">Modifier la taille de l'image :</strong></p>
+<pre>
+    < img src="Chemin de l'image" alt="Texte alternatif" <span class="violet">width="<ins>Taille longueur</ins>"  height="<ins>Taille hauteur"</ins></span> > ( auto )
+</pre>
+<p><strong class="point">Legende de l'image</strong></p>
+<pre>
+    <span class="violet">< figure ></span>
+              < img src="Chemin de l'image" >
+              <span class="violet">< figcaption ></span> <ins>Legende de l'image</ins> <span class="violet">< /figcaption ></span>
+    <span class="violet">< /figure ></span>
+</pre>
+<p><strong class="point">Zone d'une image</strong></p>
+<pre>
+    < img <span class="violet">usemap="<ins>#Nom de la map</ins>"</span> src="Chemin de l'image" >
+    <span class="violet">< map name="<ins>Nom de la map</ins>" ></span>
+        <span class="violet">< area href="<ins>Lieu d'envoi</ins>" shape=<select>
+                                                                <option title="Zone rectangulaire  :  x1,y1 (point de départ)  x2,y2 (point d'arrivée)">"rect"</option>
+                                                                <option title="Zone circulaire  :  x,y (centre du cercle)  r (rayon du cercle)">"circle"</option>
+                                                                <option title="Zone polygone  :  x1,y1  x2,y2  x3,y3...  x10,y10...">"poly"</option>
+                                                          </select> coords="<ins>Coordonnées</ins>"</span>
+    <span class="violet">< /map ></span>
+</pre>
+
+<h1 class="chapter">Sons et vidéos</h1>
+
+<p><strong class="point">Format audio : <select>
+                                  <option title="Compatible partout">mp3</option>
+                                  <option title="Compatible partout, sauf internet explorer">wav</option>
+                                  <option title="Compatible partout, sauf internet explorer et SAFARI">ogg</option>
+                          </select></strong></p>
+
+<p><strong class="point">Format vidéo : <select>
+                                  <option title="Compatible partout">mp4</option>
+                                  <option title="Compatible partout, sauf internet explorer et SAFARI">webm</option>
+                                  <option title="Compatible partout, sauf internet explorer et SAFARI">ogg</option>
+                          </select></strong></p>
+
+<p><strong class="point">Audio :</strong></p>
+<pre>
+    <span class="violet">< audio <select>
+                          <option title="Contrôle de lecture du fichier">controls</option>
+                          <option title="Joue le son à l'arriver de la page">autoplay</option>
+                          <option title="Volume par défaut mute">muted</option>
+                          <option title="Lire le fichier en boucle">loop</option>
+                          <option title="Ne precharge pas le fichier">preload "none"</option>
+                          <option title="Precharge l'ensemble du fichier">preload "auto"</option>
+                          <option title="">preload "metadata"</option>
+                          <option title="Volume par défaut">volume="0.0" ... "1.0"</option>
+                  </select>></span> ( peut aussi juste intégrer src="chemin de l'image" et ne pas écrire la ligne suivante )
+              <span class="violet">< source src="chemin de l'audio" type="audio/<ins>format_audio</ins>" ></span>
+    <span class="violet">< /audio ></span>
+</pre>
+<details><summary><em>exemple</em></summary>
+<audio src="../fichier/html_son.mp3" controls></audio>
+</details>
+
+<p><strong class="point">Vidéo :</strong></p>
+<pre>
+    <span class="violet">< vidéo <select>
+                          <option title="Contrôle de lecture du fichier">controls</option>
+                          <option title="Joue le son à l'arriver de la page">autoplay</option>
+                          <option title="Volume par défaut mute">muted</option>
+                          <option title="Lire le fichier en boucle">loop</option>
+                          <option title="Ne precharge pas le fichier">preload "none"</option>
+                          <option title="Precharge l'ensemble du fichier">preload "auto"</option>
+                          <option title="">preload "metadata"</option>
+                          <option title="Volume par défaut">volume="0.0" ... "1.0"</option>
+                          <option title="Définie la longueur">width=""</option>
+                          <option title="Définie la hauteur">height=""</option>
+                          <option title="Définie une miniature">poster="chemin de la miniature"</option>
+                  </select>></span>
+              <span class="violet">< source src="chemin de l'audio" type="video/<ins>format_vidéo</ins>" ></span>
+    <span class="violet">< /vidéo ></span>
+</pre>
+<details><summary><em>exemple</em></summary>
+<video src="../fichier/html_video.mp4" controls></video>
+</details>
+
+<h1 class="chapter">Structurer une page web</h1>
+
+<p><strong class="point">Bloc de contenu / Division de bloc :</strong></p>
+<pre>
+    <span class="violet">< div > < /div ></span>
+</pre>
+
+<p><strong class="point">Ligne de contenu / Division de ligne :</strong></p>
+<pre>
+    <span class="violet">< span> < /span ></span>
+</pre>
+
+<p><strong class="point">Contenu principal du body :</strong></p>
+<pre>
+    <span class="violet">< main > < /main ></span>
+</pre>
+
+<p><strong class="point">Sectionner une partie du document ( en général pourvu d'un titre ) :</strong></p>
+<pre>
+    <span class="violet">< section > < /section ></span>
+</pre>
+
+<p><strong class="point">Bloc indépendant pas propre à la page ( qui pourrait être écris ailleurs ) :</strong></p>
+<pre>
+    <span class="violet">< article > < /article ></span>
+</pre>
+
+<p><strong class="point">Entête d'un bloc / section / body :</strong></p>
+<pre>
+    <span class="violet">< header > < /header ></span>
+</pre>
+
+<p><strong class="point">Pied d'un bloc / section / body :</strong></p>
+<pre>
+    <span class="violet">< footer > < /footer ></span>
+</pre>
+
+<p><strong class="point">Menu de naviguation :</strong></p>
+<pre>
+    <span class="violet">< nav > < /nav ></span>
+</pre>
+
+<details><summary><em>exemple</em></summary>
+<nav>
+    <ul>
+        <li><a href="">Nom</a></li>
+        <li><a href="">Age</a></li>
+        <li><a href="">Adresse</a></li>
+        <li><a href="">Taille</a></li>
+    </ul>
+</nav>
+</details>
+
+<p><strong class="point">Contenu quelconque / à part :</strong></p>
+<pre>
+    <span class="violet">< aside > < /aside ></span>
+</pre>
+
+<details><summary><em>exemple structure correcte</em></summary>
+<pre>
+<span class="violet">< body ></span>
+        <span class="violet">< main ></span> ( Contenu principal du site )
+
+                <span class="violet">< header ></span>
+                <span class="violet">< h1 ></span> Titre / Entête principal du site <span class="violet">< /h1 ></span>
+                <span class="violet">< /header ></span>
+
+                <span class="violet">< section ></span>
+                            <span class="violet">< header ></span>
+                            <span class="violet">< h1 ></span> Titre / Entête de ma section <span class="violet">< /h1 ></span>
+                            <span class="violet">< /header ></span>
+                            <span class="violet">< p ></span> Contenu de ma section <span class="violet">< /p ></span>
+                            <span class="violet">< footer ></span>
+                            <span class="violet">< p ></span> Pied de ma section <span class="violet">< /p ></span>
+                            <span class="violet">< /footer ></span>
+                <span class="violet">< /section ></span>
+
+                <span class="violet">< footer ></span>
+                <span class="violet">< p ></span> Pied de mon site <span class="violet">< /p ></span>
+                <span class="violet">< /footer ></span>
+
+        <span class="violet">< /main ></span> ( fin du contenu principal du site )
+
+        <span class="violet">< p ></span> Paragraphe qui n'est pas le contenu principal du site <span class="violet">< /p ></span>
+
+<span class="violet">< /body ></span>
+</pre>
+</details>
+
+<script src="script.js"></script>
+</body>
+</html>

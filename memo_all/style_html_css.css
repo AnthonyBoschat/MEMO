@@ -1,0 +1,50 @@
+/* Format du document MEMO */
+body{background-color: rgb(236, 236, 236); text-indent: 5px; padding-left: 30px;}
+.chapter{color: red;}
+.point{color: rgb(2, 0, 136);}
+.precision{color: rgb(3, 156, 3);}
+.violet{color:rgb(143, 0, 141);}
+ul ul{list-style: square;}
+ul ul ul{list-style: circle;}
+
+
+
+/* Exemple */
+
+/* text-decoration line */
+.exunderline{text-decoration: underline;}
+.exoverline{text-decoration: overline;}
+.exnone{text-decoration: none;}
+.exline-through{text-decoration: line-through;}
+
+/* text-decoration style */
+.exsolid{text-decoration: underline solid;}
+.exdouble{text-decoration: underline double;}
+.exdashed{text-decoration: underline dashed;}
+.exdotted{text-decoration: underline dotted;}
+.exwavy{text-decoration: underline wavy;}
+
+/* text-shadow */
+.extext-shadow{text-shadow: 0px 0px 5px red;}
+
+/* vertical-align */
+.exverticalsub{vertical-align: sub;}
+.exverticalsuper{vertical-align: super;}
+
+#naviguation
+{
+    position: fixed;
+    outline: 1px solid black;
+    right: 10px;
+}
+
+.naviguation_bouton
+{
+    font-size: 20px;
+}
+
+.naviguation_bouton:hover
+{
+    color: blue;
+    cursor: pointer;
+}

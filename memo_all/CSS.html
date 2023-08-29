@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <link rel="stylesheet" href="style_html_css.css">
+</head>
+<body>
+
+    <div id="naviguation">
+        <div class="naviguation_bouton">Grand principe</div>
+        <div class="naviguation_bouton">Styliser un texte</div>
+        <div class="naviguation_bouton">Couleur et fond</div>
+        <div class="naviguation_bouton">Styliser une liste</div>
+        <div class="naviguation_bouton">Modèle de boite</div>
+        <div class="naviguation_bouton">Bordures et contours</div>
+        <div class="naviguation_bouton">Affichage et positionnement</div>
+        <div class="naviguation_bouton">Flex-box</div>
+        <div class="naviguation_bouton">Grid</div>
+    </div>
+
+<h1 class="chapter">Grand principe</h1>
+<ul>
+    <li>Créé un fichier CSS externe à la page HTML</li>
+    <li>Relier ce fichier CSS au fichier html</li><br>
+        <details><summary><em>Comment faire</em></summary>
+            <ol>
+                <li>Aller dans le <span class="violet">< head ></span> du fichier html</li>
+                <li>Utiliser la balise <span class="violet">< link rel="stylesheet" href="<ins>Chemin_du_fichier_CSS</ins>" ></span></li>
+            </ol>
+        </details><br>
+    <li>CSS est capable d'identifier tout les éléments HTML grâce à un <strong class="precision">selecteur</strong> : ici <strong class="precision">p</strong></li><br>
+        <details><summary><em>exemple</em></summary>
+            <ul>
+                <li><p>Pour le paragraphe du fichier html ( <span class="violet">< p ></span> )</p></li>
+            <pre>
+                <span class="violet">p</span>
+                <span class="violet">{</span>
+                    <span class="violet">< propriété > : < valeur > ;</span>
+                    <span class="violet">< propriété > : < valeur > ;</span>
+                    <span class="violet">< propriété > : < valeur > ;</span>
+                <span class="violet">}</span>
+            </pre>
+                <li>On attribue pour les paragraphes du fichier HTML relier, un style définie dans le selecteur <span class="violet">p</span></li>
+        </ul>
+        </details><br>
+    <li>Le selecteur peut s'appliquer à une partie seulement du fichier HTML : avec les <strong class="precision">ID</strong> et les <strong class="precision">Classes</strong></li><br>
+        <details><summary><em>exemple</em></summary>
+            <ul>
+                <li>Imaginons que nous avons créé une <span class="violet">id="test"</span>dans notre deuxième paragraphe du fichier html</li>
+                <li>Pour pouvoir faire référence à cette <span class="violet">id</span> il faut indiquer ceci :</li>
+            <pre>
+                <span class="violet">#test</span> ( Tout ce qui aura pour identifiant : test, auront ces modifications )<br>
+                ou bien<br>
+                <span class="violet">p#test</span> ( Les paragraphes qui ont l'identifiant test, auront ces modifications )<br>
+                {
+                    < propriété > : < valeur > ;
+                    < propriété > : < valeur > ;
+                    < propriété > : < valeur > ;
+                }
+            </pre>
+                <li>S'il s'agît d'une classe, il faut indiquer ceci :</li>
+                <pre>
+                    <span class="violet">p.<ins>test</ins></span>
+                </pre>
+            </ul>
+            </details><br>
+
+        <li>On attribue pour les paragraphes du fichier HTML relier, un style définie dans le selecteur</li>
+</ul>
+
+<h1 class="chapter">Styliser un texte</h1>
+<ul>
+    <li><strong class="point">Style du texte</strong></li>
+    <br><span class="violet">{font-style:
+        <select>
+            <option title="Style de base du texte">normal</option>
+            <option title="Met en italique">italic</option>
+            <option title="Penche le texte en fonction de normal (souvent le même résultat que italic)>">oblique</option>
+        </select>;}</span><br><br>
+
+    <li><strong class="point">Variante du texte</strong></li>
+    <br><span class="violet">{font-variant:
+        <select>
+            <option title="Variante normal du texte">normal</option>
+            <option title="Afficher des petites majuscules">small-caps</option>
+        </select>;}</span><br><br>
+    
+    <li><strong class="point">Epaisseur de la police</strong></li>
+    <br><span class="violet">{font-weight:
+        <select>
+            <option title="Epaisseur normal de la police">normal</option>
+            <option title="Met le texte en gras">bold</option>
+            <option title="Met le texte en gras ++">bolder</option>
+            <option title="Met le texte en plus léger">lighter</option>
+            <option title="100 = Epaisseur minimal de la police,  900 = Epaisseur maximal de la police">100..900</option>
+        </select>;}</span><br><br>
+
+    <li><strong class="point">Taille de la police</strong></li>
+    <br><span class="violet">{font-size:
+        <select>
+            <option title="Texte de taille normal">normal</option>
+            <option title="Texte de taille 10 pixel">10px</option>
+            <option title="Texte de taille à 50% de la taille par défaut">50%</option>
+            <option title="Fait référence à l'élément parent, 1em = 100% de la taille de la police de l'élément parent">1em</option>
+            <option title="Texte petit ++">xx-small</option>
+            <option title="Texte petit +">x-small</option>
+            <option title="Texte petit">small</option>
+            <option title="Texte moyen">medium</option>
+            <option title="Texte grand">large</option>
+            <option title="Texte grand +">x-large</option>
+            <option title="Texte grand ++">xx-large</option>
+        </select>;}</span><br><br>
+
+    <li><strong class="point">Hauteur des lignes</strong></li>
+    <br><span class="violet">{line-height:
+        <select>
+            <option title="Hauteur normal des lignes">normal</option>
+            <option title="Hauteur des lignes à 50% de la normal">50%</option>
+            <option title="Hauteur des lignes de 25 pixels">25px</option>
+            <option title="Hauteur des lignes de 25 pixels">25px</option>
+            <option title="Fait référence à l'élément parent, 1em = 100% de la hauteur des lignes de l'élément parent">1em</option>
+            <option title="Hauteur petit ++">xx-small</option>
+            <option title="Hauteur petit +">x-small</option>
+            <option title="Hauteur petit">small</option>
+            <option title="Hauteur moyen">medium</option>
+            <option title="Hauteur grand">large</option>
+            <option title="Hauteur grand +">x-large</option>
+            <option title="Hauteur grand ++">xx-large</option>
+        </select>;}</span><br><br>
+
+    <li><strong class="point">Changer la police</strong></li>
+    <br><span class="violet">{font-family:
+        <select>
+            <option title="Police gérer par défaut par le navigateur avec empatement">serif</option>
+            <option title="Police gérer par défaut par le navigateur sans empatement">sans-serif</option>
+            <option title="Chaque lettre prend la même taille">monospace</option>
+            <option title="Ecriture un peu plus scolaire">cursive</option>
+            <option title="Police Arial, et si indisponible pour l'utilisateur, écrit en sans-serif (peut être toute police)">Arial, sans-serif</option>
+        </select>;}</span><br><br>
+
+    <li><strong class="point">Decoration du texte</strong><strong class="precision"> (text-decoration peut prendre 3 valeurs : line, color, style )</strong></li>
+    <br><span class="violet">{text-decoration:
+        <select>
+            <option title="Aucune décoration n'est appliquée au texte">none</option>
+            <option title="Souligne le texte">underline</option>
+            <option title="Souligne le texte au dessus">overline</option>
+            <option title="Barre le texte">line-through</option>
+            <option title="La valeur de décoration du texte est héritée de l'élément parent">inherit</option>
+
+        </select>
+        <select>
+            <option title="Change la couleur du texte decoration">red</option>
+            <option title="Change la couleur du texte decoration">green</option>
+            <option title="Change la couleur du texte decoration">blue</option>
+            <option title="Change la couleur du texte decoration">etc..</option>
+            <option title="Change la couleur du texte decoration">Hexadécimal</option>
+        </select>
+        <select>
+            <option title="Ligne pleine">solid</option>
+            <option title="Double ligne">double</option>
+            <option title="Ligne en pointillés">dotted</option>
+            <option title="Ligne en tiret">dashed</option>
+            <option title="Ligne ondulé">wavy</option>
+        </select>
+        
+        
+        ;}</span><br><br>
+
+        <details><summary><em>exemple pour <span class="violet">text-decoration line</span></em></summary>
+        <ul>
+            <p><li><span class="violet">underline</span> : <span class="exunderline">Line underline</span></li></p>
+            <p><li><span class="violet">overline</span> : <span class="exoverline">Line overline</span></li></p> 
+            <p><li><span class="violet">none</span> : <span class="exnone">Line none</span></li></p> 
+            <p><li><span class="violet">line-through</span> : <span class="exline-through">Line line-through</span></li></p> 
+        </ul>
+        </details><br>
+
+        <details><summary><em>exemple pour <span class="violet">text-decoration style</span></em></summary>
+        <ul>
+            <p><li><span class="violet">solid</span> : <span class="exsolid">Style solid</span></li></p>
+            <p><li><span class="violet">double</span> : <span class="exdouble">Style double</span></li></p> 
+            <p><li><span class="violet">dotted</span> : <span class="exdotted">Style dotted</span></li></p> 
+            <p><li><span class="violet">dashed</span> : <span class="exdashed">Style dashed</span></li></p> 
+            <p><li><span class="violet">wavy</span> : <span class="exwavy">Style wavy</span></li></p> 
+
+        </ul></details><br>
+
+    <li><strong class="point">Ombre du texte</strong><strong class="precision"> (texte-shadow peut prendre plusieurs valeurs : Horizontale, Verticale, Portée de l'ombre, Couleur)</strong></li>
+    <br><span class="violet">{text-shadow:
+        <select>
+            <option title="L'ombre sera décaler de 2 pixels horizontallement">2px</option>
+        </select>
+        <select>
+            <option title="L'ombre sera décaler de 2 pixels verticalement">2px</option>
+        </select>
+        <select>
+            <option title="Portée de l'ombre, plus la valeur est haute, plus l'ombre sera disperser, moins forte">5px</option>
+        </select>
+        <select>
+            <option title="Couleur de l'ombre">red</option>
+            <option title="Couleur de l'ombre">green</option>
+            <option title="Couleur de l'ombre">blue</option>
+            <option title="Couleur de l'ombre">etc..</option>
+            <option title="Couleur de l'ombre">Hexadécimal</option>
+        </select>
+        ;}</span><br><br>
+
+        <details><summary><em>exemple</em></summary>
+        <span class="extext-shadow">Ceci est un exemple de text-shadow avec pour valeur : 0px 0px 5px red</span>
+        </details><br>
+
+    <li><strong class="point">Transformation du texte</strong></li>
+    <br><span class="violet">{text-transform:
+        <select>
+            <option title="Ne transforme pas le texte">none</option>
+            <option title="Toutes les premières lettres de chaque mot sont en majuscule">capitalize</option>
+            <option title="Tout le texte est en majuscule">uppercase</option>
+            <option title="Tout le texte est en minuscule">lowercase</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Alignement du texte Horizontale</strong></li>
+    <br><span class="violet">{text-align:
+        <select>
+            <option title="Alignement par défaut du texte à gauche">left</option>
+            <option title="Alignement du texte à droite">right</option>
+            <option title="Alignement du texte au centre">center</option>
+            <option title="Reparti le texte sur toute la largeur du conteneur">justify</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Alignement du texte Verticale</strong></li>
+    <br><span class="violet">{vertical-align:
+        <select>
+            <option title="Aligne le texte par rapport à la ligne de base du texte qui l'entoure">baseline</option>
+            <option title="Decale l'alignement vertical du texte de 5 pixels en haut par rapport à l'alignement de base du texte qui l'entoure">5px</option>
+            <option title="Decale l'alignement vertical du texte de 5 pixels en bas par rapport à l'alignement de base du texte qui l'entoure">-5px</option>
+            <option title="Decale l'alignement vertical du texte vers le bas">sub</option>
+            <option title="Decale l'alignement vertical du texte vers le haut">super</option>
+            <option title="Pas encore d'informations">top</option>
+            <option title="Pas encore d'informations">bottom</option>
+            <option title="Pas encore d'informations">text-bottom</option>
+            <option title="Pas encore d'informations">text-top</option>
+        </select>
+        ;}</span><br><br>
+
+        <details><summary><em>exemple</em></summary>
+        <ul>
+            <li>Ceci est un texte <span class="exverticalsub">décaler en bas avec <span class="violet">sub</span></span></li>
+            <li>Ceci est un texte <span class="exverticalsuper">décaler en haut avec <span class="violet">super</span></span></li>
+        </ul>
+        </details><br>
+    
+    <li><strong class="point">Identation du texte</strong></li>
+    <br><span class="violet">{text-indent:
+        <select>
+            <option title="Indente le début du texte de 20 pixels (Alinéa)">20px</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Gérer les dépassement de taille</strong></li>
+    <br><span class="violet">{text-overflow:
+        <select>
+            <option title="Lorsque le contenu dépasse les limites de l'élément, il est simplement tronqué et ne sera pas visible, aucun indicateur visuel">clip</option>
+            <option title="Lorsque le contenu dépasse les limites de l'élément, il est tronqué et une ellipse (...) est ajoutée à la fin du texte visible pour indiquer qu'il y a du contenu masqué.">ellipsis</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Espacement des caractères</strong></li>
+    <br><span class="violet">{letter-spacing:
+        <select>
+            <option title="Chaque lettre est séparer de 3 pixels">3px</option>
+        </select>
+        ;}</span><br><br>
+    
+    <li><strong class="point">Cassure des blancs</strong></li>
+    <br><span class="violet">{white-space:
+        <select>
+            <option title="Espacement des blancs par défaut">normal</option>
+            <option title="Le texte ne retourne pas à la ligne automatiquement">nowrap</option>
+            <option title="Le texte garde la même représentation que dans le code">pre</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Espacement des mots</strong></li>
+    <br><span class="violet">{word-spacing:
+        <select>
+            <option title="Espacement entre chaque mot de 15 pixels">15px</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Cassure des mots</strong></li>
+    <br><span class="violet">{word-spacing:
+        <select>
+            <option title="Cassure par défaut des mots">normal</option>
+            <option title="Cassure des mots à la lettre près">break-all</option>
+            <option title="Aucune cassure des mots">keep-all</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Cassure des mots ( spécifique URL )</strong></li>
+    <br><span class="violet">{word-wrap:
+        <select>
+            <option title="Les mots longs qui ne peuvent pas être affichés entièrement sur une ligne seront automatiquement coupés et enveloppés sur plusieurs lignes afin de s'ajuster à la largeur disponible.">break-work</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Direction d'écriture</strong></li>
+    <br><span class="violet">{direction:
+        <select>
+            <option title="Sens des lettres par défaut">initial</option>
+            <option title="Commence l'écriture à gauche">ltr</option>
+            <option title="Commence l'écriture à droite">rtl</option>
+        </select>
+        ;}</span><br><br>
+</ul>
+
+<h1 class="chapter">Couleur et fond</h1>
+<ul>
+
+    <li><strong class="point">Couleur de texte</strong> : <a href="https://www.w3.org/wiki/CSS/Properties/color/keywords" title="standard color name" target="_blank">standart color name</a></li>
+    <br><span class="violet">{color:
+        <select>
+            <option title="Couleur du texte en bleu ( standard color name )">blue</option>
+            <option title="Couleur du texte en valeur du code hexadecimal">"#Hexadecimal"</option>
+            <option title="Prend en valeur ( max 255 ) : Intensité de rouge, Intensité de vert, Intensité de bleu, Opacité ( 0 - 1.0 )">rgba(000, 000, 000, 000)</option>
+            <option title="Prend en valeur : Teinte ( max 360 ), Saturation ( max 100 ), Luminosité ( max 100 )">hsl(0, 0, 0)</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Couleur de fond</strong></li>
+    <br><span class="violet">{background-color:
+        <select>
+            <option title="Couleur du texte en bleu ( standard color name )">blue</option>
+            <option title="Couleur du texte en valeur du code hexadecimal">"#Hexadecimal"</option>
+            <option title="Prend en valeur ( max 255 ) : Intensité de rouge, Intensité de vert, Intensité de bleu, Opacité ( 0 - 1.0 )">rgba(000, 000, 000, 000)</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Image de fond</strong></li>
+    <br><span class="violet">{background-image:
+        <select>
+            <option title="Couleur du texte en bleu ( standard color name )">url(Chemin de l'image)</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Position de l'image de fond</strong></li>
+    <br><span class="violet">{background-position:
+        <select>
+            <option title="Positionne l'image en X et Y">25px 25px</option>
+            <option title="Positionne l'image en haut/bat/gauche/droite/centre">top / bottom / left / right / center</option>
+            <option title="Positionne l'image en haut à gauche">top left</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Répétition de l'image de fond</strong></li>
+    <br><span class="violet">{background-repeat:
+        <select>
+            <option title="L'image de fond ne se répète pas">no-repeat</option>
+            <option title="L'image de fond se répète seulement en x">repeat-x</option>
+            <option title="L'image de fond se répète seulement en y">repeat-y</option>
+            <option title="L'image de fond est répétée pour remplir l'espace disponible sans être tronquée ni déformée. Si l'image ne suffit pas pour remplir complètement la zone de fond, des espaces vides sont laissés entre les répétitions de l'image.">space</option>
+            <option title="Les copies de l'image sont redimensionnées proportionnellement pour s'ajuster à la taille de la zone de fond, sans laisser d'espaces vides. L'image est donc agrandie ou réduite de manière uniforme pour couvrir l'espace sans être déformée.">round</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Taille et elargissement de l'image de fond</strong></li>
+    <br><span class="violet">{background-size:
+        <select>
+            <option title="Etale l'image sur le contenu en dynamique ( par défaut, peut couper l'image )">cover</option>
+            <option title="Etale l'image sur le contenu en essayant de garder l'image en entier sans la couper">contain</option>
+            <option title="Dimensionne l'image en 25 pixels par 25 pixels">25px 25px</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Zone de positionnement du fond</strong></li>
+    <br><span class="violet">{background-origin:
+        <select>
+            <option title="L'image de fond commence à partir du bord de l'espacement intérieur (padding) de l'élément">padding-box</option>
+            <option title="L'image de fond commence à partir du bord de la bordure de l'élément">border-box</option>
+            <option title="L'image de fond commence à partir du bord du contenu de l'élément">content-box</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Limite de la zone de positionnement du fond</strong></li>
+    <br><span class="violet">{background-clip:
+        <select>
+            <option title="L'arrière-plan est affiché jusqu'à la bordure de l'élément, excluant le contenu">padding-box</option>
+            <option title="L'arrière-plan est affiché jusqu'à la bordure de l'élément, incluant le contenu et le remplissage (padding)">border-box</option>
+            <option title="L'arrière-plan est affiché uniquement dans la zone du contenu de l'élément, excluant le remplissage et la bordure">content-box</option>
+            <option title="L'arrière-plan est affiché uniquement derrière le texte à l'intérieur de l'élément">text</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Gestion de la fixation du fond</strong></li>
+    <br><span class="violet">{background-attachment:
+        <select>
+            <option title="Valeur par défaut">local</option>
+            <option title="Le fond défile avec le contenu lorsque la page est défilée">scroll</option>
+            <option title="Le fond ne défile pas avec le contenu lorsque la page est défilée">fixed</option>
+            <option title="L'arrière-plan est affiché uniquement derrière le texte à l'intérieur de l'élément">text</option>
+        </select>
+        ;}</span><br><br>
+</ul>
+
+
+<h1 class=chapter>Styliser une liste</h1>
+<ul>
+    <li><strong class="point">Image de puce</strong></li>
+    <br><span class="violet">{list-style-image:
+        <select>
+            <option title="Change l'image de la puce">url(chemin_de_l'image)</option>
+        </select>
+        ;}</span><br><br>
+    
+    <li><strong class="point">Position de la puce</strong></li>
+    <br><span class="violet">{list-style-position:
+        <select>
+            <option title="Place la puce en dehors de la boite élément de la liste">outside</option>
+            <option title="Place la puce dans la boite élément de la liste">inside</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Style de la puce</strong></li>
+    <br><span class="violet">{list-style-type:
+        <select>
+            <option title="Retire la puce de la liste">none</option>
+            <option title="Puce par défaut">disc</option>
+            <option title="petit carré">square</option>
+            <option title="puce ronde vide">circle</option>
+            <option title="Lettre chelou">armenian</option>
+            <option title="Lettre chelou 2">georgian</option>
+            <option title="Petite lettre latine">lower-latin</option>
+            <option title="Petite lettre grec">lower-greek</option>
+            <option title="Lettre japonaise">hiragana</option>
+        </select>
+        ;}</span><br><br>
+</ul>
+
+<h1 class="chapter">Modèle de boite</h1>
+<ul>
+    <li><strong class="point">En html, les <strong class="precision">< body > , < p > , < div > , < html ></strong> et autres, fonctionne par un système de boite.</li></strong>
+    
+    <p><li><strong class="point">Dans le fichier <strong class="precision">CSS</strong>, nous pouvons donner une dimension à ces boites</strong></li></p>
+    <span class="violet">body{
+        <select>
+            <option title="Donne une largeur de 800 pixels à la boite body">witdh : 800px</option>
+            <option title="Donne une largeur minimal de 200 pixels à la boite body">min-width : 200px</option>
+            <option title="Donne une hauteur maximal de 800 pixels à la boite body">max-width : 800px</option>
+            <option title="Donne une hauteur de 800 pixels à la boite body">height : 800px</option>
+            <option title="Donne une hauteur minimal de 200 pixels à la boite body">min-height : 200px</option>
+            <option title="Donne une hauteur maximal de 800 pixels à la boite body">max-height : 800px</option>
+        </select>
+        ;}</span><br><br>
+    
+    <li><details><summary><strong class="point">Content (element) / Padding / Border / Outline / Margin</strong></summary>
+    <img src="../fichier/css_boite.png" width="600px">
+    </details></li><br><br>
+
+    <li><strong class="point">Modifier les marges interieur et exterieur d'une boite</strong></li>
+    <br><span class="violet">body{
+        <select>
+            <option title="Marge en haut, à l'interieur de la boite, de 30px">padding-top : 30px</option>
+            <option title="Marge à droite, à l'interieur de la boite, de 30px">padding-right : 30px</option>
+            <option title="Marge en bas, à l'interieur de la boite, de 30px">padding-bottom : 30px</option>
+            <option title="Marge à gauche, à l'interieur de la boite, de 30px">padding-left : 30px</option>
+            <option title="Marge de tout les côtés, à l'interieur de la boite, de 30px">padding : 30px</option>
+        </select>
+        ;}</span><br><br>
+    <br><span class="violet">body{
+        <select>
+            <option title="Marge en haut, à l'exterieur de la boite, de 30px">margin-top : 30px</option>
+            <option title="Marge à droite, à l'exterieur de la boite, de 30px">margin-right : 30px</option>
+            <option title="Marge en bas, à l'exterieur de la boite, de 30px">margin-bottom : 30px</option>
+            <option title="Marge à gauche, à l'exterieur de la boite, de 30px">margin-left : 30px</option>
+            <option title="Marge de tout les côtés, à l'exterieur de la boite, de 30px">margin : 30px</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><strong class="point">Gérer les dépassement de boite</strong></li>
+    <br><span class="violet">body{overflow :
+        <select>
+            <option title="">auto</option>
+            <option title="Masque l'élément qui dépasse ( peut perdre de l'information )">hidden</option>
+            <option title="Affiche une barre de défilement">scroll</option>
+        </select>
+    ;}</span><br><br>
+    <span class="violet">body{overflow-x-y :
+        <select>
+            <option title="">auto</option>
+            <option title="Masque l'élément qui dépasse ( peut perdre de l'information )">hidden</option>
+            <option title="Affiche une barre de défilement">scroll</option>
+        </select>
+    </span>
+    ;}</span><span class="precision"> Ne s'applique que pour l'axe x ou y</span><br><br>
+    <span class="violet">body{overflow-wrap:
+        <select>
+            <option title="coupe le mot ou il aurait pu être effacer">break-word</option>
+        </select>
+    ;}</span><span class="precision"> Gère le paragraphe lui même</span><br><br>
+
+    <li><strong class="point">Appliquer une ombre à sa boite</strong><span class="precision"> ( box-shadow peut prendre plusieurs valeurs : Horizontale, Verticale, portée de l'ombre, Couleur )</span></li>
+    <br><span class="violet">div { box-shadow :
+        <select>
+            <option title="L'ombre sera décaler de 2 pixels horizontallement">2px</option>
+        </select>
+        <select>
+            <option title="L'ombre sera décaler de 2 pixels verticalement">2px</option>
+        </select>
+        <select>
+            <option title="Portée de l'ombre, plus la valeur est haute, plus l'ombre sera disperser, moins forte">5px</option>
+        </select>
+        <select>
+            <option title="Couleur de l'ombre">"color"</option>
+        </select>
+    ;}</span><br><br>
+    
+    <li><strong class="point">Par défaut, la largeur d'une boite conteneur ne prend pas en compte les eventuelles dépassement de largeur de leurs contenu avec <span class="precision">padding, border</span></strong></li><br><br>
+    <strong class="point">Pour prend en compte ces eventuelles dépassements</strong><br><br>
+    <span class="violet">div { box-sizing : 
+        <select>
+            <option title="Comportement par défaut de la boite">content-box</option>
+            <option title="Prend en compte les eventuelles dépassement de largeur avec padding, border">border-box</option>
+        </select>
+    ; }</span>
+
+    
+</ul>
+
+<h1 class="chapter">Bordures et contours</h1>
+<ul>
+    <li><strong class="point">Appliquer une bordure</strong><span class="precision"> ( L'attribut border prend 3 élément : border : witdh ( épaisseur ), style ( le style ), color ( la couleur ) )</span></li>
+    <br><span class="violet">body { border :
+        <select>
+            <option title="Donne une épaisseur de 5 pixels à la bordure">5px</option>
+        </select>
+        <select>
+            <option title="Point">dotted</option>
+            <option title="Tiret">dashed</option>
+            <option title="Ligne pleine">solid</option>
+            <option title="double ligne pleine">double</option>
+            <option title="petit effet de relief">groove</option>
+            <option title="petit effet de relief inversé">ridge</option>
+            <option title="effet de profondeur">inset</option>
+            <option title="effet de profondeur inversé">outset</option>
+        </select>
+        <select>
+            <option title="Donne une couleur à la bordure">"color"</option>
+        </select>
+    ;}</span><br><br>
+
+    <li><strong class="point">Appliquer une image à sa bordure</strong></li>
+    <br><span class="precision">( L'attribut border-image prend : source ( chemin de l'image ), slice ( découpe de l'image ), witdh ( épaisseur ), outset ( marge ), repeat ( répétition de l'image ) )</span>
+    </span><span class="precision"> L'image utiliser est découper en 9 parties. La partie central de la découpe est l'élément central ou s'applique la bordure.</span><br><br>
+
+    <li><a href="https://border-image.com/" target="_blank">Lien pour généré sa bordure à partie d'une image</a></li><br><br>
+
+    <li><strong class="point">Gérer les arrondies des bords de la bordure</strong></li>
+    <br><span class="violet">body { border-radius :
+        <select>
+            <option title="Arrondie les coté de X pixels">px</option>
+            <option title="Arrondie les coté de X pourcent">%</option>
+        </select>
+    ;}</span><br><br>
+
+    <span class="precision">On peut cibler des coins précis en utilisant la méta attribut : </span><span class="violet">{ border-radius : "top-left" "top-right" "bottom-right" "bottom-left" }</span><br><br>
+
+    <li><strong class="point">Pour le contours, les attributs sont les mêmes que pour border, elle s'utilise avec</strong></li>
+    <br><span class="violet">body { outline : ;}</span><br><br>
+
+    <li><strong class="point">Appliquer une marge entre border et outline</strong></li>
+    <br><span class="violet">body { outline-offset : ;}</span><br><br>
+
+    <li><strong class="point">Collision des bordure d'un tableau</strong></li>
+    <br><span class="violet">table { border-collapse :
+        <select>
+            <option title="Par défaut, les contours sont bien distinct">seperate</option>
+            <option title="Fusionne les contours du tableau">collapse</option>
+        </select>
+    ;}</span><br><br>
+
+    <li><strong class="point">Espacement des bordures d'un tableau</strong></li>
+    <br><span class="violet">table { border-spacing : ;}</span>
+</ul>
+
+<h1 class="chapter">Affichage et positionnement</h1>
+<h2 class="chapter">Affichage</h2>
+<ul>
+    <li><strong class="point">Balise type Block et Inline</strong></li><br>
+
+    <span class="point">Block</span><br><br>
+    <ul style="list-style-type: disc;">
+        <li><span class="violet">< div ></span></li>
+        <li><span class="violet">< p ></span></li>
+        <li><span class="violet">< h1..2..3.. ></span></li>
+        <li><span class="violet">< ul..ol ></span></li>
+        <li><span class="violet">< blockquote ></span></li>
+    </ul><br>
+
+    <span class="point">Inline</span><br><br>
+    <ul style="list-style-type: disc;">
+        <li><span class="violet">< span ></span></li>
+        <li><span class="violet">< a ></span></li>
+        <li><span class="violet">< strong ></span></li>
+        <li><span class="violet">< em ></span></li>
+        <li><span class="violet">< br ></span></li>
+        <li><span class="violet">< img ></span></li>
+    </ul><br><br>
+
+    <li><strong class="point">Comportement Bloc et Inline</strong></li><br>
+
+    <span class="point">Block</span><br><br>
+    <ul style="list-style-type: disc;">
+        <li><span class="violet">Utiliser pour structurer le contenu en sections distinctes</span></li>
+        <li><span class="violet">Elles peuvent avoirs des propriété de largeur ( witdh ), hauteur ( height ), margin, padding</span></li>
+        <li><span class="violet">Occupe toute la largeur disponible</span></li>
+        <li><span class="violet">Commence sur une nouvelle ligne</span></li>
+        <li><span class="violet">Pousse les éléments suivant vers le bas</span></li>
+    </ul><br>
+
+    <details><summary>exemple</summary><br>
+        <p style="color: blue;">Ce text est en réalité</p><p style="color: brown;"> 3 < p > qui sont mis</p><p style="color : rgb(234, 46, 234)"> les uns à la suite des autres</p>
+    </details><br>
+
+    <span class="point">Inline</span><br><br>
+    <ul style="list-style-type: disc;">
+        <li><span class="violet">Utiliser pour envelopper et styliser des parties spécifiques de texte</span></li>
+        <li><span class="violet">Occupe uniquement l'espace nécessaire autour de leurs contenu</span></li>
+        <li><span class="violet">Ne commence pas sur une nouvelle ligne</span></li>
+        <li><span class="violet">S'affichent sur la même ligne que le contenu qui les entoure</span></li>
+    </ul><br>
+
+    <details><summary>exemple</summary><br>
+        <span style="color: blue;">Ce text est en réalité</span><span style="color: brown;"> 3 < span > qui sont mis</span><span style="color : rgb(234, 46, 234)"> les uns à la suite des autres</span>
+    </details><br>
+
+    <li><strong class="point">Changer le type d'une balise</strong></li>
+    <br><span class="violet">span { display : 
+        <select>
+            <option title="Change le type d'une balise en Block">block</option>
+            <option title="Change le type d'une balise en Inline">inline</option>
+            <option title="N'affiche pas le contenu dans le flux du document">none</option>
+            <option title="">flex</option>
+            <option title="">grid</option>
+        </select>
+    ;}</span><br><br>
+
+    <li><strong class="point">Cacher un contenu</strong></li>
+    <br><span class="violet">span { visibility : 
+        <select>
+            <option title="Valeur par défaut, affiche le contenu">visibility</option>
+            <option title="Rend invisible le contenu, ne le retire pas du flux du document">hidden</option>
+        </select>
+    ;}</span><br><br>
+
+    <li><strong class="point">Opacité du contenu par défaut</strong></li>
+    <br><span class="violet">img { opacity : 0..1 ;}</span><br><br>
+
+    <li><strong class="point">Opacité du contenu au passage de la souris</strong></li>
+    <br><span class="violet">img : hover { opacity : 0..1 ;}</span><br><br>
+</ul>
+
+<h2 class="chapter">positionnement</h2>
+<ul>
+    <li><strong class="point">Type de positionnement</strong></li>
+    <br><span class="violet">div { position :
+        <select>
+            <option title="Positionnement par défaut, ne peut pas avoir d'attribut top, right, bottom, left">static</option>
+            <option title="Positionnement par rapport au point de coordonnées de l'élément, sert à jouer sur le positionnement de l'élément avec top, right, bottom, left, ne sort pas du flux du document">relative</option>
+            <option title="Positionnement par rapport au point de coordonnées de l'élément, sert à jouer sur le positionnement de l'élément avec top, right, bottom, left, sort du flux du document">absolute</option>
+            <option title="Pas d'information">fixed</option>
+        </select>
+    ;}</span><br><br>
+
+    <li><strong class="point">Modifier l'empilement</strong></li>
+    <br><span class="violet">div { z-index :
+        <select>
+            <option title="L'élément avec le z-index le plus élever sera celui empiler au desus des autres">0..1...25..</option>
+        </select>
+    ;}</span>
+</ul>
+
+<h1 class="chapter">Flex-box</h1>
+<ul>
+
+    <li><strong class="point"><details><summary>Illustration Flex-Box</summary><img src="../fichier/css_flexbox.PNG" alt="" width="800px"></details></strong></li><br><br>
+
+    <li><strong class="point">Organise des éléments à petite échelles</strong></li><br><br>
+
+    <li><strong class="point">Flex-box ne travaille que dans une direction à la fois</strong></li><br><br>
+
+    <li><strong class="point">Changer le type d'une balise structurante en flex-box ou inline-box </strong></li><br>
+    <span class="violet">div { display : 
+        <select>
+            <option title="Change le type en flex-box ( comme un block, tout son contenu deviens des objets flexible )">flex</option>
+            <option title="Changer le type en inline-box ( comme un inline )">inline-flex</option>
+        </select>
+        ;}</span><br><br>
+
+    <li><h3 class="chapter">Modification du comportement du conteneur</h3></li><br>
+    <ul>
+        <li><strong class="point">Changer la direction du conteneur</strong><span class="precision"> ( Définie l'axe principal et secondaire, row = Alignement principal horizontale, column = Alignement principal verticale )</span></li><br>
+        <span class="violet">div { flex-direction :
+            <select>
+                <option title="Direction en ligne, de gauche à droite, par défaut">row</option>
+                <option title="Direction en ligne, de droite à gauche, inverse la position ( symétrie central )">row-reverse</option>
+                <option title="Direction en colonnes, de haut en bas">column</option>
+                <option title="Direction en colonnes, de bas en haut">column-reverse</option>
+            </select>
+            ;}</span><br><br>
+
+        <li><strong class="point">Gérer la coupure du contenu</strong></li><br>
+        <span class="violet">div { flex-wrap :
+            <select>
+                <option title="Ne coupe pas le contenu, créé une barre de défilement, par défaut">now-rap</option>
+                <option title="Coupe la contenu, ne créé pas de barre de défilement, la taille du conteneur s'adapte">wrap</option>
+                <option title="Coupe la contenu, inverse le contenu, ne créé pas de barre de défilement, la taille du conteneur s'adapte">wrap-reverse</option>
+            </select>
+            ;}</span><br><br>
+
+        <li><span class="precision">Attribut qui rassemble les deux propriété : </span><span class="violet"> div { flex-flox : "direction" "coupure" ;}</span></li><br><br>
+        
+        <li><strong class="point">Gérer l'alignement principal du contenu </strong><span class="precision"> ( Ce qui définie l'alignement principal du conteneur flexible est sont flex-direction, row = alignement principal horizontal, column = Alignement principal verticale )</span></li><br>
+        <span class="violet">div { justify-content : 
+            <select>
+                <option title="Deplace le contenu au début du conteneur flexible, par défaut">flex-start</option>
+                <option title="Deplace le contenu à la fin du conteneur flexible, n'inverse pas le contenu">flex-end</option>
+                <option title="Deplace le contenu au centre du conteneur flexible">center</option>
+                <option title="Créé des espaces égaux entre les flex-contenu">space-between</option>
+                <option title="Créé des espaces entre et autour des flex-contenu, les espaces entre sont égaux, autour sont égaux, mais entre et autour ne le sont pas">space-between</option>
+                <option title="Créé des espaces égaux entre et autour des flex-contenu">space-evenly</option>
+            </select>
+            ;}</span><br><br>
+        
+        <li><strong class="point">Gérer l'alignement secondaire du contenu</strong></li><br>
+        <span class="violet">div { align-items : 
+            <select>
+                <option title="Etire le contenu sur tout l'espace disponible, par défaut">stretch</option>
+                <option title="Déplace le contenu au début du conteneur flexible, étire le contenu sur l'espace nécessaire à son contenu">flex-start</option>
+                <option title="Déplace le contenu à la fin du conteneur flexible, étire le contenu sur l'espace nécessaire à son contenu">flex-end</option>
+                <option title="Déplace le contenu au centre de l'espace disponible du conteneur flexible, étire le contenu sur l'espace nécessaire à son contenu">center</option>
+                <option title="Se base sur la ligne de base ( pas d'autres informations )">baseline</option>
+            </select>
+            ;}</span><br><br>
+
+    </ul>
+    
+    <li><h3 class="chapter">Modification du comportement du contenu</h3></li><br>
+    <ul>
+        <li><strong class="point">Gérer l'ordre du contenu ( objet ) </strong><span class="precision"> Changer l'ordre permet d'indiquer sa prioritée dans la disposition à l'interieur du conteneur</span></li>
+        <br><span class="violet">div { order : 
+            <select>
+                <option title="0...1...2...10...87, le contenu avec l'order le plus bas sera prioriétaire au contenu avec un order superieur">"int"</option>
+            </select>
+            ;}</span><br><br>
+
+        <li><strong class="point">Gérer l'occupation de l'espace du contenu</strong></li><br>
+        <ul>
+            <li><strong class="point">Gérer l'agrandissement</strong></li>
+            <br><span class="violet">div { flex-grow :
+                <select>
+                    <option title="Capacité de s'agrandir en relation avec les autres contenu.
+
+Les contenus de même valeurs occupes une place de même proportions chacun.
+
+Un contenu avec pour valeur 2, occupera une place deux fois plus importante que les contenues de valeur 1">1...2...3.."int"</option>
+                </select>
+            ;}</span><br><br>
+
+            <li><strong class="point">Gérer le rétrecissement</strong></li>
+            <br><span class="violet">div { flex-shrink :
+                <select>
+                    <option title="Capacité de se rétrecir en relation avec les autres contenu.
+
+Les contenus de même valeurs seront rétreci d'une place de même proportions chacun.
+
+Un contenu avec pour valeur 2, occupera une place deux fois plus importante que les contenues de valeur 1">1...2...3.."int"</option>
+                </select>
+            ;}</span><br><br>
+
+            <li><strong class="point">Définir une largeur initial</strong></li>
+            <br><span class="violet">div { flex-basis :
+                <select>
+                    <option title="Le contenu aura une taille initial de 200 pixels, ne peut pas être réduit">200px</option>
+                </select>
+            ;}</span><br><br>
+
+            <li><span class="precision">Attribut qui rassemble les trois propriétés : </span><span class="violet">div { flex : "agrandissement" "retrecissement" "largeur initial" ;}</span></li><br>
+
+
+            <li><strong class="point">Changer le comportement d'un contenu par rapport aux autres</strong></li>
+            <br><span class="violet">div { align-self : 
+                <select>
+                    <option title="Etire le contenu sur tout l'espace disponible, par défaut">stretch</option>
+                    <option title="Déplace le contenu au début du conteneur flexible, étire le contenu sur l'espace nécessaire à son contenu">flex-start</option>
+                    <option title="Déplace le contenu à la fin du conteneur flexible, étire le contenu sur l'espace nécessaire à son contenu">flex-end</option>
+                    <option title="Déplace le contenu au centre de l'espace disponible du conteneur flexible, étire le contenu sur l'espace nécessaire à son contenu">center</option>
+                    <option title="Se base sur la ligne de base ( pas d'autres informations )">baseline</option>
+                </select>
+            ;}</span><br><br>
+        </ul>
+    </ul>
+</ul>
+
+<h1 class="chapter">Grid</h1>
+<ul>
+    <li><details><summary><strong class="point">Ilustration Grid</strong></summary><img src="../fichier/css_grid.PNG" width="800px"></details></li><br><br>
+
+    <li><strong class="point">Organise des éléments à grandes échelles ( Le Gabarit )</strong></li><br><br>
+
+    <li><strong class="point">Grid est bi-dimentionnelle</strong></li><br><br>
+
+    <li><strong class="point">Changer le type d'une balise structurante en grid</strong></li><br>
+    <span class="violet">div { display : 
+        <select>
+            <option title="Change le type en grid">grid</option>
+        </select>
+    ;}</span><br><br>
+
+    <li><h3 class="chapter">Dans le conteneur</h3></li>
+
+        <ul>
+            <li><strong class="point">Indiquer un nombre de colonne</strong></li><br>
+            <span class="violet">div { grid-template-columns : 
+                <select>
+                    <option title="Indique que le conteneur contiendra 3 colonnes de 100 pixels, évite la répétition">repeat( 3, 100px )</option>
+                    <option title="Indique que le conteneur contiendra 3 colonnes de 100 pixels">100px 100px 100px</option>
+                    <option title="Indique que le conteneur contiendra 3 colonnes qui rempliront l'espace disponible en largeur">auto auto auto</option>
+                    <option title="Indique que le conteneur contiendra 3 colonnes qui rempliront un espace libre proportionnelle à leurs valeurs">1fr 2fr 1fr</option>
+                    <option title="Indique que le conteneur contiendra 3 colonnes qui rempliront un espace juste nécessaire à son contenu au minimum">min-content min-content min-content</option>
+                    <option title="Indique que le conteneur contiendra 3 colonnes qui rempliront un espace au minimal de 100 pixels, et au maximal de 200 pixels">repeat ( 3, minmax ( 100px, 200px ))</option>
+                </select>
+            ;}</span><br><br>
+
+            <li><strong class="point">Indiquer un nombre de ligne</strong></li><br>
+            <span class="violet">div { grid-template-rows : 
+                <select>
+                    <option title="Indique que le conteneur contiendra 2 lignes de 150 pixels, évite la répétition">repeat( 2, 150px)</option>
+                    <option title="Indique que le conteneur contiendra 2 lignes de 150 pixels">150px 150px</option>
+                    <option title="Indique que le conteneur contiendra 2 lignes qui rempliront l'espace disponible en hauteur">auto auto</option>
+                    <option title="Indique que le conteneur contiendra 2 lignes qui rempliront un espace libre proportionnelle à leurs valeurs">1fr 2fr 1fr</option>
+                </select>
+            ;}</span><br><br>
+
+            <li><strong class="point">Indique le positionnement pour les éléments non définie explicitement</strong></li><br>
+            <span class="violet">div { grid-auto-flow : 
+                <select>
+                    <option title="Indique que les conteneurs non définie crééront de nouvelles colonnes">columns</option>
+                    <option title="Indique que les conteneurs non définie crééront de nouvelles lignes">row</option>
+                </select>
+            ;}</span><br><br>
+
+            <li><strong class="point">Indiquer une largeur pour les éléments non définie explicitement positionner en colonnes</strong></li><br>
+            <span class="violet">div { grid-auto-columns : 
+                <select>
+                    <option title="Indique que les conteneurs non définie auront une largeur de 200 pixels">200px</option>
+                </select>
+            ;}</span><br><br>
+
+            <li><strong class="point">Indiquer une hauteur pour les éléments non définie explicitement positionner en lignes</strong></li><br>
+            <span class="violet">div { grid-auto-rows : 
+                <select>
+                    <option title="Indique que les conteneurs non définie auront une hauteur de 150 pixels">150px</option>
+                </select>
+            ;}</span><br><br>
+        </ul>
+
+    <li><h3 class="chapter">Dans le contenu ( items )</h3></li>
+        <ul>
+            <li><strong class="point">Indiquer la position de l'item sur une colonne précise</strong></li><br>
+                <span class="violet">div { grid-column : 
+                    <select>
+                        <option title="Indique que l'item se positionnera sur la première colonne">1</option>
+                        <option title="Indique que l'item occupera toute les colonnes définie">1 / -1</option>
+                    </select>
+                ;}</span><br><br>
+
+                <li><strong class="point">Indiquer la position de l'item sur une ligne précise</strong></li><br>
+                <span class="violet">div { grid-row : 
+                    <select>
+                        <option title="Indique que l'item se positionnera sur la toisième">3</option>
+                        <option title="Indique que l'item occupera tout les lignes définie">1 / -1</option>
+                    </select>
+                ;}</span><br><br>
+
+                <li><strong class="point">Indiquer le point de départ de l'item sur une colonne précise</strong></li><br>
+                <span class="violet">div { grid-column-start : 
+                    <select>
+                        <option title="La cellule commencera au départ de la colonne 1, dans le flux">1</option>
+                    </select>
+                ;}</span><br><br>
+
+                <li><strong class="point">Indiquer le point de fin de l'item sur une colonne précise</strong></li><br>
+                <span class="violet">div { grid-column-end : 
+                    <select>
+                        <option title="La cellule se terminera au départ de la colonne 3 dans le flux">3</option>
+                    </select>
+                ;}</span><br><br>
+
+                <li><strong class="point">Indiquer le point de départ de l'item sur une ligne précise</strong></li><br>
+                <span class="violet">div { grid-row-star : 
+                    <select>
+                        <option title="La cellule commencera au départ de la ligne 1, dans le flux">3</option>
+                    </select>
+                ;}</span><br><br>
+
+                <li><strong class="point">Indiquer le point de fin de l'item sur une ligne précise</strong></li><br>
+                <span class="violet">div { grid-row-end : 
+                    <select>
+                        <option title="La cellule se terminera au départ de la ligne 3 dans le flux">3</option>
+                    </select>
+                ;}</span><br><br>
+        </ul>
+    <li><h3 class="chapter">Définir le découpage des airs de placements</h3></li>
+    <ul>
+        <li><strong class="point">Protocole</strong></li><br>
+            <ul>
+                <li><span class="point">On attribut un nom d'airs à un selecteur :</span></li>
+                <br><span class="violet">div_1 { grid-area : "nom_1" ;}</span><br><br>
+                <span class="violet">div_2 { grid-area : "nom_2" ;}</span><br><br>
+                <span class="violet">div_3 { grid-area : "nom_3" ;}</span><br><br>
+
+                <li><span class="point">On défini leurs emplacements <span class="chapter">Dans le conteneur</span> :</span></li>
+                <br><span class="violet"><pre>div { grid-template-areas : " nom_1 nom_1 nom_1 "
+                            " nom_2 nom_1 nom_2 "
+                            " nom_3 nom_3 nom_3"
+                </pre></span><br><br>
+
+                <li><span class="point">div_1 représentera les trois colonnes de la première ligne de la grid</span></li>
+                <li><span class="point">div_2 représentera la colonne à gauche et à droite de la deuxième ligne de la grid, div_1 la colonne central de la deuxième ligne de la grid</span></li>
+                <li><span class="point">div_3 représentera les trois colonne de la troisième ligne de la grid</span></li>
+            </ul>
+    </ul>
+
+</ul>
+
+
+    
+
+    
+        
+
+        
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

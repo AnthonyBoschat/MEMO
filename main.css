@@ -1,0 +1,49 @@
+a{color: black; text-decoration: none;}
+
+body 
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main_box
+{
+    width: 100%;
+    display: flex;
+}
+
+#language_informatique_liste
+{
+    list-style-type: none;
+
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.language_informatique_box
+{
+    outline: 2px double black;
+    
+    height: 80px;
+    width: 250px;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+    box-shadow: 0 0 8px black;
+}
+
+.language_informatique_box:hover
+{
+    box-shadow: 0 0 15px black;
+    cursor: pointer;
+}

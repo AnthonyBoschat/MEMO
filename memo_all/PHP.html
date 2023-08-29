@@ -1,0 +1,3229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="naviguation">
+        <i class="fa-solid fa-bars" id="barre_naviguation"></i>
+        <div id="box_naviguation_liste">
+            
+        </div>
+    </div>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=CHcg88F21us&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=5&pp=iAQB" target="_blank">Affichage</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Echo</div>
+            <div class="content">
+                <div>
+                    <div class="blue">• Affichage</div>
+                    <br>
+                    <pre>
+<span class="red">echo</span> "bonjour";
+                    </pre>
+                    <br>
+                    <div class="blue">• Autorise l'écriture HTML</div>
+                    <br>
+                    <pre>
+<span class="red">echo</span> "bonjour <span class="red">< br ></span>";
+<span class="red">echo</span> "tout le monde";
+                    </pre>
+                    <br>
+                    <div class="blue">• Affichage plusieurs informations</div>
+                    <br>
+                    <pre>
+<span class="red">echo</span> "bonjour"<span class="red">,</span> " tout le monde";
+                    </pre>
+                    <br>
+                    <div class="blue">• Se passer d'echo</div>
+                    <br>
+                    <pre>
+<span class="red">< ?=</span> "bonjour" <span class="red">? ></span>
+                    </pre>
+                    <div class="precision">( souvent utile quand php est utiliser avec du html )</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Print</div>
+            <div class="content">
+                <div>
+                    <div>Fonctionne de la même manière que echo, mais peut etre <br>utiliser dans des contextes de fonctions</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Commentaire</div>
+            <div class="content">
+                <div>
+                    <div class="red">• Indique un Commentaire</div>
+                    <br>
+                    <pre>
+<span class="red">/*</span> Ceci est un commentaire <span class="red">*/</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=PRXy1yA6O7w&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=6" target="_blank">Variables et types</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Différents types</div>
+            <div class="content">
+                <div>
+                    <div class="blue" style="text-align: center;">Types scalaires</div>
+                    <br>
+                    <ul>
+                        <li><span class="red">Boolean</span> : Vrai(1) | Faux(0)</li>
+                        <li><span class="red">Integer</span> : 10, -10, 225</li>
+                        <li><span class="red">Float</span>   : 10.1, 10.0, -225.5</li>
+                        <li><span class="red">String</span>  : "bonjour", "Hello world"</li>
+                    </ul>
+                    <br>
+                    <div class="blue" style="text-align: center;">Types composés</div>
+                    <br>
+                    <ul>
+                        <li><span class="red">Array</span> ( Tableau )</li>
+                        <li><span class="red">Object</span></li>
+                        <li><span class="red">Callable</span> ( Fonctions de rappel )</li>
+                        <li><span class="red">Iterbale</span> ( Itérateurs )</li>
+                    </ul>
+                    <br>
+                    <div class="blue" style="text-align: center;">Types divers</div>
+                    <br>
+                    <ul>
+                        <li><span class="red">Resource</span></li>
+                        <li><span class="red">NULL</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Déclarer une variable</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">$</span>prenom <span class="red">=</span> "Anthony";
+<span class="red">$</span>age <span class="red">=</span> 28;
+echo "Je m'appelle $prenom et j'ai $age ans";
+                    <span class="red"></pre></span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Concaténation</div>
+            <div class="content">
+                <div>
+                    <pre>
+$prenom = "Anthony";
+$age = 28;
+echo "Je m'appelle "<span class="red">.</span>$prenom<span class="red">.</span>" et j'ai "<span class="red">.</span>$age"<span class="red">.</span>" ans";
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Connaitre information complète d'une variable</div>
+            <div class="content">
+                <div>
+                    <pre>
+$prenom = "Anthony";
+<span class="red">var_dump(</span>$prenom<span class="red">)</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Connaitre seulement le type d'une variable</div>
+            <div class="content">
+                <div>
+                    <pre>
+$prenom = "Anthony";
+echo <span class="red">gettype(</span>$prenom<span class="red">)</span>;
+                    </pre>
+                    <div class="precision"><span class="red">gettype</span> renvoie une information, c'est pour ça qu'il faut utiliser echo pour afficher le retour de la fonction</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Verification du type de la variable</div>
+            <div class="content">
+                <div>
+                    <pre>
+echo <span class="red">is_string(</span>$variable<span class="red">)</span>;
+     <span class="red">is_int(</span>$variable<span class="red">)</span>;
+     <span class="red">is_float(</span>$variable<span class="red">)</span>;
+     <span class="red">if_bool(</span>$variable<span class="red">)</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+
+        <div class="box">
+            <div class="title">Vérification existence d'une variable</div>
+                <div class="content">
+                    <div>
+                        <pre>
+$prenom = "Anthony";
+echo <span class="red">isset(</span>$prenom<span class="red">)</span>;
+                        </pre>
+                        <div class="precision"><span class="red">isset</span> renverra <span class="red">TRUE</span> ou <span class="red">FALSE</span></div>
+                        <br>
+                        <div class="blue">OU BIEN</div>
+                        <br>
+                        <pre>
+$prenom = "Anthony";
+$message = $prenom <span class="red">??</span> "Elle n'existe pas";
+echo $message;
+                        </pre>
+                        <div class="precision"><span class="red">$message</span> va prendre soit la valeur de la variable <span class="red">$prenom</span>, ou bien, si elle n'existe pas, prendra pour valeur <span class="red">"Elle n'existe pas"</span></div>
+                        <br>
+                        <div class="precision">Equivalent de :</div>
+                        <pre>
+                        
+$prenom = "Anthony";
+if(<span class="red">!isset(</span>$prenom<span class="red">)</span>)
+{
+    $message = "Elle n'existe pas";
+    echo $message;
+}
+else
+{
+    $message = $prenom;
+    echo $message;
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="box">
+        <div class="title">Effacer les informations d'une variable</div>
+            <div class="content">
+                <div>
+                    <pre>
+$prenom = "Anthony";
+<span class="red">unset(</span>$prenom<span class="red">)</span>;
+echo $prenom;
+                    </pre>
+                    <div class="precision"><span class="red">Unset</span> va donner la valeur <span class="red">NULL</span> à cette variable</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Références</div>
+            <div class="content">
+                <div>
+                    <pre>
+$variable_1 = "Anthony";
+$variable_2 = <span class="red">&</span>$variable_1;
+                    </pre>
+                    <div class="precision">Créé une variable qui fait références à une autre variable</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Transtypage (cast)</div>
+            <div class="content">
+                <div>
+                    <pre>
+$variable = "10.5";
+echo <span class="red">(int)</span>$variable;
+                    </pre>
+                    <ul>
+                        <li><span class="red">(int)</span></li>
+                        <li><span class="red">(float)</span></li>
+                        <li><span class="red">(string)</span></li>
+                        <li><span class="red">(bool)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=k1j01vaRHgo&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=7" target="_blank">Constantes</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Principe</div>
+            <div class="content">
+                <div>
+                    <ul>
+                        <li>Une constante <span class="blue">ne peut pas être modifier</span></li>
+                        <li>Par convention, les constantes sont écrites en <span class="blue">MAJUSCULE</span></li>
+                    </ul>    
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Déclarer une constante</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">define(</span>"ANNIVERSAIRE"<span class="red">,</span>"22 Octobre 1994"<span class="red">)</span>;
+echo ANNIVERSAIRE;
+                    </pre>
+                    <ul>
+                        <li><span class="blue">Paramètre 1</span> : Nom de la constante</li>
+                        <li><span class="blue">Paramètre 2</span> : Valeur de la constante</li>
+                    </ul>
+                    <br>
+                    <div class="blue" style="text-align: center;">OU BIEN</div>
+                    <br>
+                    <pre>
+<span class="red">const</span> ANNIVERSAIRE <span class="red">=</span> "22 Octobre 1994";
+echo ANNIVERSAIRE;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Quelques constantes intéressantes</div>
+            <div class="content">
+                <div>
+                    <pre>
+• echo <span class="red">PHP_INT_MAX</span>;
+(<span class="blue">Nombre entier maximal affichable</span>) 
+
+• echo <span class="red">PHP_INT_MIN</span>;
+(<span class="blue">Nombre entier minimal affichable</span>) 
+
+• echo <span class="red">PHP_INT_SIZE</span>;
+(<span class="blue">Octets</span>)
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=FeLf4G800ks&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=8" target="_blank">Opérateurs</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Fonctions utiles</div>
+            <div class="content">
+                <div>
+                    <div class="blue" style="text-align: center;">Affiche l'entier du resultat d'une division</div>
+                    <br>
+                    <pre>
+echo <span class="red">intdiv(</span>10<span class="red">,</span> 3<span class="red">)</span>;
+<span class="green">= 3</span>
+                    </pre>
+                    <br>
+                    <div class="blue" style="text-align: center;">Reste d'une division</div>
+                    <br>
+                    <pre>
+echo <span class="red">fmod(</span>18<span class="red">,</span> 4<span class="red">)</span>;
+<span class="green">= 2</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Arithmétique</div>
+            <div class="content">
+                <div>
+                    <ul>
+                        <li><span class="red">+</span></li>
+                        <li><span class="red">-</span></li>
+                        <li><span class="red">*</span></li>
+                        <li><span class="red">/</span></li>
+                        <li><span class="red">%</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Affectation</div>
+            <div class="content">
+                <div>
+                    <ul>
+                        <li><span class="red">+=</span></li>
+                        <li><span class="red">-=</span></li>
+                        <li><span class="red">*=</span></li>
+                        <li><span class="red">/=</span></li>
+                        <li><span class="red">%=</span></li>
+                        <li>
+                            <span class="red">.=</span>
+                            <br><br>
+                            <pre>
+$variable = "Hello";
+$variable <span class="red">.=</span> "World";
+
+<span class="green">$variable = "HelloWorld"</span>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Logique</div>
+                <div class="content">
+                    <div>
+                        <ul>
+                            <li>
+                                <span class="red">and</span>
+                                <br>
+                                <div class="precision">Les variables sont tous TRUE</div>
+                                <br>
+                            </li>
+                            <li>
+                                <span class="red">or</span>
+                                <div class="precision">Au moin une des variables est TRUE</div>
+                                <br>
+                            </li>
+                            <li>
+                                <span class="red">xor</span>
+                                <div class="precision">Une seule des variable est TRUE</div>
+                                <br>
+                            </li>
+                            <li>
+                                <span class="red">&&</span>
+                                <div class="precision">Similaire à <span class="red
+                                    ">and</span>, mais la prioritée change</div>
+                                <br>
+                            </li>
+                            <li>
+                                <span class="red">||</span>
+                                <div class="precision">Similaire à <span class="red
+                                    ">or</span>, mais la prioritée change</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=m2LT_aPPuvk&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=9" target="_blank">Conditions / Continue, break, return, exit</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Opérateur de comparaison</div>
+            <div class="content">
+                <div>
+                    <ul>
+                        <li><span class="red">==</span></li>
+                        <div class="blue">Même valeur</div>
+                        <br>
+                        <li><span class="red">===</span></li>
+                        <div class="blue">Même valeur et même type</div>
+                        <br>
+                        <li><span class="red">!=</span></li>
+                        <div class="blue">Différente valeur</div>
+                        <br>
+                        <li><span class="red">!==</span></li>
+                        <div class="blue">Différente valeur ou différent type</div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">IF</div>
+            <div class="content">
+                <div>
+                    <pre>
+$variable = 10;
+<span class="red">if(</span>$variable == 10<span class="red">)</span>
+<span class="red">{</span>
+    echo "ok 10";
+<span class="red">}</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Elseif</div>
+            <div class="content">
+                <div>
+                    <pre>
+$variable = 15;
+
+if($variable == 10)
+{
+    echo "ok 10";
+}
+<span class="red">elseif(</span>$variable == 15<span class="red">)</span>
+<span class="red">{</span>
+    echo "ok 15";
+<span class="red">}</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Else</div>
+                <div class="content">
+                    <div>
+                        <pre>
+$variable = 20;
+
+if($variable == 10)
+{
+    echo "ok 10";
+}
+elseif($variable == 15)
+{
+    echo "ok 15";
+}
+<span class="red">else</span>
+<span class="red">{</span>
+    echo "pas ok";
+<span class="red">}</span>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Switch</div>
+            <div class="content">
+                <div>
+                    <pre>
+$variable = 10;
+
+<span class="red">switch(</span>$variable<span class="red">)</span>
+<span class="red">{</span>
+    <span class="red">case</span> 1<span class="red">:</span>
+        echo "ok 1";
+        <span class="red">return</span>;
+    <span class="red">case</span> 5<span class="red">:</span>
+        echo "ok 5";
+        <span class="red">return</span>;
+    <span class="red">case</span> 10<span class="red">:</span>
+        echo "ok 10";
+        <span class="red">return</span>;
+    <span class="red">default:</span>
+        echo "pas ok";
+        <span class="red">return</span>;
+<span class="red">}</span>
+                    </pre>
+                    <div class="precision">Le <span class="red">return/break</span> est important, sinon il va continuer les verifications</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Ternaire</div>
+            <div class="content">
+                <div>
+                    <pre>
+$variable = 10;
+
+$message = ($variable == 10 ) <span class="red">?</span> "ok 10" <span class="red">:</span> "pas ok";
+echo $message;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Return / Break / Continue / Exit</div>
+            <div class="content">
+                <div>
+                    <ul>
+                        <li><span class="red">Continue</span></li>
+                        <div class="blue">Stop l'execution du code pour l'itération en cours, et passe à l'itération suivante</div>
+                        <br>
+                        <li><span class="red">Break</span></li>
+                        <div class="blue">Stop l'itération en cours et sort de la boucle</div>
+                        <br>
+                        <li><span class="red">Return</span></li>
+                        <div class="blue">Similaire à <span class="red">Break</span> mais permet également de renvoyer une valeur</div>
+                        <br>
+                        <li><span class="red">Exit</span></li>
+                        <div class="blue">Le programme s'arrête instantanément et aucun code supplémentaire ne sera exécuté après cette fonction</div>
+                        <br>
+                        <div class="precision blue">exit(<span class="green">"message_personnaliser"</span>);</div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=jfkq2iXGWcY&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=10" target="_blank">Boucles</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">While</div>
+            <div class="content">
+                <div>
+                    <pre>
+$number = 0;
+
+<span class="red">while(</span>$number <= 10<span class="red">)</span>
+<span class="red">{</span>
+    echo $number;
+    $number++;
+<span class="red">}</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Do While</div>
+            <div class="content">
+                <div>
+                    <pre>
+$number = 11;
+
+<span class="red">do</span>
+<span class="red">{</span>
+    echo $number;
+    $number++;
+<span class="red">}</span>
+<span class="red">while(</span>$number <= 10<span class="red">)</span>;
+                    </pre>
+                    <div class="precision">Commence déjà par une instruction, puis ensuite une vérification.</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">For</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">for(</span>$i = 0 <span class="red">;</span> i <= 10 <span class="red">;</span> i++<span class="red">)</span>
+<span class="red">{</span>
+    echo $i;
+<span class="red">}</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=YCIMh2dH8AI&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=11" target="_blank">Fonctions</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Fonctions internes</div>
+            <div class="content">
+                <div>
+                    <ul>
+                        <li><a href="https://www.php.net/manual/fr/ref.var.php" style="color: blue;" target="_blank">Gestion des variables</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Déclarer une fonction</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">function</span> hello<span class="red">()</span>
+<span class="red">{</span>
+    echo "HelloWorld";
+<span class="red">}</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Appeler une fonction</div>
+            <div class="content">
+                <div>
+                    <pre>
+hello<span class="red">()</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Paramètre par défaut</div>
+            <div class="content">
+                <div>
+                    <pre>
+function hello($variable <span class="red">=</span> "HelloWorld")
+{
+    echo $variable;
+}
+
+hello();
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Retourner une information</div>
+            <div class="content">
+                <div>
+                    <pre>
+function hello()
+{
+    $variable = 10;
+    <span class="red">return</span> $variable;
+}
+
+$message <span class="red">= hello()</span>;
+echo $message;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Modifier une variable en dehors de la fonction</div>
+            <div class="content">
+                <div>
+                    <pre>
+$number = 10;
+
+function changement(<span class="red">&</span>$variable)
+{
+    $variable = 5;
+}
+
+changement($number);
+echo $number;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Préciser un type de paramètre précis</div>
+            <div class="content">
+                <div>
+                    <ul>
+                        <li><span class="red">int</span></li>
+                        <li><span class="red">float</span></li>
+                        <li><span class="red">string</span></li>
+                        <li><span class="red">bool</span></li>
+                        <li><span class="red">callable</span></li>
+                        <li><span class="red">array</span></li>
+                    </ul>
+                    <br>
+                    <div class="precision">par exemple :</div>
+                    <br>
+                    <pre>
+function affichage(<span class="red">int</span> $variable)
+{
+    echo $variable;
+}
+
+affichage(5);
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Nombre de paramètre infini</div>
+            <div class="content">
+                <div>
+                    <pre>
+function addition(<span class="red">...</span>$nombres)
+{
+    $resultat = 0;
+
+    foreach($nombres as $chiffre)
+    {
+        $resultat += $chiffre;
+    }
+
+    echo $resultat;
+}
+
+addition(5,10,15,2)
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Indiquer le type du retour ( typage strict )</div>
+            <div class="content">
+                <div>
+                    <pre>
+function message() <span class="red">:</span> string
+{
+    return 10;
+}
+
+$nombre = message()
+echo gettype($nombre);
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Fonction anonyme</div>
+            <div class="content">
+                <div>
+                    <pre>
+$hello = <span class="red">function()</span>
+{
+    echo "HelloWorld";
+}
+
+$hello();
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Stocker une fonction dans une variable</div>
+            <div class="content">
+                <div>
+                    <pre>
+function hello()
+{
+    echo "HelloWorld";
+}
+
+$coucou = <span class="red">"hello"</span>;
+$hello();
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title"></div>
+            <div class="content">
+                <div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=vZs202lVwJQ&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=12" target="_blank">Tableaux</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Principe et fonctions utiles</div>
+            <div class="content">
+                <div>
+                    <ul>
+                        <li><a href="https://www.php.net/manual/fr/ref.array.php" style="color: blue;" target="_blank">Fonction utiles</a></li>
+                        <br>
+                        <li><span class="blue">Fonctionne par un principe de <br> <span class="red">clé</span> : <span class="red">valeur</span></span></li>
+                        <br>
+                        <li><span class="blue">La déclaration de clé est <span class="red">optionnelle</span></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Déclarer un tableau vide</div>
+            <div class="content">
+                <div>
+                    <pre>
+$tableau <span class="red">= []</span>;
+                    </pre>
+                    <br>
+                    <div class="blue">OU BIEN</div>
+                    <pre>
+$tableau <span class="red">= array()</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Déclarer un tableau avec des valeurs</div>
+            <div class="content">
+                <div>
+                    <pre>
+$tableau <span class="red">=</span>
+<span class="red">[</span>
+    "Anthony"<span class="red">,</span>
+    "Maurane"<span class="red">,</span>
+    "Mathias"<span class="red">,</span>
+    "Benoit"
+<span class="red">]</span>;
+
+echo "< pre >";
+print_r($tableau);
+echo "< /pre >";
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Déclarer un tableau avec des clé / valeurs</div>
+                <div class="content">
+                    <div>
+                        <pre>
+$tableau =
+[
+    <span class="red">1 =></span> "Anthony",
+    <span class="red">"ok" =></span> "Maurane",
+    <span class="red">6 =></span> "Mathias",
+    <span class="red">"mentor" =></span> "Benoit",
+    "Jésahel"
+];
+
+echo "< pre >";
+print_r($tableau);
+echo "< /pre >";
+                        </pre>
+                        <div class="precision">La dernière clé n'est pas préciser, il prendra la valeur 7<br>Un float est tronqué en integer pour la clé.</div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Accéder à une valeur en particulier</div>
+            <div class="content">
+                <div>
+                    <pre>
+$tableau =
+[
+    1 => "Anthony",
+    "ok" => "Maurane",
+    6 => "Mathias",
+    "mentor" => "Benoit",
+    "Jésahel"
+];
+
+echo $tableau<span class="red">[</span>"mentor"<span class="red">]</span>;
+                    </pre>
+                    <div class="precision">On indique l'indice / la clé</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Modifier une valeur</div>
+            <div class="content">
+                <div>
+                    <pre>
+$tableau =
+[
+    1 => "Anthony",
+    "ok" => "Maurane",
+    6 => "Mathias",
+    "mentor" => "Benoit",
+    "Jésahel"
+];
+
+$tableau["mentor"] <span class="red">=</span> "Information modifier";
+
+echo $tableau["mentor"];
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Parcourir les valeurs d'un tableau</div>
+            <div class="content">
+                <div>
+                    <pre>
+$tableau =
+[
+    1 => "Anthony",
+    "ok" => "Maurane",
+    6 => "Mathias",
+    "mentor" => "Benoit",
+    "Jésahel"
+];
+
+<span class="red">foreach(</span>$tableau <span class="red">as</span> $valeur<span class="red">)</span>
+{
+    echo $valeur."< br >";
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Parcourir les clés et valeurs d'un tableau</div>
+            <div class="content">
+                <div>
+                    <pre>
+$tableau =
+[
+    1 => "Anthony",
+    "ok" => "Maurane",
+    6 => "Mathias",
+    "mentor" => "Benoit",
+    "Jésahel"
+];
+
+foreach($tableau as <span class="red">$clef =></span> $valeur)
+{
+    echo $clef." - ".$valeur."< br >";
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Fonctions utiles</div>
+            <div class="content">
+                <div>
+                    <ul>
+                        <li><span class="red">array_push()</span></li>
+                        <div class="precision">Empile un ou plusieurs éléments à la fin d'un tableau</div>
+                        <br>
+                        <li><span class="red">array_pop()</span> / <span class="red">array_shift()</span></li>
+                        <div class="precision">Dépile un élément de la fin d'un tableau</div>
+                        <br>
+                        <li><span class="red">in_array()</span></li>
+                        <div class="precision">Indique si une valeur appartient à un tableau</div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=AP1nR-5QZss&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=13" target="_blank">Gestion d'erreurs</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Principe</div>
+            <div class="content">
+                <div>
+                    <div>• Sur de plus gros projet, <span class="red">permet de gérer des erreurs plus personnaliser</span></div>
+                    <br>
+                    <div>• Avertissement(<span class="red">Notice</span>) -> Alerte(<span class="red">Warning</span>) -> Erreur(<span class="red">Error</span>)</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Signalement d'erreur</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">ini_set("display_errors", 0)</span>;
+<span class="red">error_reporting(0)</span>;
+                    </pre>
+                    <div>• Désactive toutes les erreurs</div>
+                    <div>• En production</div>
+                    <br>
+                    <pre>
+<span class="red">ini_set("display_errors", 1)</span>;
+<span class="red">error_reporting(-1)</span>;
+                    </pre>
+                    <div>• Active toute les erreurs</div>
+                    <div>• En développement</div>
+                    <br>
+                    <span class="precision">( Ne concerne pas les gestionnaires d'erreur à soi )</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Appliquer son gestionnaire</div>
+                <div class="content">
+                    <div>
+                        <pre>
+<span class="red">set_error_handler("mon_gestionnaire_erreur")</span>;
+
+<span class="green">// Ou </span>
+
+<span class="red">set_error_handler($mon_gestionnaire_erreur)</span>;
+                        </pre>
+                        <span class="precision">( en fonction de la méthode de création utiliser )</span>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="box_large">
+
+    
+        <div class="box">
+        <div class="title">Informations pour la création d'un gestionnaire d'erreur</div>
+            <div class="content">
+                <div>
+                    <div>• Par défaut, c'est le gestionnaire d'erreur PHP qui est utiliser</div>
+                    <br>
+                    <div>• La définition d'un gestionnaire d'erreur peut prendre plusieurs paramètres <span class="red">obligatoires</span> et <span class="green">optionnelles</span></div>
+                    <div class="precision">( Les noms des paramètres sont des conventions, rien d'obligatoire )</div>
+                    <br>
+                    <div>• <span class="red">$errno</span> -> Type d'erreur</div>
+                    <br>
+                    <div><span class="blue">E_USER_NOTICE</span> -> Avertissement</div>
+                    <div><span class="blue">E_USER_WARNING</span> -> Alerte</div>
+                    <div><span class="blue">E_USER_ERROR</span> -> Erreur</div>
+                    <span class="red"><br></span>
+                    <div>• <span class="red">$errmsg</span> -> Le message d'erreur</div>
+                    <div>• <span class="green">$errfile</span> -> Le fichier ou il y a une erreur</div>
+                    <div>• <span class="green">$errline</span> -> La ligne ou il y a une erreur</div>
+                    <div>• <span class="green">$errdatas</span> -> Les variables utiliser lors du contexte</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Créé son propre gestionnaire d'erreur</div>
+                <div class="content">
+                    <div>
+                        <div>Il est utile d'utiliser un Switch dans ce cas</div>
+                        <br>
+                        <br>
+                        <pre>
+function mon_gestionnaire_erreur(<span class="red">$errno</span>, <span class="red">$errmsg</span>, <span class="green">$errfile</span>, <span class="green">$errline</span>)
+{
+
+    switch(<span class="red">$errno</span>)
+    {
+        case <span class="blue">E_USER_NOTICE</span>:
+            echo <span class="red">$errmsg</span>;
+            break;
+        
+        case <span class="blue">E_USER_WARNING</span>:
+            echo <span class="red">$errmsg</span>." sur le fichier ".$errfile;
+            break;
+
+        case <span class="blue">E_USER_ERROR</span>:
+            echo <span class="red">$errmsg</span>;
+            break;
+
+        <span class="red">default</span>:
+            echo "Erreur non reconnue...";
+            break;
+    }
+
+}
+
+// Ou
+
+$mon_gestionnaire_erreur = function(<span class="red">#para</span><span class="green">mètres</span>)
+{
+
+    <span class="green">// Conditions des erreurs</span>
+
+};
+                        </pre>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Provoquer une erreur précise</div>
+            <div class="content">
+                <div>
+                    <pre>
+$age = 15;
+
+if($age < 18)
+{
+    <span class="red">trigger_error(</span>"Tu n'es pas majeur !"<span class="red">, E_USER_WARNING)</span>;
+}
+                    </pre>
+                    <div class="precision">L'erreur passera par notre gestionnaire dans le case <span class="red">E_USER_WARNING</span></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Gérer l'envoie d'erreurs</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">error_log(</span>"Problème rencontrer"<span class="red">, 0)</span>;
+-> Envoie l'erreur dans l'<span class="red">historique PHP</span> ( par défaut )
+
+<span class="red">error_log(</span>"Problème rencontrer"<span class="red">, 1,</span> "admin@dev.fr"<span class="red">)</span>;
+-> Envoie l'erreur dans un <span class="red">email</span>
+
+<span class="red">error_log(</span>"Problème rencontrer"<span class="red">, 3,</span> "errors.log"<span class="red">)</span>;
+-> Envoie l'erreur dans un <span class="red">fichier</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=06FZz73qelU&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=14" target="_blank">Manipuler un fichier</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Tableau récapitulatif</div>
+            <div class="content">
+                <div>
+                    <img src="../fichier/php_fonction_fichier.PNG" alt="">
+                    <br>
+                    <br>
+                    <div style="text-align: center;"><img src="../fichier/php_ouverture_fichier.PNG" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Attention aux permissions (Linux)</div>
+            <div class="content">
+                <div>
+                    <div class="red">Attention aux permissions nécessaire pour la lecture et l'écriture dans Linux (chmod)</div>
+                    <br>
+                    <div style="font-size: 30px; text-align: center;"><a target="_blank" style="color: blue" href="https://www.youtube.com/watch?v=AvdVbh3j-50&t=742s">Informations vidéos</a></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Acceder à la fin d'un fichier texte</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="green">// On ouvre le fichier en lecture et écriture (<span class="red">r+</span>)</span>
+$fichier = fopen("info.txt", "<span class="red">r+</span>");
+
+<span class="green">// Déplace le curseur de <span class="red">0 octets</span> depuis la fin du fichier (<span class="red">SEEK_END</span>)</span>
+<span class="red">fseek(</span>$fichier<span class="red">, 0, SEEK_END)</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=RWL0mUiPiI4&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=15" target="_blank">Traiter formulaire HTML</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Formulaire HTML utiliser</div>
+            <div class="content">
+                <div>
+                    <pre>
+< h1>Saisie d'informations< /h1>
+
+< form action="http://localhost/PHP/code.php" <span class="red">method="get"</span> target="_blank">
+    < p>Utilisateur : < input type="text" id="iduser" <span class="red">name="user"</span>>< /p>
+    < p>Choix : < input type="radio" id="idchoice" <span class="red">name="choice"</span> value="oui">Oui < input type="radio" id="idchoice" <span class="red">name="choice"</span> value="Non">Non</p>
+    < p>< input type="submit" <span class="red">name="valid_form"</span> value="Valider">< /p>
+< /form>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Variable superglobales</div>
+            <div class="content">
+                <div>
+                    <div class="red">$_GET</div>
+                    <br>
+                    <div><span class="blue">URL en GET</span> -> http://monsite/Accueil?<span class="red">var1=10&var2=25&var3=ok</span></div>
+                    <div class="precision">Les données sont renseigner dans l'url</div>
+                    <br>
+                    <div class="red">$_POST</div>
+                    <br>
+                    <div><span class="blue">URL en POST</span> -> http://monsite/Accueil</div>
+                    <div class="precision">Les données ne sont pas renseigner dans l'url</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Récupérer des informations avec GET / POST</div>
+            <div class="content">
+                <div>
+                    <div><span class="blue">Dans le formulaire HTML</span> (Méthode d'envoi)</div>
+                    <br>
+                    <div><span class="red">method="get"</span></div>
+                    <div><span class="red">method="post"</span></div>
+                    <div><br></div>
+                    <br>
+                    <div><span class="blue">Dans le fichier php</span> (on peut récupérer l'information dans une variable par exemple)</div>
+                    <br>
+                    <div>$prenom <span class="red">= $_GET["</span>user<span class="red">"]</span>;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Faille de sécurité XSS</div>
+            <div class="content">
+                <div>
+                    <div><span class="blue">Faille XSS = Transmission de script lors de l'envoie</span></div>
+                    <br>
+                    <br>
+                    <div>Pour eviter ça :</div>
+                    <br>
+                    <div><span class="red">htmlspecialchars()</span></div>
+                    <div><span class="blue">Remplace les caractère spéciaux comme < par &lt</span></div>
+                    <div><span class="blue">On peut voir les changements avec l'affichage du code source de la page</span></div>
+                    <br>
+                    <div><span class="red">htmlentities()</span></div>
+                    <div>-> <span class="blue">A renseigner</span></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Vérifier les données</div>
+            <div class="content">
+                <div>
+<div><span class="blue">Vérifie qu'une variable existe et est non nulle</span></div>
+<div><span class="red">isset()</span></div>
+<br>
+<div><span class="blue">Vérifie qu'une variable est nulle ( la variable doit exister )</span></div>
+<div><span class="red">is_null()</span></div>
+<br>
+<div><span class="blue">Vérifie qu'une variable est vide</span></div>
+<div><span class="red">empty()</span></div>
+                    <span class="blue"><br></span>
+                    <div>Exemple de verifications</div>
+                    <br>
+                    <pre>
+if(<span class="red">isset($_GET["</span><span class="blue">user</span><span class="red">"]</span>) && <span class="red">!empty($_GET["</span><span class="blue">user</span><span class="red">"]</span>))
+{
+    <span class="green">// Manipulation des données...</span>
+
+    $prenom = htmlspecialchars($_GET["<span class="blue">user</span>"]);
+    echo $prenom;
+} 
+                    </pre>
+                    <br>
+                    <div>Si la donnée <span class="blue">user</span> existe, non null, et n'est pas vide, on la manipule</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=_dHqDXKvAlw&t=470s" target="_blank">Programmation modulaire</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Principe</div>
+            <div class="content">
+                <div>
+                    <div>Permet de répartir un projet dans plusieurs modules/parties/fichiers</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Instruction</div>
+            <div class="content">
+                <div>
+                    <div><span class="red">include</span></div>
+                    <div>• Permet d'inclure le contenu d'un fichier à l'endroit ou on fait appelle à cette inclusion</div>
+                    <div>• Provoque une alerte si impossible d'inclure le fichier ( <span class="blue">Ne stop pas l'execution du script</span> )</div>
+                    <br>
+                    <div><span class="red">include_once</span></div>
+                    <div>• Permet d'inclure le contenu d'un fichier à l'endroit ou on fait appelle à cette inclusion</div>
+                    <div>• Provoque une alerte si impossible d'inclure le fichier ( <span class="blue">Ne stop pas l'execution du script</span> )</div>
+                    <div>• <span class="blue">N'inclu pas un fichier déjà inclu</span></div>
+                    <br>
+                    <div><span class="red">require</span></div>
+                    <div>• Permet d'inclure le contenu d'un fichier à l'endroit ou on fait appelle à cette inclusion</div>
+                    <div>• Provoque une erreur fatale si impossible d'inclure le fichier ( <span class="blue">Stop l'execution du script</span> )</div>
+                    <br>
+                    <div><span class="red">require_once</span></div>
+                    <div>• Permet d'inclure le contenu d'un fichier à l'endroit ou on fait appelle à cette inclusion</div>
+                    <div>• Provoque une erreur fatale si impossible d'inclure le fichier ( <span class="blue">Stop l'execution du script</span> )</div>
+                    <div>• <span class="blue">N'inclu pas un fichier déjà inclu</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Comment faire</div>
+            <div class="content">
+                <div>
+                    <div>Pour les besoins de l'exemple, on a deux fichier : <span class="blue">code.php</span>, <span class="blue">utils.php</span></div>
+                    <br>
+                    <div>Contenu <span class="blue">utils.php</span></div>
+                    <br>
+                    <pre>
+< ?php
+                        
+function hello()
+{
+    echo "HelloWorld";
+}
+                    </pre>
+                    <br>
+                    <div>Contenu <span class="blue">code.php</span></div>
+                    <br>
+                    <pre>
+< ?php
+
+<span class="red">include "</span><span class="blue">utils.php</span><span class="red">";</span>
+
+hello();
+                    </pre>
+                    <div class="precision">Grâce à <span class="red">include</span>, on peut utiliser la fonction hello() dans le fichier <span class="blue">code.php</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Inclure des fichier html</div>
+            <div class="content">
+                <div>
+                    <div><span class="red">On peut rendre une page html beaucoup plus dynamique de cette manière</span></div>
+                    <br>
+                    <div>Trois fichier : <span class="blue">haut.php</span>, <span class="blue">bas.php</span>, <span class="blue">code.php</span></div>
+                    <br>
+                    <div><span class="blue">Contenu haut.php</span></div>
+                    <br>
+                    <pre>
+< !DOCTYPE html>
+< html lang="en">
+< head>
+    < meta charset="UTF-8">
+    < meta name="viewport" content="width=device-width, initial-scale=1.0">
+    < title>Document< /title>
+< /head>
+< body>
+                    </pre>
+                    <br>
+                    <div><span class="blue">Contenu bas.php</span></div>
+                    <br>
+                    <pre>
+< /body>
+< /html>
+                    </pre>
+                    <br>
+                    <div><span class="blue">Contenu code.php</span></div>
+                    <br>
+                    <pre>
+< ?php
+<span class="red">include "</span><span class="blue">haut.php</span><span class="red">";</span>
+?>
+
+< p>Je suis un texte qui est positionner précisement< /p>
+
+< ?php
+<span class="red">include "</span><span class="blue">bas.php</span><span class="red">";</span>
+?>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=yED9q_chp8c" target="_blank">Cookies</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Principe</div>
+            <div class="content">
+                <div>
+                    <div class="red"> •Un cookie est un fichier texte enregistrer sur la naviguateur web</div>
+                    <br>
+                    <div class="red">• Il stock des informations (pas de sécurité, ni confidentiel )</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Créé un cookie</div>
+            <div class="content">
+                <div>
+                    <div>Le cookie doit être <span class="red">créé avant toute requête http, tout autre code</span></div>
+                    <br>
+                    <div><span class="red">setcookie(</span>"<span class="blue">#nom_du_cookie</span>"<span class="red">,</span> "<span class="blue">#valeur_du_cookie</span>"<span class="red">,</span> "<span class="blue">#temp_avant_expiration</span>"<span class="red">,</span> "<span class="blue">#chemin_du_cookie</span>"<span class="red">,</span> "<span class="blue">#nom_de_domaine</span>"<span class="red">,</span> <span class="blue">#cookie_securiser?</span>"<span class="red">,</span> "<span class="blue">#acces_uniquement_en_http</span>"<span class="red">);</span></div>
+                    <br>
+                    <div>• <span class="blue">nom_du_cookie</span>               : "<span class="red">string</span>"</div>
+                    <div>• <span class="blue">valeur_du_cookie</span>            : "<span class="red">string</span>"</div>
+                    <div>• <span class="blue">temp_avant_expiration</span>       : <span class="red">time()</span> + <span class="red">x</span> (time() + la durée voulu)</div>
+                    <div>• <span class="blue">chemin_du_cookie</span>            : "<span class="red">string</span>" | <span class="red">null</span> (si chemin spécifique)</div>
+                    <div>• <span class="blue">nom_de_domaine</span>              : "<span class="red">string</span>" | <span class="red">null</span> (si nom de domain)</div>
+                    <div>• <span class="blue">cookie_securiser</span>            : <span class="red">true</span> | <span class="red">false</span> (https?)</div>
+                    <div>• <span class="blue">acces_uniquement_en_http</span>    : <span class="red">true</span> | <span class="red">false</span> (http et pas javascript, presque toujours <span class="red">true</span>)</div>
+                    <br>
+                    <br>
+                    <div class="precision">Par exemple :</div>
+                    <br>
+                    <pre>
+<span class="red">setcookie(</span>"<span class="blue">langue</span>"<span class="red">,</span> "<span class="blue">fr</span>"<span class="red">,</span> <span class="blue">time() + 3600 * 24 * 365</span><span class="red">,</span> <span class="blue">null</span><span class="red">,</span> <span class="blue">null</span><span class="red">,</span> <span class="blue">false</span><span class="red">,</span> <span class="blue">true</span><span class="red">)</span>;
+                    </pre>
+                <span class="blue"></div></span>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Manipuler un cookie</div>
+            <div class="content">
+                <div>
+                    <pre>
+echo htmlspecialchars(<span class="red">$_COOKIE</span>["<span class="blue">langue</span>"]);
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=UgJ21BAt-y0" target="_blank">Sessions</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Code</div>
+            <div class="content">
+                <div>
+                    <pre>
+< ?php
+
+<span class="red">session_start()</span>;
+
+<span class="red">$_SESSION[</span>"<span class="blue">prenom</span>"<span class="red">]</span> = "<span class="blue">Anthony</span>";
+<span class="red">$_SESSION[</span>"<span class="blue">nom</span>"<span class="red">]</span> = "<span class="blue">Boschat</span>";
+
+
+?>
+< !DOCTYPE html>
+< html lang="en">
+< head>
+    < meta charset="UTF-8">
+    < meta name="viewport" content="width=device-width, initial-scale=1.0">
+    < title>Document< /title>
+< /head>
+< body>
+    < h1>Sessions en PHP< /h1>
+
+    < p>Le prénom de l'utilisateur est : < ?= <span class="green">htmlspecialchars(</span><span class="red">$_SESSION[</span>"<span class="blue">prenom</span>"<span class="red">]</span><span class="green">)</span>?>< /p>
+    < p>Le nom de famille de l'utilisateur est : < ?= <span class="green">htmlspecialchars(</span><span class="red">$_SESSION[</span>"<span class="blue">nom</span>"<span class="red">]</span><span class="green">)</span>?>< /p>
+    
+< /body>
+< /html>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Principe</div>
+            <div class="content">
+                <div>
+                    <div>Identifiant de session en PHP : <span class="blue">PHPSESSID</span></div>
+                    <div>Va enregistrer <span class="blue">un identifiant d'une sessions</span></div>
+                    <div>Le démarrage de session doit être créé <span class="blue">avant toute requête http, tout autre code</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Démarrer une session</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">session_start()</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Mettre fin à une session</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">session_destroy()</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Créé une variable SESSION</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">$_SESSION[</span>"<span class="blue">prenom</span>"<span class="red">]</span> = "<span class="blue">Anthony</span>";
+<span class="red">$_SESSION[</span>"<span class="blue">nom</span>"<span class="red">]</span> = "<span class="blue">Boschat</span>";
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Supprimer une variable SESSION</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">unset(</span>$_SESSION["<span class="blue">prenom</span>"]<span class="red">)</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Exemple initialisation et fin de session</div>
+            <div class="content">
+                <div>
+                    <div>INITIALISATION DE SESSION</div>
+                    <br>
+                    <pre>
+<span class="green">// S'il n'y a pas d'identifiant de session</span>
+if(<span class="red">!session_id()</span>)
+{
+    <span class="green">// On lance la session</span>
+    <span class="red">session_start()</span>;
+    <span class="green">// On régénère l'identifiant de session (true supprime l'ancienne session)</span>
+    <span class="red">session_regenerate_id(<span class="blue">true</span>)</span>;
+}
+
+<span class="green">// On fait des choses dans la session</span>
+                    </pre>
+                    <br>
+                    <div>FIN DE SESSION TOTAL</div>
+                    <br>
+                    <pre>
+<span class="green">// On supprime toutes les variables de sessions</span>
+<span class="red">session_unset()</span>;
+<span class="green">// On supprime la session</span>
+<span class="red">session_destroy()</span>;
+<span class="green">// Fermeture de la session et on la supprime</span>
+<span class="red">session_write_close()</span>;
+<span class="green">// Modifie le cookie de nom de session à vide, expiration 0 ( tout de suite)</span>
+<span class="red">setcookie(session_name(), "", 0, null, null, false, true)</span>;
+<span class="green">// Régénération d'un nouvel identifiant</span>
+<span class="red">session_regenerate_id(<span class="blue">true</span>)</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title">Vérifier qu'une session fonctionne</div>
+            <div class="content">
+                <div>
+                    <pre>
+echo <span class="red">session_status()</span>;
+                    </pre>
+                    <br>
+                    <div><span class="red">0</span> | PHP_SESSION_DISABLED -> <span class="blue">Session impossible et pas en cours</span></div>
+                    <div><span class="red">1</span> | PHP_SESSION_NONE -> <span class="blue">Session possible mais pas en cours</span></div>
+                    <div><span class="red">2</span> | PHP_SESSION_ACTIVE -> <span class="blue">Session créé et en cours d'utilisation</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=iD2JOTVbOjc" target="_blank">POO : Introduction</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title"></div>
+            <div class="content">
+                <div>
+                    <div><span class="red">Support complet à partir de PHP 5</span></div>
+                    <br>
+                    <div><span class="red">Notions abordées</span> : <br> <ul>
+                        <li><span class="blue">classes, objets, visibilité</span></li>
+                        <li><span class="blue">classes abstraites, finales</span></li>
+                        <li><span class="blue">attributs ( ou propriétés ) et méthodes</span></li>
+                        <li><span class="blue">héritage, polymorphisme</span></li>
+                        <li><span class="blue">interface, exceptions</span></li>
+                        <li><span class="blue">traits</span></li>
+                    </ul></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=xUT49vXBcuc" target="_blank">Classe - Classes et objets</a></section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title">Illustration Classe, Attribut, Méthode</div>
+        <div class="content_onlyone">
+            <div>
+                <div><img src="../fichier/Classes_Objets_illustration_PHP.PNG" alt=""></div>
+                <br>
+                <div><span class="red">Classe</span> : <span class="blue">Guerrier</span></div>
+                <div><span class="red">Attribut</span> : <span class="blue">piecesOr</span>, <span class="blue">pointsDeVie</span></div>
+                <div><span class="red">Méthode</span> : <span class="blue">seDeplacer()</span>, <span class="blue">attaquer()</span></div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Définir une classe</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="red">class</span> <span class="blue">Vehicle</span>
+<span class="red">{</span>
+    <span class="green">// Attribut et méthode</span>
+<span class="red">}</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Définir un constructeur</div>
+            <div class="content">
+                <div>
+                    <pre>
+class <span class="blue">Vehicle</span>
+{
+    <span class="red">public function __construct()</span>
+    <span class="red">{</span>
+        <span class="blue">echo "Je suis construit"</span>;
+    <span class="red">}</span>
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Créé un objet de la classe Vehicle</div>
+            <div class="content">
+                <div>
+                    <pre>
+class <span class="blue">Vehicle</span>
+{
+    public function __construct()
+    {
+        echo "Je suis construit";
+    }
+}
+
+<span class="red"><span class="blue">$voiture1</span> = new Vehicle();</span>
+
+<span class="green">// Ou, plus dynamique</span>
+
+<span class="blue">$name</span> <span class="red">= "Vehicle"</span>;
+<span class="blue">$voiture1</span> <span class="red">= new $name()</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Pseudo variable de l'instance courante</div>
+            <div class="content">
+                <div>
+                    <div><span class="red">$this</span> -> <span class="blue">Lui même</span> ( <span class="red">l'objet courant</span>, <span class="red">l'instance en cours</span> )</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Détruire un constructeur ( assez rare )</div>
+            <div class="content">
+                <div>
+                    <pre>
+class Vehicle
+{
+    public function __construct()
+    {
+        echo "Je suis construit";
+    }
+
+    <span class="red">public function __destruct()</span>
+    <span class="red">{</span>
+        <span class="blue">echo "Je suis détruit"</span>;
+    <span class="red">}</span>
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=YCeS-4Z_wSk" target="_blank">Classe - Attributs public, private, protected et méthodes</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Code utiliser</div>
+            <div class="content">
+                <div>
+                    <pre>
+class Vehicle
+{
+    public function __construct() 
+    {
+        
+    }
+}
+
+$voiture1 = new Vehicle();
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Définition</div>
+            <div class="content">
+                <div>
+                    <div><span class="red">Attribut</span> (ou propriété) : <span class="blue">Variable</span> appartenant à une classe</div>
+                    <div><span class="red">Méthode</span> : <span class="blue">Fonction</span> appartenant à une classe</div>
+                    <br>
+                    <div><span class="red">public</span> : Les informations déclarer public dans une classe, <span class="blue">seront accessible à l'exterieur de cette classe</span></div>
+                    <div><span class="red">private</span> : Les informations déclarer private dans une classe, <span class="blue">ne seront pas accessible à l'exterieur de cette classe</span></div>
+                    <div><span class="red">protected</span> : Les informations déclarer protected <span class="blue">ne seront pas accessible à l'exterieur de cette classe, sauf pour ses classes fille</span></div>
+                    <br>
+                    <div>En général, les <span class="red">attributs</span> sont en <span class="red">private</span> et pas en public,ici il ne s'agit que d'un exemple pour rendre les choses plus lisibles</div>
+                    <div>En général, les <span class="red">méthode</span> sont en <span class="red">public</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Définir un attribut publique</div>
+            <div class="content">
+                <div>
+                    <pre>
+class Vehicle
+{
+    <span class="red">public</span> <span class="blue">$_name</span>;
+
+    public function __construct(string <span class="blue">$name</span>) 
+    {
+        <span class="red">$this-></span><span class="blue">_name</span> <span class="red">=</span> <span class="blue">$name</span>;
+    }
+}
+
+$voiture1 = new Vehicle("Vélo");
+                    </pre>
+                    <div class="precision">Rend l'attribut <span class="blue">$_name</span> <span class="red">publique</span></div>
+                    <div class="precision">Et affecte la variable <span class="blue">$name</span> à l'attribut <span class="blue">$_name</span></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Accéder à un attribut publique</div>
+            <div class="content">
+                <div>
+                    <pre>
+class Vehicle
+{
+    public $<span class="blue">_name</span>;
+
+    public function __construct(string <span class="blue">$name</span>) 
+    {
+        $this-><span class="blue">_name</span> = <span class="blue">$name</span>;
+    }
+}
+
+$vehicule1 = new Vehicle("Vélo");
+echo $vehicule1 <span class="red">-></span> <span class="blue">_name</span>; 
+                    </pre>
+                    <div class="precision">Affiche pour l'objet $vehicule1, l'attribut <span class="blue">_name</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Modifier un attribut publique</div>
+            <div class="content">
+                <div>
+                    <pre>
+class Vehicle
+{
+    public <span class="blue">$_name</span>;
+
+    public function __construct(string <span class="blue">$name</span>) 
+    {
+        $this-><span class="blue">_name</span> = <span class="blue">$name</span>;
+    }
+}
+
+$vehicule1 = new Vehicle("Vélo");
+echo $vehicule1 -> _name; 
+$vehicule1 <span class="red">-></span><span class="blue"> _name</span> = "Nouveau nom";
+echo $vehicule1 -> _name; 
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Créé une méthode</div>
+            <div class="content">
+                <div>
+                    <pre>
+class Vehicle
+{
+    public $<span class="blue">_name</span>;
+
+    public function __construct(string $<span class="blue">name</span>) 
+    {
+        $this->_name = $name;
+    }
+
+    <span class="red">public function</span> <span class="blue">move()</span>
+    <span class="red">{</span>
+        <span class="blue">echo $this->_name." Se déplace";</span>
+    <span class="red">}</span>
+}
+
+$vehicule1 = new Vehicle("Vélo");
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title">Appeler une méthode</div>
+        <div class="content_onlyone">
+            <div>
+                <pre>
+class Vehicle
+{
+    public $_name;
+
+    public function __construct(string $name) 
+    {
+        $this->_name = $name;
+    }
+
+    public function <span class="blue">move()</span>
+    {
+        echo $this->_name." Se déplace";
+    }
+}
+
+$vehicule1 = new Vehicle("Vélo");
+$vehicule1 <span class="red">-></span> <span class="blue">move()</span>;
+                </pre>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=vrGedfJXUNo" target="_blank">Classe - Encapsulation des données</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Code</div>
+            <div class="content">
+                <div>
+                    <pre>
+class Vehicle
+{
+    private $_name;
+    private $_speed;
+
+    public function __construct(string $name, int $speed) 
+    {
+        $this->_name = $name;
+        $this->_speed = $speed;
+    }
+
+    public function move()
+    {
+        echo "Le vehicule ".$this->_name." se deplace à ".$this->_speed."km/h";
+    }
+}
+
+$vehicule1 = new Vehicle("XC450", 650);
+$vehicule1 -> move();
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Principe Accesseurs</div>
+            <div class="content">
+                <div>
+                    <div><span class="blue">Lorsqu'un attribut ou methode est en private</span></div>
+                    <div><span class="blue">Il est bon de créé un <span class="red">getter</span> et un <span class="red">setter</span> pour chaque attribut en private</span></div>
+                    <br>
+                    <div><span class="blue">getter</span> (Lire un attribut) -> <span class="green">fonction publique</span> <span class="red">get_attribut</span></div>
+                    <div><span class="blue">setter</span> (Modifier un attribut) -> <span class="green">fonction publique</span> <span class="red">set_attribut</span></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Créé des accesseurs</div>
+            <div class="content">
+                <div>
+                    <pre>
+class Vehicle
+{
+    private $_name;
+    private $_speed;
+
+    <span class="red">public function get_name()</span>
+    <span class="red">{</span>
+        <span class="green">// Possibilité de conditions</span>
+        <span class="red">return $this->_name</span>;
+    <span class="red">}</span>
+
+    <span class="red">public function set_name(</span><span class="blue">string $name</span><span class="red">)</span>
+    <span class="red">{</span>
+        <span class="green">// Possibilité de conditions</span>
+        <span class="green">if(strlen(</span><span class="blue">$name</span><span class="green">) > 5)</span>
+        <span class="green">
+        {
+            echo "Nom de véhicule trop long";
+        }
+        </span>
+        else
+        {
+            <span class="red">$this->_name = $name;</span>
+        }
+        
+    <span class="red">}</span>
+
+    public function __construct(string $name, int $speed) 
+    {
+        $this->_name = $name;
+        $this->_speed = $speed;
+    }
+
+    public function move()
+    {
+        echo "Le vehicule ".$this->_name." se deplace à ".$this->_speed."km/h";
+    }
+}
+
+$vehicule1 = new Vehicle("XC450", 650);
+echo "Nom du vehicule passer par un accesseur : ".<span class="red">$vehicule1-> get_Name()</span>;
+<span class="red">$vehicule1->set_Name(</span>"<span class="blue">Vélo</span>"<span class="red">)</span>;
+echo "Nom du vehicule passer par un accesseur : ".<span class="red">$vehicule1-> get_Name()</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=Wd4FDAR9nHg" target="_blank">Classe - Propriété et méthode statique</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Principe</div>
+            <div class="content">
+                <div>
+                    <div>• Il s'agit d'une méthode <span class="red">qui n'est pas liée à l'instanciation d'un objet de cette classe</span></div>
+                    <br>
+                    <div>• Elle est <span class="red">utilisable en dehors de la classe</span> sans avoir à créé d'objet</div>
+                    <br>
+                    <div>• Pour des classes utilitaires çapeut être intéressant, dès lors qu'ils n'y a pas d'instanciation</div>
+                    <br>
+                    <div><span class="red">Ceci n'est pas une méthode statique</span>, elle passe par l'instanciation de l'objet $vehicule1 : </div>
+                    <pre>
+$vehicule1->move();
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Créé une méthode statique</div>
+            <div class="content">
+                <div>
+                    <div class="blue">( Dans ce cas de figure, il n'y a pas besoin de créé de constructeur, puisqu'il n'y a pas d'instanciation d'objets )</div>
+                    <br>
+                    <pre>
+class <span class="blue">Database</span>
+{
+    <span class="red">public static</span> <span class="blue">$_SGBD</span> <span class="red">=</span> "MySQL";
+
+    <span class="red">public static function</span> <span class="blue">connect()</span>
+    <span class="red">{</span>
+        echo "Je me connecte à la base de donnée...";
+    <span class="red">}</span>
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Utiliser une méthode statique</div>
+            <div class="content">
+                <div>
+                    <pre>
+class <span class="blue">Database</span>
+{
+    <span class="red">public static</span> <span class="blue">$_SGBD</span> = "MySQL";
+
+    <span class="red">public static function</span> <span class="blue">connect()</span>
+    <span class="red">{</span>
+        echo "Je me connecte à la base de donnée...";
+    <span class="red">}</span>
+}
+
+<span class="blue">Database</span><span class="red">::</span><span class="blue">connect()</span>;
+echo <span class="blue">Database</span><span class="red">::</span><span class="blue">$_SGBD</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=BqO7U0ed-pA" target="_blank">Classe - Héritage</a></section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title">Représensation</div>
+        <div class="content_onlyone">
+            <div>
+                <div><img src="../fichier/PHP heritage.PNG" alt=""></div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Principe</div>
+            <div class="content">
+                <div>
+                    <div>Les classes filles/enfants <span class="blue">herite des méthodes de la classe mère</span></div>
+                    <br>
+                    <div>Elles ont en plus des <span class="blue">attributs/methode qui leurs sont propres</span></div>
+                    <br>
+                    <div>PHP va dabord chercher <span class="blue">au plus bas niveau</span>, la classe fille</div>
+                    <div>S'il ne trouve rien, <span class="blue">va remonter</span> petit à petit jusqu'a trouver l'attribut ou la méthode demander</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Création de la classe mère</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="green">// Classe mère</span>
+class Card
+{
+    <span class="red">protected</span> <span class="blue">$_name</span>;
+    <span class="red">protected</span> <span class="blue">$_description</span>;
+
+    public function __construct($name, $description) 
+    {
+        <span class="blue">$this->_name</span> = $name;
+        <span class="blue">$this->_description</span> = $description;
+    }
+
+    public function hello()
+    {
+        echo "Je suis la carte ".$this->_name;
+    }
+
+    public static function world()
+    {
+        echo "helloWorld";
+    }
+}
+
+<span class="green">// Manipulation de la classe mère</span>
+$carte1 = new Card("\"Magicien sombre\"", "Un magicien aux grands pouvoirs...");
+$carte1->hello();
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title">Création de la classe filles <span class="red">avec héritage</span></div>
+                <div class="content">
+                    <div>
+                        <pre>
+<span class="green">// Classe fille</span>
+class TrapCard <span class="red">extends</span> Card
+{
+    <span class="red">protected</span> <span class="blue">$_effect</span>;
+
+    public function __construct($name, $description, $effect) 
+    {
+        <span class="red">parent::__construct(</span>$name, $description<span class="red">)</span>;
+        <span class="blue">$this->_effect</span> = $effect;
+    }
+
+    public function presentation()
+    {
+        echo "Nom : ".$this->_name;
+        echo "< br>";
+        echo "Description : ".$this->_description;
+        echo "< br>";
+        echo "Effet : ".$this->_effect;
+    }
+}
+
+<span class="green">// Manipulation de la classe fille</span>
+$carte_piege_1 = new TrapCard("Fosse", "Un grand trou béant", "Détruit une créature attaquante");
+$carte_piege_1->presentation();
+echo "< br>";
+$carte_piege_1-><span class="blue">hello_world()</span>;
+                        </pre>
+                    </div>
+                </div>
+            </div>
+    
+        <div class="box">
+        <div class="title">Explication</div>
+            <div class="content">
+                <div>
+                    <ol>
+                        <li>On lui donne un attribut <span class="red">protected</span> <span class="blue">$_effect</span> ( spécifique aux cartes pièges )</li>
+                        <div class="precision">(Il n'y a pas besoin de lui renseigner les attributs <span class="red">$_name</span> et <span class="red">$_description</span>, dans la classe mère elles sont en protected, donc accessible depuis la classe fille)</div>
+                        <br>
+                        <li>On lui créé son propre constructeur, pour prendre en compte le nouvel attribut <span class="red">$_effect</span> ( qu'il n'y a pas dans la classe mère )</li>
+                        <div class="precision"><span class="red">parent::__construct(</span><span class="blue">$name</span>, <span class="blue">$description</span><span class="red">)</span> va aller chercher le constructeur de la classe mère, pour eviter d'avoir à ré-indiquer les mêmes informations, comme un appel de fonction</div>
+                        <br>
+                        <li>On redéfini la méthode présentation, pour que ce soit plus adéquat pour une carte piège et la classe fille TrapCard</li>
+                        <br>
+                        <li>La classe fille ne possède pas en elle même la méthode <span class="blue">hello_world()</span><br>
+                        Mais comme elle hérite (<span class="red">extends</span>) de la classe Card, elle remonte pour chercher cette méthode</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title">Final</div>
+        <div class="content_onlyone">
+            <div>
+                <div>Il est impossible d'étendre ou de redéfinir un <span class="red">final</span></div>
+                <br>
+                <div>Au moment de la définition de la classe :</div>
+                <pre>
+<span class="red">final</span> class TrapCard extends Card
+                </pre>
+                <br>
+                <div>Au moment de la définition d'une methode :</div>
+                <pre>
+<span class="red">final</span> public function presentation()
+                </pre>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=Wh0aRwvZigc" target="_blank">Classe - Classe abstraite</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Principe</div>
+            <div class="content">
+                <div>
+                    <div class="blue">• Une classe <span class="red">vague</span></div>
+                    <br>
+                    <div class="blue">• Une classe <span class="red">qu'on ne peut pas instancier en objet</span></div>
+                    <br>
+                    <div class="blue">• Les méthode filles qui hérite d'une classe abstraite doivent <span class="red">OBLIGATOIREMENT</span> redéfinir les méthodes abstraites de leurs mère</div>
+                    <br>
+                    <div class="blue">• Ne contiennent que des <span class="red">METHODES</span> flou, pas d'attributs ni de constructeur</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Exemple</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="green">// On créé la classe mère en abstract</span>
+<span class="red">abstract</span> class <span class="red">Mere</span>
+{
+    <span class="green">
+        // On lui donner une méthode en abstract
+        // ( Tout ses enfants auront cette méthode plus précise )
+    </span>
+    <span class="red">abstract</span> protected function <span class="blue">parler($message)</span>;
+}
+
+<span class="green">// On créé la classe fille</span>
+class <span class="red">Fille</span> extends <span class="red">Mere</span>
+{
+    <span class="green">// On doit redéfinir la méthode parler(), on peut lui donner un paramètre</span> <span class="red">OPTIONNELLE</span>
+    public function <span class="blue">parler($message</span>, $parametre_optionnelle = ""<span class="blue">)</span> 
+    {
+        echo $message." ".$parametre_optionnelle."< br>";
+    }
+}
+
+<span class="green">
+    // On ne peut pas instancier la classe mère
+    // On manipule la classe fille
+</span>
+$fille = new <span class="blue">Fille</span>();
+$fille->parler("Bonjour");
+$fille->parler("Je suis la classe fille", "=D");
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=3APJu3DjbHQ" target="_blank">Classe - Interface</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Différence entre les classes abstraites et les interfaces</div>
+            <div class="content">
+                <div>
+                    <div><span class="red">Classe abstraite</span></div>
+                    <br>
+                    <div>• Classe qui <span class="blue">ne s'instancie pas</span></div>
+                    <div>• <span class="blue">Factoriser du code</span></div>
+                    <div>• L'<span class="blue">héritage multiple est impossible</span> (Une classe ne peut pas etre une extensions de plusieurs classes mère)</div>
+                    <br>
+                    <br>
+                    <div><span class="red">Interface</span></div>
+                    <br>
+                    <div><span class="blue">API</span></div>
+                    <div>Définie/<span class="blue">Fournit</span> un "<span class="blue">contrat de services</span>"</div>
+                    <div>L'héritage/<span class="blue">implémentation multiple est possible</span>. (Une classe peut implémenter plusieurs interface.)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Définir une interface</div>
+            <div class="content">
+                <div>
+                    <div>Par exemple, une interface pour des articles, et une interface pour les auteurs</div>
+                    <br>
+                    <div>L'interface va définir des méthodes</div>
+                    <br>
+                    <div>Les méthodes vont définir tout ce qu'on peut faire avec un article, ou les auteurs</div>
+                    <br>
+                    <pre>
+<span class="green">// Définition de l'interface interface_article</span>
+<span class="red">interface</span> <span class="blue">interface_article</span>
+{
+
+    <span class="green">// Constante</span>
+    const<span class="blue"> Nombre_Article_Maximum_Par_Page</span> = 10;
+
+    <span class="green">// Méthode pour sauvegarder un article</span>
+    public function <span class="blue">save()</span>;
+
+    <span class="green">// Méthode pour supprimer un article</span>
+    public function <span class="blue">delete()</span>;
+
+    <span class="green">// Méthode pour créé un article</span>
+    public function <span class="blue">create()</span>;
+
+    <span class="green">// Méthode pour lire un article</span>
+    public function <span class="blue">read()</span>;
+
+    <span class="green">// Méthode pour connaitre le nombre de commentaire d'un article</span>
+    public function <span class="blue">get_number_comments(</span>$number<span class="blue">)</span>;
+}
+
+<span class="green">// Définition de l'interface author</span>
+<span class="red">interface</span> <span class="blue">author</span>
+{
+    <span class="green">// Méthode pour acceder à son profil</span>
+    public function <span class="blue">profil()</span>;
+}
+                    </pre>
+                    <div class="precision">Les méthodes décrivent l'ensemble des services que propose l'interface <span class="blue">interface_article</span> et l'interface <span class="blue">author</span></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Implémenter une interface dans une classe</div>
+            <div class="content">
+                <div>
+                    <div class="red">Il faut obligatoirement implémenter toutes les méthode des interfaces dans la classe</div>
+                    <br>
+                    <div><span class="blue">blog_article</span> va implémenter les services que propose <span class="blue">interface_article</span> et <span class="blue">author</span>
+                        (Puisque l'<span class="blue">héritage multiple est possible</span>)</div>
+                    <br>
+                    <pre>
+<span class="green">// Manipulation de la classe</span>
+class <span class="blue">blog_article</span> <span class="red">implements</span> <span class="blue">interface_article</span>, <span class="blue">author</span>
+{
+    public function <span class="blue">save()</span>
+    {
+        echo "Article sauvegarder";
+    }
+
+    public function <span class="blue">delete()</span>
+    {
+        echo "Article supprimer";
+    }
+
+    public function <span class="blue">create()</span>
+    {
+        echo "Article créé";
+    }
+
+    public function <span class="blue">read()</span>
+    {
+        echo "Vous lisez l'article";
+    }
+
+    public function <span class="blue">get_number_comments(</span>$number<span class="blue">)</span>
+    {
+        echo "Nombre de commentaires : ".$number;
+    }
+
+    public function <span class="blue">profil()</span>
+    {
+        echo "J'accède à mon profil";
+    }
+}
+
+<span class="green">// Manipulation de la classe</span>
+
+$utilisateur = new blog_article;
+$utilisateur-><span class="blue">read()</span>;
+$utilisateur-><span class="blue">profil()</span>;
+
+<span class="green">// Pour acceder à une variacle ou une constante dans une interface</span>
+echo <span class="blue">interface_article</span><span class="red">::</span><span class="blue">Nombre_Article_Maximum_Par_Page</span>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=ZIqKnK37y9A" target="_blank">Classe - Traits</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Principe</div>
+            <div class="content">
+                <div>
+                    <div>• <span class="blue">Ré-utilisation de code, dans des classes indépendantes</span></div>
+                    <div>• <span class="blue">Similaire à une classes</span></div>
+                    <div>• <span class="blue">Grouper des fonctionnalités</span></div>
+                    <div>• <span class="blue">Pas d'instanciation d'un Trait</span></div>
+                    <div>• <span class="blue">Peut être implémenter dans plusieurs classes, et d'autres traits</span></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Définir un Trait</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="green">// On définie un trait</span>
+<span class="red">trait</span> <span class="blue">t_routing</span>
+{
+    <span class="green">// On créé des fonctionnalités</span>
+    public function <span class="blue">parse()</span>
+    {
+        echo "Parsing...";
+    }
+
+    public function <span class="blue">get(</span>$variable<span class="blue">)</span>
+    {
+        echo "Je récupère $variable";
+    }
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+            <div class="title">Implémenter un Trait dans une classe</div>
+                <div class="content">
+                    <div>
+                        <pre>
+<span class="green">
+    // La classe module_manager va avoir besoin
+    d'utiliser les fonctionnalités de t_routing
+</span>
+
+class <span class="blue">module_manager</span>
+{
+    <span class="red">use</span> <span class="blue">t_routing</span>;
+}
+
+class <span class="blue">template</span>
+{
+    <span class="red">use</span> <span class="blue">t_routing</span>;
+}
+
+$test = new <span class="blue">module_manager</span>;
+$test->parse();
+
+$test2 = new <span class="blue">template</span>;
+$test2->parse();
+                        </pre>
+                    </div>
+                </div>
+            </div>
+    
+        <div class="box">
+        <div class="title">Changer la visibilité des fonctions</div>
+            <div class="content">
+                <div>
+                    <pre>
+class <span class="blue">template</span>
+{
+    use <span class="blue">t_routing</span> 
+    <span class="red">{</span>
+        parse <span class="red">as</span> <span class="blue">private</span>;
+    <span class="red">}</span>
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">Faire référence à une méthode du parent</div>
+                <div class="content">
+                    <div>
+                        <pre>
+<span class="green">// On définie un trait</span>
+trait <span class="blue">t_routing</span>
+{
+    <span class="green">// On peut avoir des attributs</span>
+
+    <span class="green">// On créé des fonctionnalités</span>
+    public function <span class="blue">parse()</span>
+    {
+        echo "Parsing...";
+    }
+
+    public function <span class="blue">get(</span>$variable<span class="blue">)</span>
+    {
+        echo "Je récupère $variable";
+    }
+
+    <span class="green">
+        // On créé une fonction qui fait référence
+        à une méthode de l'élément parent
+    </span>
+    public function <span class="blue">methode_parent()</span>
+    {
+        <span class="green">// Cette méthode-ci</span>
+        <span class="red">parent::</span><span class="blue">helloWorld()</span>;
+    }
+}
+
+class <span class="blue">super_user</span>
+{
+    public function <span class="blue">helloWorld()</span>
+    {
+        echo "helloWorld";
+    }
+}
+
+class template extends super_user
+{
+    use <span class="blue">t_routing</span>;
+}
+
+
+$test = new <span class="blue">template</span>;
+$test-><span class="blue">methode_parent()</span>;
+                        </pre>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=ePFxa2VcCoE" target="_blank">Classe - Exceptions</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Lever une erreur / Try-Catch-Finally</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="green">// On défini une variable à 17</span>
+<span class="blue">$age</span> = 17;
+
+<span class="green">// Try : On va essayer quelque chose, susceptible de lever une erreur</span>
+<span class="red">try</span>
+{
+    <span class="green">// Si <span class="blue">$age</span> est inferieur à 18</span>
+    if(<span class="blue">$age</span> < 18)
+    {
+        <span class="green">// On provoque une nouvelle exception, avec un message d'erreur</span>
+        <span class="blue"><span class="red">throw new Exception</span>(</span>"Tu n'est pas majeur"<span class="blue">)</span>;
+    }
+}
+
+<span class="green">
+    // Catch : Quand une erreur est lever
+    // Exception : quand une exception est lever
+</span>
+<span class="red">catch</span>(<span class="red">Exception</span> <span class="blue">$error</span>)
+{
+    <span class="green">// On affiche le message d'erreur correspondant</span>
+    
+    echo <span class="blue">$age</span>.<span class="blue">$error</span>-><span class="blue">getMessage()</span>;
+}
+
+<span class="green">// Finally : Dans tout les cas, à la fin on fait ceci</span>
+<span class="red">finally</span>
+{
+    echo "< br>";
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Créé sa propre classe d'exception, à partir de la classe général</div>
+            <div class="content">
+                <div>
+                    <pre>
+<span class="green">// On créé notre classe fille de Exception</span>
+class <span class="blue">my_exception_class</span> <span class="red">extends Exception</span>
+{
+    <span class="green">// On défini une méthode personnel pour lever une erreur d'email</span>
+    public function <span class="blue">show_email_error_message()</span>
+    {
+        echo "Attention, l'e-mail saisi est incorrecte";
+    }
+}
+
+<span class="green">// On défini un email incorrecte</span>
+<span class="blue">$email</span> = "anthony@@hotmail.f";
+
+<span class="green">// On essaie quelque chose qui pourrait lever une erreur</span>
+<span class="blue">try</span>
+{
+    <span class="green">// On vérifie si l'email est invalide selon
+    le filtrer_var(FILTER_VALIDATE_EMAIL)</span>
+    if(!filter_var(<span class="blue">$email</span>, <span class="blue">FILTER_VALIDATE_EMAIL</span>))
+    {
+        <span class="green">// Si c'est le cas, on lève une nouvelle exception</span>
+        <span class="blue">throw new my_exception_class()</span>;
+        <span class="green">// Réalise la même chose que
+        throw new Exception("Attention, l'e-mail saisi est incorrecte")</span>
+    }
+}
+<span class="green">// Quand l'erreur est lever</span>
+<span class="blue">catch</span>(<span class="blue">my_exception_class $error</span>) 
+<span class="green">// $error devient un objet de la classe my_exception_class</span>
+{
+    <span class="green">// On affiche le message</span>
+    echo <span class="blue">$error</span>-><span class="blue">show_email_error_message()</span>;
+    
+    <span class="green">
+    // Si on serait passer par new Exception sans passer par notre classe
+    // Ca aurait similaire de faire : $error->getMessage();
+    </span>
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=ZXekAnqLwe0" target="_blank">PDO - Introduction/Connexion</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Se connecter à l'interface PDO</div>
+            <div class="content">
+                <div>
+                    <div class="blue">PDO() prend plusieurs paramètres :</div>
+                    <br>
+                    <div><span class="blue">$DB_DSN</span>     : " Nom du sgbd utiliser:hôte;nom de la base de données voulu"</div>
+                    <div><span class="blue">$DB_USER</span>    : " L'utilisateur utiliser "</div>
+                    <div><span class="blue">$DB_PASS</span>    : " Mot de passe de l'utilisateur"</div>
+                    <br>
+                    <pre>
+<span class="green">// On défini les paramètre obligatoires pour la classe PDO</span>
+<span class="blue">$DB_DSN</span> = "mysql:host=localhost; dbname=fv_database";
+<span class="blue">$DB_USER</span> = "root";
+<span class="blue">$DB_PASS</span> = "";
+
+<span class="green">// On définie les paramètres optionnelles pour la classe PDO</span>
+<span class="blue">$options =</span>
+<span class="blue">[</span>
+    <span class="blue">PDO::MYSQL_ATTR_INIT_COMMAND =></span> "SET NAMES utf8", <span class="green">// Pour configurer PDO en utf8</span>
+    <span class="blue">PDO::ATTR_ERRMODE =></span> PDO::ERRMODE_EXCEPTION, <span class="green">// S'il y a des erreurs, on les gères comme des exceptions</span>
+//  <span class="blue">PDO::ATTR_PERSISTENT =></span> true <span class="green"></span> // Le connexion PDO est persistante
+<span class="blue">];</span>
+
+
+<span class="green">// On essaie de se connecter à PDO</span>
+<span class="blue">try</span>
+{
+    <span class="blue">$PDO</span> = <span class="red">new PDO(</span><span class="red">$DB_DSN</span><span class="red">,</span> <span class="red">$DB_USER</span><span class="red">,</span> <span class="red">$DB_PASS</span><span class="red">, <span class="blue">$options</span>)</span>;
+
+    echo "Connexion établie";
+}
+<span class="green">// Si une exception est lever</span>
+<span class="blue">catch</span>(PDOException $pe)
+{
+    <span class="green">// On affiche le message d'erreur</span>
+    echo "Erreur : ".$pe->getMessage();
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=W1g01wKWVv4&t=602s" target="_blank">PDO - Interroger une base de données</a></section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Base de donnée utiliser</div>
+            <div class="content">
+                <div>
+                    <pre>
++------------+--------------+--------------+
+| id_country | country_code | country_name |
++------------+--------------+--------------+
+|          1 | FR           | France       |
+|          2 | JP           | Japon        |
+|          3 | DE           | Allemagne    |
+|          4 | IT           | Italie       |
+|          5 | KR           | Corée        |
++------------+--------------+--------------+
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Lancer une requête</div>
+            <div class="content">
+                <div>
+                    <pre>
+try
+{
+    <span class="blue">$PDO</span> = new PDO($DB_DSN, $DB_USER, $DB_PASS, $options);
+
+    <span class="yellow">requete(</span><span class="blue">$PDO</span><span class="yellow">)</span>;
+}
+<span class="green">// Si une exception est lever</span>
+catch(PDOException $pe)
+{
+    <span class="green">// On affiche le message d'erreur</span>
+    echo "Erreur : ".$pe->getMessage();
+}
+
+
+
+
+
+
+function <span class="yellow">requete(</span><span class="blue">$PDO</span><span class="yellow">)</span>
+{
+    <span class="green">// On lance une requête, on stock le retour de cette requête dans <span class="blue">$result</span></span>
+    <span class="blue">$result</span> = <span class="blue">$PDO</span> <span class="red">-> query("</span>SELECT * FROM fv_countries<span class="red">")</span>;
+
+    <span class="green">// On regarde ce que $result contient</span>
+    echo "< pre>";
+    print_r(<span class="blue">$result</span>);
+    echo "< /pre>";
+}
+                    </pre>
+                    <br>
+                    <div class="precision blue
+                    ">On observe que tout les résultat ont été récupérer de manière brute dans PDO statement</div>
+                    <div class="precision blue
+                    ">Il va falloir tous les parcourirs pour récupérer les informations.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Parcourir et récupérer les informations</div>
+            <div class="content">
+                <div>
+                    <pre>
+function <span class="yellow">requete(</span><span class="blue">$PDO</span><span class="yellow">)</span>
+{
+    <span class="green">// On lance une requête, on stock le retour de cette requête dans $result</span>
+    <span class="blue">$result</span> = <span class="blue">$PDO</span> -> query("SELECT * FROM fv_countries");
+
+    <span class="green">// On parcours tout ce que contient $result</span>
+    <span class="red">foreach(</span><span class="blue">$result</span> <span class="red">as</span> <span class="violet">$data</span><span class="red">)</span>
+    {
+        <span class="green">// On affiche chaques informations</span>
+        echo "< pre>";
+        print_r(<span class="violet">$data</span>);
+        echo "< /pre>";
+    }
+}
+                    </pre>
+                    <br>
+                    <div class="precision blue">On remarque que les tableaux fournissent plus d'informations que voulu.</div>
+                    <div class="precision blue">Elles affichent l'index de lignes correspondante en plus des clés.</div>
+                    <div class="precision red">On peut utiliser Fetch pour filtrer ça</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Utilisation de fetch</div>
+            <div class="content">
+                <div>
+                    <div>paramètre de fetch :</div>
+                    <br>
+                    <div class="blue">• <span class="red">BOTH</span> ( par défaut : On récupère les informations de la base de donnée, <span class="red">et les index de ligne</span> )</div>
+                    <div class="blue">• <span class="red">ASSOC</span> ( On récupère les informations de la base de donnée, <span class="red">sans les index de ligne</span> )</div>
+                    <div class="blue">• <span class="red">OBJ</span> ( retourne un objet )</div>
+                    <br>
+                    <div class="precision">( L'utilisation de <span class="red">ASSOC</span> ou de <span class="red">OBJ</span> est une question de préférence )</div>
+                    <br>
+                    <div class="blue">On peut l'utiliser uniquement au moment de l'affichage :</div>
+                    <pre>
+function <span class="yellow">requete(</span><span class="blue">$PDO</span><span class="yellow">)</span>
+{
+    <span class="green">// On lance une requête, 
+    // On stock le retour de cette requête dans $result</span>
+    <span class="blue">$result</span> = <span class="blue">$PDO</span> -> query("SELECT * FROM fv_countries");
+
+    <span class="green">// On parcours tout ce que contient $result 
+    // On change son mode de retour fetch</span>
+    <span class="red">while(</span><span class="violet">$data</span> <span class="red">=</span> <span class="blue">$result</span><span class="red">->fetch(</span><span class="blue">PDO::FETCH_ASSOC</span><span class="red">))</span>
+    {
+        // On affiche chaques informations
+        echo "< pre>";
+        print_r(<span class="violet">$data</span>);
+        echo "< /pre>";
+    }
+}
+                    </pre>
+                    <br>
+                    <div class="blue">Ou on peut l'utiliser avant avec une méthode PDO, ce qui affectera toute les manipulation de <span class="red">$result</span> ensuite :</div>
+                    <pre>
+function <span class="yellow">requete(</span><span class="blue">$PDO</span><span class="yellow">)</span>
+{
+    <span class="green">// On lance une requête, 
+    // On stock le retour de cette requête dans $result</span>
+    <span class="blue">$result</span> = <span class="blue">$PDO</span> -> query("SELECT * FROM fv_countries");
+
+    <span class="green">// On change son mode de retour fetch</span>
+    <span class="blue">$result</span><span class="red">->setFetchMode(</span><span class="blue">PDO::FETCH_ASSOC</span><span class="red">)</span>;
+
+    <span class="green">// On parcours tout ce que contient $result</span>
+    <span class="red">foreach(</span><span class="blue">$result</span> <span class="red">as</span> <span class="violet">$data</span><span class="red">)</span>
+    {
+        <span class="green">// On affiche chaques informations</span>
+        echo "< pre>";
+        print_r(<span class="violet">$data</span>);
+        echo "< /pre>";
+    }
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Récupération d'une valeur en particulier avec ASSOC</div>
+            <div class="content">
+                <div>
+                    <pre>
+function <span class="yellow">requete(</span><span class="blue">$PDO</span><span class="yellow">)</span>
+{
+    <span class="green">// On lance une requête, 
+    // On stock le retour de cette requête dans $result</span>
+    <span class="blue">$result</span> = <span class="blue">$PDO</span> -> query("SELECT * FROM fv_countries");
+
+    <span class="green">// On change son mode de retour fetch</span>
+    <span class="blue">$result</span><span class="red">->setFetchMode(</span><span class="blue">PDO::FETCH_ASSOC</span><span class="red">)</span>;
+
+    <span class="green">// On parcours tout ce que contient $result</span>
+    <span class="red">foreach(</span><span class="blue">$result</span> <span class="red">as</span> <span class="violet">$data</span><span class="red">)</span>
+    {
+        <span class="green">// On affiche tout les noms de pays</span>
+        echo "< p>";
+        echo <span class="violet">$data</span><span class="red">[</span><span class="blue">"country_name"</span><span class="red">]</span>;
+        echo "< /p>";
+    }
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Récupération d'une valeur en particulier avec OBJ</div>
+            <div class="content">
+                <div>
+                    <pre>
+function <span class="yellow">requete(</span><span class="blue">$PDO</span><span class="yellow">)</span>
+{
+    <span class="green">// On lance une requête, 
+    // On stock le retour de cette requête dans $result</span>
+    <span class="blue">$result</span> = <span class="blue">$PDO</span> -> query("SELECT * FROM fv_countries");
+
+    <span class="green">// On change son mode de retour fetch</span>
+    <span class="blue">$result</span><span class="red">->setFetchMode(</span><span class="blue">PDO::FETCH_OBJ</span><span class="red">)</span>;
+
+    <span class="green">// On parcours tout ce que contient $result</span>
+    <span class="red">foreach(</span><span class="blue">$result</span> <span class="red">as</span> <span class="violet">$data</span><span class="red">)</span>
+    {
+        <span class="green">// On affiche tout les noms de pays</span>
+        echo "< p>";
+        print_r(<span class="violet">$data</span><span class="red">-></span><span class="blue">country_name</span>);
+        echo "< /p>";
+    }
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Utilisation de fetch_all</div>
+            <div class="content">
+                <div>
+                    <pre>
+function <span class="yellow">requete(</span><span class="blue">$PDO</span><span class="yellow">)</span>
+{
+    <span class="green">// On lance une requête, 
+    // On stock le retour de cette requête dans $result</span>
+    <span class="blue">$result</span> = <span class="blue">$PDO</span> -> query("SELECT * FROM fv_countries");
+
+    <span class="green">// On utiliser fetchAll</span>
+    <span class="blue">$result</span><span class="red">->fetchAll(</span><span class="blue">PDO::FETCH_ASSOC</span><span class="red">)</span>;
+
+    <span class="green">// On affiche ce que retourne fetchAll</span>
+    echo "< pre>";
+    print_r(<span class="violet">$data</span>);
+    echo "< /pre>";
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title">Fermer le curseur</div>
+            <div class="content">
+                <div>
+                    <div>On ferme le curseur au moment ou on en a plus besoin</div>
+                    <br>
+                    <pre>
+function <span class="yellow">requete(</span><span class="blue">$PDO</span><span class="yellow">)</span>
+{
+    <span class="green">// On lance une requête, 
+    // On stock le retour de cette requête dans $result</span>
+    <span class="blue">$result</span> = <span class="blue">$PDO</span> -> query("SELECT * FROM fv_countries");
+
+    <span class="green">// On utiliser fetchAll</span>
+    <span class="blue">$result</span><span class="red">->fetchAll(</span><span class="blue">PDO::FETCH_ASSOC</span><span class="red">)</span>;
+
+    <span class="green">// On a récupérer ce qu'on voulait, on peut fermer le curseur</span>
+    <span class="blue">$result</span><span class="red">->closeCursor()</span>;
+
+    <span class="green">// On affiche tout les pays</span>
+    echo "< pre>";
+    echo <span class="violet">$data</span><span class="blue">["country_name"]</span>;
+    echo "< /pre>";
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chapter"><a href="https://www.youtube.com/watch?v=Vr6wfvlXPkw&list=PLrSOXFDHBtfFuZttC17M-jNpKnzUL5Adc&index=31" target="_blank">Sécuriser requêtes SQL</a></section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title">Base de donnée utiliser</div>
+        <div class="content_onlyone">
+            <div>
+                <pre>
++------------+--------------+--------------+
+| id_country | country_code | country_name |
++------------+--------------+--------------+
+|          1 | FR           | France       |
+|          2 | JP           | Japon        |
+|          3 | DE           | Allemagne    |
+|          4 | IT           | Italie       |
+|          5 | KR           | Corée        |
++------------+--------------+--------------+
+                </pre>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title">Code utilisé</div>
+        <div class="content_onlyone">
+            <div>
+                <pre>
+<span class="green">// On défini les paramètre obligatoires pour la classe PDO</span>
+<span class="blue">$DB_DSN</span> = "mysql:host=localhost; dbname=fv_database";
+<span class="blue">$DB_USER</span> = "root";
+<span class="blue">$DB_PASS</span> = "";
+
+<span class="green">// On définie les paramètres optionnelles pour la classe PDO</span>
+<span class="blue">$options</span> =
+[
+    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8", <span class="green">// Pour configurer PDO en utf8</span>
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, <span class="green">// S'il y a des erreurs, on les gères comme des exceptions</span>
+//  PDO::ATTR_PERSISTENT => true  <span class="green">// Le connexion PDO est persistante</span>
+];
+
+
+<span class="green">// On essaie de se connecter à PDO</span>
+<span class="violet">try</span>
+<span class="violet">{</span>
+    <span class="blue">$PDO</span> = new PDO($DB_DSN, $DB_USER, $DB_PASS, $options);
+
+    <span class="yellow">requete(</span>$PDO<span class="yellow">)</span>;
+<span class="violet">}</span>
+<span class="green">// Si une exception est lever</span>
+<span class="violet">catch(</span>PDOException $pe<span class="violet">)</span>
+<span class="violet">{</span>
+    <span class="green">// On affiche le message d'erreur</span>
+    echo "Erreur : ".$pe->getMessage();
+<span class="violet">}</span>
+
+
+function <span class="yellow">requete(</span><span class="blue">$PDO</span><span class="yellow">)</span>
+<span class="yellow">{</span>
+    <span class="blue">$requete</span> = <span class="blue">$PDO</span>->query("SELECT * FROM fv_countries");
+
+    echo "< pre>";
+    print_r(<span class="blue">$requete</span>->fetchAll(PDO::FETCH_ASSOC));
+    echo "< pre>";
+<span class="yellow">}</span>
+                </pre>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="box_large">
+        <div class="box">
+        <div class="title">Faille par injection SQL</div>
+            <div class="content">
+                <div>
+                    <div>C'est le fait d'injecter du code et d'alterer une requête SQL pour récupérer des mails, des mots de passes par exemple.</div>
+                    <br>
+                    <div>Pas encore sécuriser</div>
+                    <pre>$sql = "SELECT * FROM fv_countries";</pre>
+                    <div>Un hacker peut intégrer des simples quotes et rentrer du code :</div>
+                    <pre>$sql = "SELECT * <span class="red">''</span>FROM fv_countries";</pre>
+                    <br>
+                    <div class="blue">On peut sécuriser ça avec une <span class="red">requête préparée</span></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+        <div class="title red">Requêtes préparée</div>
+            <div class="content">
+                <div>
+                    <div>Il faut définir une nouvelle option dans <span class="blue">$options</span> :</div>
+                    <pre><span class="red">PDO::ATTR_EMULATE_PREPARES => false</span> <span class="green">// Pas d'emulation de requête préparée</span></pre>
+                    <br>
+                    <div>Dans le code :</div>
+                    <pre>
+function requete($PDO)
+{
+    <span class="green">// On prépare une requête, qui est stocker dans la variable <span class="blue">$requete</span></span>
+    <span class="blue">$requete</span> = <span class="blue">$PDO</span><span class="red">->prepare(</span>"SELECT * FROM fv_countries"<span class="red">)</span>;
+    <span class="green">// On lance la requête quand on en a besoin :</span>
+    <span class="blue">$requete</span><span class="red">->execute()</span>;
+
+
+    echo "< pre>";
+    <span class="green">// fetchAll pour obtenir un tableau associative</span>
+    print_r($requete->fetchAll(PDO::FETCH_ASSOC));
+    echo "< pre>";
+}
+                    </pre>
+                    <br>
+                    <div class="precision blue">Si la syntaxe de la requête est incorrecte, ça renverra une erreur :</div>
+                    <pre>$requete = $PDO->prepare("SELECT * <span class="red">''</span>FROM fv_countries");</pre>
+                    <br>
+                    <div>Imaginons que nous voulons maintenant toute les informations lorsque id_country est spécifique :</div>
+                    <pre>
+$requete = $PDO->prepare("SELECT * FROM fv_countries WHERE id_country = <span class="red">?</span>");
+<span class="green">// ou pour nommer l'identificateur</span>
+$requete = $PDO->prepare("SELECT * FROM fv_countries WHERE id_country = <span class="red">:id</span>");
+                    </pre>
+                    <br>
+                    <div class="blue"><span class="red">?</span> et <span class="red">:id</span> sont des  identificateurs, ils signifient que c'est une valeur qu'on definira plus tard.</div>
+                    <br>
+                    <div>Pour definir cette valeur avec <span class="red">bindValue</span> :</div>
+                    <pre>
+<span class="blue">$requete</span><span class="red">->bindValue(</span><span class="blue">1</span>, <span class="blue">3</span><span class="red">)</span>;
+<span class="green">// <span class="blue">1 / :id</span> = première valeur à définir ( premier identificateur )</span>
+<span class="green">// <span class="blue">3</span> = la valeur à renseigner</span>
+                    </pre>
+                    <br>
+                    <div class="blue">L'avantage, c'es qu'on pourra rappeler cette requête avec des valeurs différentes. <span class="red">bindValue</span> évalue la requête au moment de l'utilisation de <span class="red">bindValue</span></div>
+                    <br>
+                    <br>
+                    <div>Pour definir cette valeur avec <span class="red">bindParam</span> :</div>
+                    <pre>
+<span class="blue">$requete</span><span class="red">->bindParam(</span><span class="blue">1</span>, <span class="blue">$id</span><span class="red">)</span>;
+
+<span class="blue">$id</span> = 3;
+                    </pre>
+                    <div class="blue">L'avantage de <span class="red">bindParam</span>, c'est que le paramètre peut être définie <span class="red">après bindParam</span>. Il évalue la requête au moment de l'execution ( <span class="red">execute()</span> )</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box_large">
+    <div class="box">
+    <div class="title">Verifier le type de donnée à passer</div>
+        <div class="content_onlyone">
+            <div>
+                <div class="blue">En général, le SGBD converti automatiquement</div>
+                <pre>
+bindValue(":id", 3, <span class="red">PDO::PARAM_STR</span>) <span class="green">// Par défault, passe un string</span>
+bindValue(":id", 3, <span class="red">PDO::PARAM_BOOL</span>) <span class="green">// Passe un booléen</span>
+bindValue(":id", 3, <span class="red">PDO::PARAM_INT</span>) <span class="green">// Passe un entier / un float</span>
+                </pre>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+
+    <!--    
+        
+        <section class="chapter">Fonction</section>
+        
+        --------------------------------------------------------------------
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title"></div>
+                <div class="content blue">
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title"></div>
+                <div class="content blue">
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="title"></div>
+                <div class="content blue">
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        ---------------------------------------------------------------------
+
+        <section class="box_large">
+
+            <div class="box">
+                <div class="title">Titre</div>
+                <div class="content_onlyone">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    -->
+
+    <script src="script.js"></script>
+</body>
+</html>
